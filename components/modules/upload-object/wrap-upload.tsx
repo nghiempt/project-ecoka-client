@@ -2,7 +2,6 @@
 
 import React from "react";
 import { UploadSingleObject } from "./single-object";
-import { UploadMultipleObject } from "./multiple-object";
 
 const WrapUpload = () => {
   return (
