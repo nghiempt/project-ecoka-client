@@ -71,7 +71,7 @@ export default function ProductTable() {
                   <div className="flex justify-start items-center gap-x-2">
                     <CardMedia
                       sx={{ width: 40, height: 40, borderRadius: "10px" }}
-                      image={STRING.dev_product}
+                      // image={STRING.dev_product}
                       title="card"
                     />
                     {row.product_name}
