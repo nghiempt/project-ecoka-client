@@ -1,0 +1,15 @@
+export const URL = {
+  ECOKA_LOGO_SQUARE: "https://ecoka.devilop.me/dev_ecoka_logo_text.png",
+  ECOKA_LOGO_CIRCLE: "https://ecoka.devilop.me/dev_ecoka_logo_single.png",
+  PRIMARY_BANNER: "https://ecoka.devilop.me/dev_banner.png",
+  SECONDARY_BANNER: "https://ecoka.devilop.me/dev_sub_banner.png",
+  TERTIARY_BANNER: "https://ecoka.devilop.me/dev_subscribe_banner.png",
+  VIDEO: "https://ecoka.devilop.me/dev_video.mp4",
+  PRODUCT_THUMBNAL: "https://ecoka.devilop.me/dev_product.jpg",
+  BLOG_THUMBNAL: "https://ecoka.devilop.me/dev_blog.jpg",
+  VN_FLAG: "https://ecoka.devilop.me/dev_vn_flag.png",
+  EN_FLAG: "https://ecoka.devilop.me/dev_en_flag.png",
+  JA_FLAG: "https://ecoka.devilop.me/dev_jp_flag.png",
+  FB_ICON: "https://ecoka.devilop.me/dev_facebook_icon.png",
+  GG_ICON: "https://ecoka.devilop.me/dev_google_icon.png",
+};
