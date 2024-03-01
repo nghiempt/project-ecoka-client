@@ -13,14 +13,78 @@ import { URL } from "@/constant/url";
 import LanguageChanger from "../translation/language-changer";
 import Link from "next/link";
 import MenuIcon from '@mui/icons-material/Menu';
+import { Box, Divider, Drawer } from "@mui/material";
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import List from '@mui/material/List';
+import HomeIcon from '@mui/icons-material/Home';
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import InfoIcon from '@mui/icons-material/Info';
+import PostAddIcon from '@mui/icons-material/PostAdd';
 
 export default function Header({ translate }: { translate: any }) {
   const { data } = useSession();
 
-  useEffect(() => { }, [])
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(!open);
+  };
+
+  useEffect(() => { }, [open])
 
   return (
     <div className="lg:w-3/4 flex justify-between items-center py-10">
+      <Drawer open={open} onClose={toggleDrawer(false)} anchor={"right"}>
+        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} className="pt-6 flex flex-col justify-between items-center">
+          {
+            data?.user ? (<div className="mb-4 flex flex-col justify-center items-center">
+              <h1>Hi, nghiempt.dev@gmail.com</h1>
+              <Link href={{
+                pathname: '/sign-in'
+              }}
+                className="mt-4"
+              >
+                <button
+                  className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center"
+                >
+                  {'Đăng xuất'}<LogoutIcon className="ml-2" fontSize="small" />
+                </button>
+              </Link>
+            </div>) : (<Link href={{
+              pathname: '/sign-in'
+            }}
+              className="mt-4"
+            >
+              <button
+                className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center"
+              >
+                <LoginIcon className="mr-2" fontSize="small" /> {
+                  translate('header-sign-in')
+                }
+              </button>
+            </Link>)
+          }
+          <List className="w-full">
+            {[translate('header-tab-home'), translate('header-tab-collection'), translate('header-tab-about'), translate('header-tab-blog')].map((text, index) => (
+              <Link key={index} href={{
+                pathname: `${index === 0 ? '/' : index === 1 ? '/collection' : index === 2 ? '/about' : 'blog'}`
+              }}>
+                <ListItem>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      {index === 0 ? <HomeIcon /> : index === 1 ? <ProductionQuantityLimitsIcon /> : index === 2 ? <InfoIcon /> : <PostAddIcon />}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
       <Link href={{
         pathname: '/'
       }}>
@@ -86,7 +150,7 @@ export default function Header({ translate }: { translate: any }) {
         />{" "}
         <LanguageChanger />
       </div>
-      <div className="ml-6 lg:hidden cursor-pointer">
+      <div className="ml-6 lg:hidden cursor-pointer" onClick={toggleDrawer(true)}>
         <MenuIcon />
       </div>
       {data?.user ? (

@@ -54,7 +54,7 @@ export const ProductPopular = ({ translate }: { translate: any }) => {
                 title="card"
               />
               <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>{translate(item?.product_name)}</div>
               </div>
               <div className="">
                 <div className="font-bold lg:text-[14px] text-[rgb(var(--primary-rgb))]">

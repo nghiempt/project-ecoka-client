@@ -156,7 +156,7 @@ export default function TabHome({ translate }: { translate: any }) {
             </Link>
           </div>
           <div className="mt-6 flex flex-col lg:flex-row overflow-x-auto lg:gap-x-[20px] lg:h-[310px] unshowscrollbar">
-            {[...FAKE.CATEGORIES, ...FAKE.CATEGORIES.slice(0,1)]?.map((item: any, index: any) => (
+            {[...FAKE.CATEGORIES, ...FAKE.CATEGORIES.slice(0, 1)]?.map((item: any, index: any) => (
               <div
                 key={index}
                 className="relative flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg w-[400px] h-[400px] lg:w-[300px] lg:h-[260px]"

@@ -120,7 +120,7 @@ const BLOGS = [
 const PRODUCTS = [
   {
     product_id: "ECOTTNLB01",
-    product_name: "Nón Lục Bình Macrame - Phong cách tự nhiên và độc đáo cho mùa hè",
+    product_name: "pn-01",
     product_description: "Chào mừng mùa hè với một phụ kiện thời trang độc đáo và nổi bật - Nón Lục Bình Macrame. Với sự kết hợp tinh tế giữa thiết kế Lục Bình truyền thống và kỹ thuật macrame tỉ mỉ, chiếc nón này không chỉ là một món đồ bảo vệ từ ánh nắng mặt trời mà còn là điểm nhấn hoàn hảo cho phong cách của bạn.",
     product_price: "190000",
     product_discount: true,
@@ -137,7 +137,7 @@ const PRODUCTS = [
   },
   {
     product_id: "vanghongxam",
-    product_name: "Túi Macrame Cầm Tay 3 Mảnh Chaneva",
+    product_name: "pn-02",
     product_description: "Túi Macrame Cầm Tay - Sự Tinh Tế và Tự Nhiên Trên Đầu Ngón Tay\nChào mừng đến với bài đăng sản phẩm đặc biệt hôm nay! Chúng tôi tự hào giới thiệu đến bạn chiếc túi macrame cầm tay, một sự kết hợp hoàn hảo giữa sự tinh tế và sự tự nhiên. Với thiết kế độc đáo và đường nét tinh xảo, chiếc túi này sẽ mang đến cho bạn một phong cách thời trang độc đáo và nổi bật.",
     product_price: "325000",
     product_discount: false,
@@ -154,7 +154,7 @@ const PRODUCTS = [
   },
   {
     product_id: "macramedienthoaihong",
-    product_name: "Túi Macrame Điện Thoại - Phong Cách Bền Vững Cho Cuộc Sống Hiện Đại",
+    product_name: "pn-03",
     product_description: "Sắc Màu Đậm Đà và Độc Đáo trong Túi Xách Macrame\nBạn đang tìm kiếm một chiếc túi xách độc đáo và đậm chất nghệ thuật? Túi xách macrame là lựa chọn hoàn hảo cho những ai yêu thích sự tự nhiên và muốn thể hiện phong cách độc đáo. Với những sợi dây macrame được tạo thành bằng tay và kỹ thuật thủ công tinh tế, chiếc túi xách này sẽ là điểm nhấn độc đáo trong bộ sưu tập của bạn.",
     product_price: "245000",
     product_discount: false,
@@ -171,7 +171,7 @@ const PRODUCTS = [
   },
   {
     product_id: "macramelaptop",
-    product_name: "Túi Macrame Laptop - Mang Phong Cách Tự Nhiên Và Sự Bảo Vệ Hoàn Hảo",
+    product_name: "pn-04",
     product_description: "Túi Macrame Laptop - Kết Hợp Hoàn Hảo Giữa Phong Cách và Bảo Vệ Cho Laptop Của Bạn\nChúng tôi xin giới thiệu đến bạn chiếc túi macrame laptop, một sự kết hợp hoàn hảo giữa phong cách và bảo vệ cho laptop của bạn. Với thiết kế độc đáo và chất liệu tự nhiên, chiếc túi này sẽ là người bạn đồng hành lý tưởng cho laptop của bạn.",
     product_price: "620000",
     product_discount: false,
@@ -188,7 +188,7 @@ const PRODUCTS = [
   },
   {
     product_id: "macramehellosummer01",
-    product_name: "Túi tote macrame - Bộ sưu tập Hello Summer khuấy động không khí hè - 01",
+    product_name: "pn-05",
     product_description: "Khám phá chiếc túi tote bằng macrame - một phụ kiện thời trang độc đáo và tiện dụng cho mọi ngày. Với thiết kế tinh tế kết hợp macrame và nút nhựa hiện đại, túi tote này sẽ là người bạn đồng hành hoàn hảo cho các chuyến đi xa hoặc hoạt động hàng ngày.",
     product_price: "195000",
     product_discount: false,
@@ -205,7 +205,7 @@ const PRODUCTS = [
   },
   {
     product_id: "macramehellosummer02",
-    product_name: "Túi tote macrame - Bộ sưu tập Hello Summer khuấy động không khí hè - 02",
+    product_name: "pn-06",
     product_description: "Khám phá chiếc túi tote bằng macrame - một phụ kiện thời trang độc đáo và tiện dụng cho mọi ngày. Với thiết kế tinh tế kết hợp macrame và nút nhựa hiện đại, túi tote này sẽ là người bạn đồng hành hoàn hảo cho các chuyến đi xa hoặc hoạt động hàng ngày.",
     product_price: "195000",
     product_discount: false,
@@ -222,7 +222,7 @@ const PRODUCTS = [
   },
   {
     product_id: "macramehellosummer03",
-    product_name: "Túi tote macrame - Bộ sưu tập Hello Summer khuấy động không khí hè - 03",
+    product_name: "pn-07",
     product_description: "Khám phá chiếc túi tote bằng macrame - một phụ kiện thời trang độc đáo và tiện dụng cho mọi ngày. Với thiết kế tinh tế kết hợp macrame và nút nhựa hiện đại, túi tote này sẽ là người bạn đồng hành hoàn hảo cho các chuyến đi xa hoặc hoạt động hàng ngày.",
     product_price: "195000",
     product_discount: false,
@@ -239,7 +239,7 @@ const PRODUCTS = [
   },
   {
     product_id: "totevanphong",
-    product_name: "Túi Tote văn phòng bằng cói - Sự kết hợp hoàn hảo giữa phong cách và tiện ích",
+    product_name: "pn-08",
     product_description: "Giới thiệu chiếc túi tote bằng cói, một phụ kiện thiết thực và tự nhiên cho mọi ngày. Túi tote này không chỉ mang đến sự tiện dụng trong việc đựng đồ hàng ngày mà còn tạo điểm nhấn về phong cách và sự gần gũi với thiên nhiên.",
     product_price: "465000",
     product_discount: false,
@@ -256,7 +256,7 @@ const PRODUCTS = [
   },
   {
     product_id: "totevanphongmixcolor",
-    product_name: "Túi Tote văn phòng bằng cói - Sự kết hợp hoàn hảo giữa phong cách và tiện ích - Mixed color",
+    product_name: "pn-09",
     product_description: "Giới thiệu chiếc túi tote bằng cói, một phụ kiện thiết thực và tự nhiên cho mọi ngày. Túi tote này không chỉ mang đến sự tiện dụng trong việc đựng đồ hàng ngày mà còn tạo điểm nhấn về phong cách và sự gần gũi với thiên nhiên.",
     product_price: "465000",
     product_discount: false,
@@ -273,7 +273,7 @@ const PRODUCTS = [
   },
   {
     product_id: "tuilucbinh2323178",
-    product_name: "Túi Xách Lục Bình - Phong Cách Tự Nhiên và Sành Điệu",
+    product_name: "pn-10",
     product_description: "Thiết Kế Độc Đáo với Túi Xách Lục Bình Handmade\nBạn đang tìm kiếm một chiếc túi xách độc đáo và mang phong cách tự nhiên? Túi xách lục bình sẽ là sự lựa chọn hoàn hảo cho phụ nữ sành điệu và yêu thích sự tự do tự nhiên. Với thiết kế độc đáo và chất liệu lục bình tự nhiên, chiếc túi xách này sẽ là điểm nhấn độc đáo trong bộ sưu tập của bạn.",
     product_price: "270000",
     product_discount: false,
@@ -290,7 +290,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOTTTLB02",
-    product_name: "Túi Xách Lục Bình Họa Tiết Chim Công - Khám phá vẻ đẹp nghệ thuật trong từng đường nét",
+    product_name: "pn-11",
     product_description: "Trong bộ sưu tập thời trang đầy sáng tạo, chúng tôi xin giới thiệu Túi Xách Lục Bình Họa Tiết Chim Công - một sự kết hợp hoàn hảo giữa vẻ đẹp hiện đại và nghệ thuật truyền thống. Với những đường nét tinh tế và sự tinh tế trong kỹ thuật họa tiết chim công, chiếc túi mang trong mình vẻ đẹp độc đáo, tạo nên một điểm nhấn đặc biệt cho phong cách của bạn.",
     product_price: "490000",
     product_discount: false,
@@ -307,7 +307,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOTTTLB03",
-    product_name: "Túi Xách Lục Bình Hoạ Tiết Macrame Dọc- Tinh hoa thời trang và truyền thống giao hòa",
+    product_name: "pn-12",
     product_description: "Trong bộ sưu tập thời trang đầy sáng tạo, chúng tôi xin giới thiệu Túi Xách Lục Bình Hoạ Tiết Macrame Dọc- một sự kết hợp hoàn hảo giữa vẻ đẹp hiện đại và truyền thống lâu đời. Với những đường nét tỉ mỉ và sự tinh tế của kỹ thuật macrame, chiếc túi mang trong mình vẻ đẹp độc đáo, tạo nên một điểm nhấn đặc biệt cho phong cách của bạn.",
     product_price: "490000",
     product_discount: false,
@@ -324,7 +324,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOTTTLB04",
-    product_name: "Túi xách lục bình họa tiết macrame ngang - Điểm nhấn thú vị cho phong cách của bạn",
+    product_name: "pn-13",
     product_description: "Giới thiệu đến bạn chiếc túi lục bình trang trí thêm họa tiết Macrame tinh xảo, một phụ kiện tuyệt đẹp kết hợp giữa nghệ thuật macrame và vẻ đẹp tự nhiên của lục bình. Chiếc túi này thực sự là một sự kết hợp tuyệt vời giữa sự tinh tế, sự khéo léo và phong cách thời trang ý thức môi trường.",
     product_price: "490000",
     product_discount: false,
@@ -341,7 +341,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOTTTLB01",
-    product_name: "Túi Xách Lục Bình Quai Da - Sự lựa chọn đẳng cấp cho phong cách cá nhân",
+    product_name: "pn-14",
     product_description: "Trong bộ sưu tập thời trang đầy phong cách, chúng tôi tự hào giới thiệu Túi xách Lục Bình Quai Da - một sự kết hợp tuyệt vời giữa vẻ đẹp truyền thống của lục bình và sự sang trọng của da bò. Với họa tiết lục bình tinh tế và quai đeo da bò chất lượng cao, chiếc túi này là sự lựa chọn hoàn hảo cho những ai yêu thích phong cách độc đáo và không gian rộng rãi.",
     product_price: "545000",
     product_discount: false,
@@ -358,7 +358,7 @@ const PRODUCTS = [
   },
   {
     product_id: "lucbinh2530251033",
-    product_name: "Túi Xách Lục Bình Quai Da - Sự lựa chọn thời thượng và đẳng cấp",
+    product_name: "pn-15",
     product_description: "Trong bộ sưu tập thời trang đầy phong cách, chúng tôi tự hào giới thiệu Túi xách Lục Bình Quai Da - một sự kết hợp tuyệt vời giữa vẻ đẹp truyền thống của lục bình và sự sang trọng của da bò. Với họa tiết lục bình tinh tế và quai đeo da bò chất lượng cao, chiếc túi này là sự lựa chọn hoàn hảo cho những ai yêu thích phong cách độc đáo và không gian rộng rãi.",
     product_price: "490000",
     product_discount: false,
@@ -375,7 +375,7 @@ const PRODUCTS = [
   },
   {
     product_id: "tuimacramengangkem",
-    product_name: "Túi Xách Macrame - Tinh Hoa Nghệ Thuật và Phong Cách Tự Nhiên",
+    product_name: "pn-16",
     product_description: "Túi xách macrame là kết hợp hài hòa giữa sự tự nhiên và sự sáng tạo. Với màu sắc đậm đà và họa tiết độc đáo, chiếc túi này thu hút ánh nhìn và tạo nên điểm nhấn cho phong cách của bạn. Bằng cách sử dụng các kỹ thuật macrame, những sợi dây được thắt chặt với nhau tạo nên cấu trúc vững chắc và bền bỉ cho túi xách.",
     product_price: "375000",
     product_discount: false,
@@ -392,7 +392,7 @@ const PRODUCTS = [
   },
   {
     product_id: "W10003",
-    product_name: "Dây Cotton Cao Cấp 3m - Sự Lựa Chọn Hoàn Hảo Cho Các Dự Án Sáng Tạo",
+    product_name: "pn-17",
     product_description: "Dây cotton cao cấp 3m là lựa chọn hàng đầu cho việc làm đồ thủ công, trang trí và handmade. Chất liệu cotton tự nhiên giúp dây mềm mại, mịn màng và dễ dàng để làm việc. Độ dài 3m đủ để bạn thực hiện nhiều dự án sáng tạo và tạo nên những sản phẩm độc đáo và đẹp mắt.\nVới dây cotton cao cấp, bạn có thể tạo ra những món đồ thủ công như móc túi xách, đan mũ len, hoặc làm vòng cổ handmade. Cùng với sự linh hoạt và đa dạng của dây cotton, chỉ cần một chút sáng tạo, bạn có thể tạo nên những sản phẩm unique và cá nhân hóa.",
     product_price: "129000",
     product_discount: false,
@@ -409,7 +409,7 @@ const PRODUCTS = [
   },
   {
     product_id: "PLATEMAT_SIZE30_SET2",
-    product_name: "Dĩa Lót Đan Bằng Lục Bình Size 30cm - Sự Kết Hợp Tinh Tế và Sắc Màu Tươi Sáng",
+    product_name: "pn-18",
     product_description: "Dĩa lót đan bằng lục bình không chỉ là một vật trang trí đẹp mắt, mà còn có vai trò bảo vệ bề mặt bàn và giữ cho dĩa và đĩa chén luôn sạch sẽ. Với chất liệu tự nhiên của đan bằng và sự bền bỉ của lục bình, dĩa lót không chỉ giúp bảo vệ mặt bàn khỏi trầy xước mà còn tạo điểm nhấn thú vị cho bữa ăn của bạn.\nSự đa dạng về màu sắc là một điểm nổi bật của dĩa lót đan bằng lục bình. Bạn có thể lựa chọn từ một loạt các màu sắc tươi sáng và đa dạng như xanh lá cây, vàng rực rỡ, cam tươi mát và nhiều màu khác. Điều này cho phép bạn tạo ra sự pha trộn màu sắc độc đáo và tạo nên không gian ẩm thực thú vị và sáng tạo.",
     product_price: "54000",
     product_discount: false,
@@ -426,7 +426,7 @@ const PRODUCTS = [
   },
   {
     product_id: "PLATEMAT_SIZE34_SET1",
-    product_name: "Dĩa Lục Bình Size 34cm - Tinh tế và độc đáo làm nổi bật bàn ăn của bạn",
+    product_name: "pn-19",
     product_description: "Dĩa lót đan bằng lục bình không chỉ là một vật trang trí đẹp mắt, mà còn có vai trò bảo vệ bề mặt bàn và giữ cho dĩa và đĩa chén luôn sạch sẽ. Với chất liệu tự nhiên của đan bằng và sự bền bỉ của lục bình, dĩa lót không chỉ giúp bảo vệ mặt bàn khỏi trầy xước mà còn tạo điểm nhấn thú vị cho bữa ăn của bạn.\nSự đa dạng về màu sắc là một điểm nổi bật của dĩa lót đan bằng lục bình. Bạn có thể lựa chọn từ một loạt các màu sắc tươi sáng và đa dạng như xanh lá cây, vàng rực rỡ, cam tươi mát và nhiều màu khác. Điều này cho phép bạn tạo ra sự pha trộn màu sắc độc đáo và tạo nên không gian ẩm thực thú vị và sáng tạo.",
     product_price: "35000",
     product_discount: false,
@@ -443,7 +443,7 @@ const PRODUCTS = [
   },
   {
     product_id: "Full_rattan_30",
-    product_name: "Lót dĩa bằng mây 30cm - Tạo nét đẹp thư thái cho bữa ăn",
+    product_name: "pn-20",
     product_description: "Miếng lót bàn ăn bằng mây\nMaterials:  100% bằng mây đan thủ công\nOrigin:  Vietnam\nBảo quản: nơi khô ráo thoáng mát. Nếu ướt, cần phơi khô dưới nắng\nVệ sinh: không nên nhúng vào nước, vệ sinh bằng khăn/vải ướt và cất giữ ở nơi khô thoáng\nKich thước: 30 x 1 cm / 11.8 x 0.39 in (Diameter x Height)\n34 x 1 cm / 13.4 x 0.39 in (Diameter x Height) ",
     product_price: "105000",
     product_discount: false,
@@ -460,7 +460,7 @@ const PRODUCTS = [
   },
   {
     product_id: "2lotlylucbinh",
-    product_name: "Lót Ly Lục Bình - Tinh Hoa Sắc Màu Và Sự Tinh Tế Cho Bữa Tiệc Của Bạn",
+    product_name: "pn-21",
     product_description: "Lót ly lục bình được làm từ lục bình tự nhiên, được chọn lọc kỹ lưỡng để đảm bảo chất lượng và sự bền bỉ. Mỗi mẫu lót ly được thiết kế với những hoa văn lục bình tinh xảo, tạo điểm nhấn tuyệt đẹp cho bộ đồ uống của bạn. Bất kể bạn tổ chức tiệc trong nhà hay ngoài trời, lót ly lục bình sẽ làm cho không gian trở nên sống động và ấn tượng.",
     product_price: "32000",
     product_discount: false,
@@ -477,7 +477,7 @@ const PRODUCTS = [
   },
   {
     product_id: "lotlymacrame",
-    product_name: "Lót Ly Macrame - Tinh Tế và Sắc Màu Đa Dạng Cho Bữa Tiệc Hoàn Hảo",
+    product_name: "pn-22",
     product_description: "Với lót ly macrame, bạn có thể lựa chọn từ một loạt các màu sắc tươi sáng và trầm, từ những gam màu pastel nhẹ nhàng cho đến những tông màu đậm mạnh. Bạn có thể tạo nên sự pha trộn và kết hợp màu sắc theo sở thích riêng, tạo ra một không gian độc đáo và trang nhã cho bữa tiệc của mình.",
     product_price: "22000",
     product_discount: false,
@@ -494,7 +494,7 @@ const PRODUCTS = [
   },
   {
     product_id: "remmacrame01",
-    product_name: "Rèm Macrame - Điểm nhấn trang trí sang trọng và độc đáo - REM01",
+    product_name: "pn-23",
     product_description: "Chúng tôi tự hào giới thiệu đến bạn bộ sưu tập Rem Macrame - một sự kết hợp hoàn hảo giữa thủ công tinh tế và phong cách hiện đại. Với những sợi dây macrame tỉ mỉ được thắt nút và tạo hình độc đáo, các chiếc rèm này mang đến vẻ đẹp độc đáo và độc đáo cho không gian sống của bạn.",
     product_price: "520000",
     product_discount: false,
@@ -511,7 +511,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOHKSLB03",
-    product_name: "Set 3 Cái Sọt Đan Lục Bình - Sắp xếp thông minh và trang trí độc đáo cho không gian của bạn - SOT02",
+    product_name: "pn-24",
     product_description: "Chúng tôi tự hào giới thiệu Set 3 Cái Sọt Đan Lục Bình - một giải pháp lưu trữ thông minh và sự kết hợp tuyệt vời giữa chức năng và trang trí cho không gian của bạn. Bộ set gồm 3 sọt với kích thước và thiết kế khác nhau, đáp ứng nhu cầu sắp xếp đa dạng và mang đến vẻ đẹp độc đáo và ấn tượng.",
     product_price: "295000",
     product_discount: false,
@@ -528,7 +528,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOHKSLB02",
-    product_name: "Set 3 Cái Sọt Đan Lục Bình - Giải pháp đa năng cho không gian sống của bạn - SOT03",
+    product_name: "pn-25",
     product_description: "Chúng tôi tự hào giới thiệu Set 3 Cái Sọt Đan Lục Bình - một giải pháp lưu trữ thông minh và sự kết hợp tuyệt vời giữa chức năng và trang trí cho không gian của bạn. Bộ set gồm 3 sọt với kích thước và thiết kế khác nhau, đáp ứng nhu cầu sắp xếp đa dạng và mang đến vẻ đẹp độc đáo và ấn tượng.",
     product_price: "295000",
     product_discount: false,
@@ -545,7 +545,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOHKSLB01",
-    product_name: "Set 3 Cái Sọt Đan Lục Bình - Lưu trữ hiệu quả và trang trí đẳng cấp cho không gian sống của bạn - SOT04",
+    product_name: "pn-26",
     product_description: "Chúng tôi tự hào giới thiệu Set 3 Cái Sọt Đan Lục Bình - một giải pháp lưu trữ thông minh và sự kết hợp tuyệt vời giữa chức năng và trang trí cho không gian của bạn. Bộ set gồm 3 sọt với kích thước và thiết kế khác nhau, đáp ứng nhu cầu sắp xếp đa dạng và mang đến vẻ đẹp độc đáo và ấn tượng.",
     product_price: "295000",
     product_discount: false,
@@ -562,7 +562,7 @@ const PRODUCTS = [
   },
   {
     product_id: "sotcobien",
-    product_name: "Sọt Cỏ Biển Sọt đựng đồ chơi Sọt đựng đồ dùng (kèm miếng lót)",
+    product_name: "pn-27",
     product_description: "Sọt cỏ biển tự nhiên kích thước 30.5cmx30.5cmx30.5cm là một sản phẩm thủ công tinh tế, được làm từ chất liệu cỏ biển tự nhiên và kết hợp với miếng lót bảo vệ. Sọt này không chỉ mang đến vẻ đẹp tự nhiên mà còn thể hiện sự chú trọng đến bảo vệ môi trường.",
     product_price: "195000",
     product_discount: false,
@@ -579,7 +579,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOHKSLB04 ",
-    product_name: "Sọt Đan Lục Bình (KÈM MIẾNG LÓT) - Sự hoàn hảo cho không gian tổ chức và trang trí! - SOT01",
+    product_name: "pn-28",
     product_description: "Hãy khám phá sự hoàn hảo của Sọt Đan Lục Bình - một sản phẩm đẹp mắt và tiện dụng cho không gian sống của bạn. Với kích thước 30.5x30.5x30.5cm, sọt được làm từ chất liệu tự nhiên và đan tinh tế, mang lại vẻ đẹp tự nhiên và sang trọng cho không gian của bạn.",
     product_price: "195000",
     product_discount: false,
@@ -596,7 +596,7 @@ const PRODUCTS = [
   },
   {
     product_id: "ECOHKSM01",
-    product_name: "Sọt Đan Macrame Handmade (kèm miếng lót) - Sắp xếp và trang trí theo phong cách tự nhiên",
+    product_name: "pn-29",
     product_description: "Với kích thước 30.5cmx30.5cmx30.5cm, chiếc sọt này là lựa chọn hoàn hảo cho việc lưu trữ và trang trí nhà cửa của bạn.",
     product_price: "290000",
     product_discount: false,
@@ -613,7 +613,7 @@ const PRODUCTS = [
   },
   {
     product_id: "thamcoihinhhoa",
-    product_name: "Thảm Cói Hình Hoa - Khám Phá Vẻ Đẹp Tự Nhiên Trên Sàn Nhà",
+    product_name: "pn-30",
     product_description: "Nguyên liệu: 100% từ cói\nĐường kính : 90cm, 120cm\nHình dáng: Bông hoa\nXuất xứ: Việt Nam\nBảo quản: Nơi khô ráo, tránh ẩm ướt.\nNguyên liệu chính của thảm cói hình hoa là sợi cói tự nhiên được chọn lọc kỹ càng. Những nghệ nhân lành nghề đã dùng tay của mình để tạo ra những chiếc thảm cói với họa tiết hoa văn tinh tế và tỉ mỉ. Mỗi chiếc thảm cói hình hoa là một tác phẩm nghệ thuật độc đáo, mang đến một cảm giác gần gũi với thiên nhiên và vẻ đẹp tự nhiên.",
     product_price: "425000",
     product_discount: true,
@@ -624,7 +624,7 @@ const PRODUCTS = [
   },
   {
     product_id: "thamcoihinhtron",
-    product_name: "Thảm Cói Tròn ECOKA - Kết Hợp Tinh Hoa Tự Nhiên Và Phong Cách Sống Đẳng Cấp",
+    product_name: "pn-31",
     product_description: "Nguyên liệu: 100% từ cói\nĐường kính : 90cm, 120cm\nThảm cói được làm từ sợi cói tự nhiên, một nguyên liệu chất lượng cao và bền bỉ. Sự tỉ mỉ và tinh tế trong từng đường nét đã tạo ra những họa tiết độc đáo và hấp dẫn trên thảm cói. Bất kể bạn đặt thảm cói ở phòng khách, phòng ngủ hay phòng làm việc, nó sẽ là điểm nhấn tuyệt vời cho không gian của bạn.",
     product_price: "265000",
     product_discount: true,
@@ -641,7 +641,7 @@ const PRODUCTS = [
   },
   {
     product_id: "romayset3cai",
-    product_name: "Rổ Mây Set 3 Cái - Sự Hòa Quyện Tuyệt Vời Của Thiên Nhiên Trong Ngôi Nhà Của Bạn",
+    product_name: "pn-32",
     product_description: "Rổ Mây Set 3 Cái. Được tạo ra từ 100% mây tự nhiên, những chiếc rổ mây này không chỉ mang đến sự tự nhiên và gần gũi, mà còn thể hiện đẳng cấp và sự tinh tế trong trang trí nội thất.\nVới kích thước như sau: 26 x 10 cm, 23 x 8 cm và 20 x 6 cm, các rổ mây này là sự lựa chọn hoàn hảo cho việc sắp xếp và trang trí không gian sống của bạn.",
     product_price: "390000",
     product_discount: false,
@@ -658,7 +658,7 @@ const PRODUCTS = [
   },
   {
     product_id: "rotreset4cai",
-    product_name: "Rổ Tre Set 4 Cái - Sự Tự Nhiên Gắn Kết, Sản Phẩm Handmade Chất Lượng",
+    product_name: "pn-33",
     product_description: "Chất liệu 100% từ tre tự nhiên chất lượng cao là điểm nhấn nổi bật của rổ tre Ecoka. Nhờ đội ngũ thợ thủ công lành nghề, mỗi chiếc rổ được tạo ra đều được chăm chút kỹ lưỡng và đảm bảo đạt đến tiêu chuẩn chất lượng cao nhất. Không chỉ là một sản phẩm trang trí, mà rổ tre Ecoka còn thể hiện sự tôn trọng và gắn kết với thiên nhiên.",
     product_price: "250000",
     product_discount: false,
