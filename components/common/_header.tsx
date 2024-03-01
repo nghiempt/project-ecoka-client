@@ -141,7 +141,7 @@ export default function Header({ translate }: { translate: any }) {
           </Link>
         </Button>
       </div>
-      <div className="w-[40px] lg:w-[180px]"></div>
+      <div className="lg:w-[180px]"></div>
       <div className="flex justity-center items-center">
         <Avatar
           alt="avatar"

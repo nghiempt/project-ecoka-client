@@ -39,7 +39,7 @@ export default function Footer({ translate }: { translate: any }) {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 mt-6">
           <div className="flex flex-col justify-center items-center lg:items-start lg:justify-start">
             <h1 className="text-[14px] lg:text-[16px] text-white font-bold mb-2 mt-4">
               {translate("footer-11")}

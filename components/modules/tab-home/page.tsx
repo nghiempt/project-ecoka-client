@@ -138,7 +138,7 @@ export default function TabHome({ translate }: { translate: any }) {
           </div>
         </div>
       </div>
-      <div className="lg:w-full bg-[#64694C] rounded-tr-lg rounded-tl-lg mt-10">
+      <div className="hidden lg:block lg:w-full bg-[#64694C] rounded-tr-lg rounded-tl-lg mt-10">
         <div className="p-10">
           <div className="flex justify-between items-center">
             <div>

@@ -12,7 +12,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { FAKE } from "@/constant/fake";
 import Link from "next/link";
-import { convertStringToMoney } from "@/utils/helper";
+import { convertStringToMoney, limitString } from "@/utils/helper";
 
 export default function TabCollection({ translate }: { translate: any }) {
 
@@ -116,36 +116,40 @@ export default function TabCollection({ translate }: { translate: any }) {
               </div>
             </div>
           </div>
-          <div className="lg:w-3/4 flex flex-wrap gap-[20px] justify-center items-center">
-            {loadDataByPage(page)?.map((item: any, index: any) => (
-              <div
-                key={index}
-                className="cursor-pointer border border-gray-100 p-4 rounded-md"
-                style={{ flex: "25%" }}
-              >
-                <Link href={{
-                  pathname: '/collection/product',
-                  query: { product: JSON.stringify(item) }
-                }}
+          <div className="lg:w-3/4 flex flex-col justify-center items-center">
+            <div className="lg:w-full flex flex-wrap gap-[20px] justify-center items-center">
+              {loadDataByPage(page)?.map((item: any, index: any) => (
+                <div
+                  key={index}
+                  className="cursor-pointer border border-gray-200 p-4 rounded-md"
+                  style={{ flex: "25%" }}
                 >
-                  <CardMedia
-                    sx={{ height: 340, borderRadius: "10px" }}
-                    image={item?.product_thumbnail_one}
-                    title="card"
-                  />
-                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                    <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>{translate(item?.product_name)}</div>
-                  </div>
-                  <div className="">
-                    <div className="font-bold text-[14px] text-[rgb(var(--primary-rgb))]">
-                      {convertStringToMoney(item?.product_price.toString())} VND
+                  <Link href={{
+                    pathname: '/collection/product',
+                    query: { product: JSON.stringify(item) }
+                  }}
+                  >
+                    <CardMedia
+                      sx={{ borderRadius: "10px" }}
+                      className="h-[180px] lg:h-[350px]"
+                      image={item?.product_thumbnail_one}
+                      title="card"
+                    />
+                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                      <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>{limitString(translate(item?.product_name) || '', 70)}</div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                    <div className="">
+                      <div className="font-bold text-[14px] text-[rgb(var(--primary-rgb))]">
+                        {convertStringToMoney(item?.product_price.toString())} VND
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
             <Pagination count={Math.ceil(FAKE.PRODUCTS.length / 10)} shape="rounded" className="mt-10" onChange={changePage} />
           </div>
+
         </div>
       </div>
       <Service translate={translate} />

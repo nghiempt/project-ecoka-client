@@ -11,3 +11,8 @@ export const convertStringToMoney = (money: string) => {
 export const increaseMoney = (money: any) => {
   return money + money * 0.1;
 };
+
+// limit string
+export const limitString = (str: string, limit: any) => {
+  return str.length > limit ? str.slice(0, limit) + "..." : str;
+};

@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function SignIn({ translate }: { translate: any }) {
   return (
     <div className="lg:w-3/4 flex justify-center items-center">
-      <div className="items-center text-center p-6">
+      <div className="items-center text-center px-6 lg:py-6">
         <div className="flex items-center text-center grid grid-cols-1 lg:grid-cols-10 gap-0">
           <div className="hidden lg:block col-span-4 w-full h-full border border-[5px] border-[rgb(var(--secondary-rgb))] flex justify-center items-center rounded-lg">
             <Avatar
