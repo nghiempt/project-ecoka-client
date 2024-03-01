@@ -1,27 +1,29 @@
 "use client";
 
 import React from "react";
+import { Suspense } from 'react'
 import BoxWrapper from "@/components/common/box-wrapper";
 import { NextPage } from "next";
 import AdminContainer from "@/components/modules/admin/container";
-interface AdminServerProps {
-  params: {
-    locale: string;
-  };
+import { useParams } from "next/navigation";
+
+function AdminFallback() {
+  return <>placeholder</>
 }
 
-const AdminServer: NextPage<AdminServerProps> = async ({
-  params: { locale },
-}) => {
+const AdminServer: NextPage<any> = async () => {
+  const { locale } = useParams();
   return (
     <BoxWrapper>
-      <div className="w-full h-screen flex justify-center items-center">
-        <AdminContainer
-          params={{
-            locale: locale,
-          }}
-        />
-      </div>
+      <Suspense fallback={<AdminFallback />}>
+        <div className="w-full h-screen flex justify-center items-center">
+          <AdminContainer
+            params={{
+              locale: locale,
+            }}
+          />
+        </div>
+      </Suspense>
     </BoxWrapper>
   );
 };

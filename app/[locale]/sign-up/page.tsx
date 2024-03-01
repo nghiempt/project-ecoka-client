@@ -1,27 +1,29 @@
 "use client";
 
 import React from "react";
+import { Suspense } from 'react'
 import BoxWrapper from "@/components/common/box-wrapper";
 import { NextPage } from "next";
 import SignUpContainer from "@/components/modules/auth/sign-up/container";
-interface SignUpServerProps {
-  params: {
-    locale: string;
-  };
+import { useParams } from "next/navigation";
+
+function SignUpFallback() {
+  return <>placeholder</>
 }
 
-const SignUpServer: NextPage<SignUpServerProps> = async ({
-  params: { locale },
-}) => {
+const SignUpServer: NextPage<any> = async () => {
+  const { locale } = useParams();
   return (
     <BoxWrapper>
-      <div className="w-full h-screen flex justify-center items-center">
-        <SignUpContainer
-          params={{
-            locale: locale,
-          }}
-        />
-      </div>
+      <Suspense fallback={<SignUpFallback />}>
+        <div className="w-full h-screen flex justify-center items-center">
+          <SignUpContainer
+            params={{
+              locale: locale,
+            }}
+          />
+        </div>
+      </Suspense>
     </BoxWrapper>
   );
 };

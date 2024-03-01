@@ -59,7 +59,7 @@ export default function Product({ translate }: { translate: any }) {
           </div>
           <div className="lg:w-1/2">
             <h1 className="text-[22px] font-bold">
-              {product?.product_name}
+              {translate(product?.product_name)}
             </h1>
             <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_status}</h1>
             <div className="flex items-center">
