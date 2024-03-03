@@ -23,8 +23,8 @@ export default function TabCollection({ translate }: { translate: any }) {
   };
 
   const loadDataByPage = (page: number) => {
-    const start = (page - 1) * 9;
-    const end = page * 9;
+    const start = (page - 1) * 8;
+    const end = page * 8;
     return FAKE.PRODUCTS.slice(start, end);
   };
 
@@ -40,84 +40,35 @@ export default function TabCollection({ translate }: { translate: any }) {
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
       <PreBanner title={translate('collection-banner')} translate={translate} />
       <div className="w-full flex flex-col mt-10 mb-20">
-        <div className="w-full flex flex-col lg:flex-row gap-y-2 justify-center items-center pt-4 pb-10">
-          <div className="lg:w-1/4">
-            <h1 className="text-[22px] font-semibold">{translate('collection-01')}</h1>
-          </div>
-          <div className="lg:w-3/4 flex items-center">
-            <p className="mr-2">{translate('collection-02')}:</p>
-            {/* <Chip
-              label="Giá: Tăng Dần"
-              variant="outlined"
-              onDelete={() => { }}
-            />
-            <div className="ml-2"></div>
-            <Chip
-              label="Chất Liệu: Lục Bình"
-              variant="outlined"
-              onDelete={() => { }}
-            /> */}
-          </div>
+
+        <div className="mb-10 flex justify-center items-center gap-x-1 lg:gap-x-4">
+          <button className="bg-[rgb(var(--secondary-rgb))] !text-white text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+            HOME DECORATION
+          </button>
+          <button className="bg-gray-100 !text-gray-700 text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+            KITCHEN
+          </button>
+          <button className="bg-gray-100 !text-gray-700 text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+            FURNITURE
+          </button>
+          <button className="bg-gray-100 !text-gray-700 text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+            FASHION
+          </button>
         </div>
-        <div className="w-full flex justify-center items-start">
-          <div className="w-1/4 hidden lg:block">
-            <div className="flex flex-col">
-              <h1 className="text-[16px] font-semibold">{translate('collection-03')}</h1>
-              <div className="ml-2">
-                <FormGroup>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={translate('collection-06')}
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={translate('collection-07')}
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={translate('collection-08')}
-                  />
-                </FormGroup>
-              </div>
-            </div>
-            <div className="flex flex-col mt-6">
-              <h1 className="text-[16px] font-semibold">{translate('collection-04')}</h1>
-              <div className="ml-2">
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label={translate('collection-09')} />
-                </FormGroup>
-              </div>
-            </div>
-            <div className="flex flex-col mt-6">
-              <h1 className="text-[16px] font-semibold">{translate('collection-05')}</h1>
-              <div className="ml-2">
-                <FormGroup>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={`${translate('collection-10')} 1.000.000 VND`}
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label="1.000.000 VND - 2.000.000 VND"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label="2.000.000 VND - 3.000.000 VND"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label="3.000.000 VND - 4.000.000 VND"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={`${translate('collection-11')} 4.000.000 VND`}
-                  />
-                </FormGroup>
-              </div>
-            </div>
-          </div>
-          <div className="lg:w-3/4 flex flex-col justify-center items-center">
-            <div className="lg:w-full flex flex-wrap gap-[20px] justify-center items-center">
+
+        <div className="mb-10 flex justify-center items-center gap-x-2 lg:gap-x-4">
+          <h1 className="text-[12px] lg:text-[14px] font-semibold">Category:</h1>
+          <button className="bg-[rgb(var(--secondary-rgb))] !text-white text-[11px] lg:text-[12px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+            MACRAME DECORATION
+          </button>
+          <button className="bg-gray-100 !text-gray-700 text-[11px] lg:text-[12px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+            HYACINTH DECORATION
+          </button>
+        </div>
+
+        <div className="w-full flex justify-center items-center">
+          <div className="lg:w-full flex flex-col justify-center items-center">
+            <div className="lg:w-full flex grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
               {loadDataByPage(page)?.map((item: any, index: any) => (
                 <div
                   key={index}
@@ -131,17 +82,12 @@ export default function TabCollection({ translate }: { translate: any }) {
                   >
                     <CardMedia
                       sx={{ borderRadius: "10px" }}
-                      className="h-[180px] lg:h-[350px]"
+                      className="h-[360px] lg:h-[300px]"
                       image={item?.product_thumbnail_one}
                       title="card"
                     />
                     <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                      <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>{limitString(translate(item?.product_name) || '', 70)}</div>
-                    </div>
-                    <div className="">
-                      <div className="font-bold text-[14px] text-[rgb(var(--primary-rgb))]">
-                        {convertStringToMoney(item?.product_price.toString())} VND
-                      </div>
+                      <div className="font-medium lg:text-[14px] text-justify" style={{ minHeight: '48px' }}>{limitString(translate(item?.product_name) || '', 65)}</div>
                     </div>
                   </Link>
                 </div>
@@ -152,13 +98,7 @@ export default function TabCollection({ translate }: { translate: any }) {
 
         </div>
       </div>
-      <Service translate={translate} />
-      <div className="h-[60px]"></div>
-      <ProductPopular translate={translate} />
-      <div className="h-[60px]"></div>
       <SubBanner isRoundedFull={true} translate={translate} />
-      <div className="h-[60px]"></div>
-      <RegisterReceive translate={translate} />
     </div>
   );
 }

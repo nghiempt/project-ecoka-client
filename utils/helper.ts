@@ -1,7 +1,3 @@
-export const example = (example: any) => {
-  return true;
-};
-
 // convert string to money
 export const convertStringToMoney = (money: string) => {
   return money.replace(/\B(?=(\d{3})+(?!\d))/g, ".");

@@ -23,6 +23,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import InfoIcon from '@mui/icons-material/Info';
 import PostAddIcon from '@mui/icons-material/PostAdd';
+import LanguageChangerMobile from "../translation/language-changer-mobile";
 
 export default function Header({ translate }: { translate: any }) {
   const { data } = useSession();
@@ -68,9 +69,9 @@ export default function Header({ translate }: { translate: any }) {
             </Link>)
           }
           <List className="w-full">
-            {[translate('header-tab-home'), translate('header-tab-collection'), translate('header-tab-about'), translate('header-tab-blog')].map((text, index) => (
+            {[translate('header-tab-home'), translate('header-tab-collection'), translate('header-tab-about'), translate('header-tab-blog'), 'CONTACT'].map((text, index) => (
               <Link key={index} href={{
-                pathname: `${index === 0 ? '/' : index === 1 ? '/collection' : index === 2 ? '/about' : 'blog'}`
+                pathname: `${index === 0 ? '/' : index === 1 ? '/collection' : index === 2 ? '/about' : index === 3 ? '/blog': '/contact'}`
               }}>
                 <ListItem>
                   <ListItemButton>
@@ -97,7 +98,7 @@ export default function Header({ translate }: { translate: any }) {
       </Link>
       <div className={`mx-10 flex gap-x-10`}>
         <Button
-          className="!text-[16px] !text-gray-700 !hidden lg:!block"
+          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/'
@@ -108,18 +109,7 @@ export default function Header({ translate }: { translate: any }) {
           </Link>
         </Button>
         <Button
-          className="!text-[16px] !text-gray-700 !hidden lg:!block"
-        >
-          <Link href={{
-            pathname: '/collection'
-          }}>
-            {
-              translate('header-tab-collection')
-            }
-          </Link>
-        </Button>
-        <Button
-          className="!text-[16px] !text-gray-700 !hidden lg:!block"
+          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/about'
@@ -130,7 +120,18 @@ export default function Header({ translate }: { translate: any }) {
           </Link>
         </Button>
         <Button
-          className="!text-[16px] !text-gray-700 !hidden lg:!block"
+          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
+        >
+          <Link href={{
+            pathname: '/collection'
+          }}>
+            {
+              translate('header-tab-collection')
+            }
+          </Link>
+        </Button>
+        <Button
+          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/blog'
@@ -140,15 +141,25 @@ export default function Header({ translate }: { translate: any }) {
             }
           </Link>
         </Button>
+        <Button
+          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
+        >
+          <Link href={{
+            pathname: '/contact'
+          }}>
+            CONTACT
+          </Link>
+        </Button>
       </div>
-      <div className="lg:w-[180px]"></div>
+      {/* <div className="lg:w-[100px]"></div> */}
       <div className="flex justity-center items-center">
         <Avatar
           alt="avatar"
           src={translate('lang') === 'vi' ? URL.VN_FLAG : translate('lang') === 'en' ? URL.EN_FLAG : URL.JA_FLAG}
           sx={{ width: 20, height: 20, marginRight: 1 }}
         />{" "}
-        <LanguageChanger />
+        <div className="hidden lg:block"><LanguageChanger /></div>
+        <div className="lg:hidden"><LanguageChangerMobile /></div>
       </div>
       <div className="ml-6 lg:hidden cursor-pointer" onClick={toggleDrawer(true)}>
         <MenuIcon />
@@ -167,7 +178,7 @@ export default function Header({ translate }: { translate: any }) {
           className="hidden lg:block"
         >
           <button
-            className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center"
+            className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-2 rounded-lg font-semibold flex justify-center items-center"
           >
             <LoginIcon className="mr-2" fontSize="small" /> {
               translate('header-sign-in')

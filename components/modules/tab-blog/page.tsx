@@ -5,6 +5,7 @@ import { ProductPopular } from "@/components/common/product-popular";
 import { RegisterReceive } from "@/components/common/register-receive";
 import { SubBanner } from "@/components/common/sub-banner";
 import { FAKE } from "@/constant/fake";
+import { limitString } from "@/utils/helper";
 import { CardMedia, Pagination } from "@mui/material";
 import Link from "next/link";
 import React from "react";
@@ -38,7 +39,7 @@ export default function TabBlog({ translate }: { translate: any }) {
               </h6>
               <div className="px-6 py-2" style={{ minHeight: '48px' }}>
                 <div className="font-bold text-[16px] mb-2" style={{ minHeight: '48px' }}>
-                  {blog?.blog_title}
+                  {limitString(blog?.blog_title, 65)}
                 </div>
               </div>
               <div className="px-6 pt-2 pb-2">
@@ -51,9 +52,7 @@ export default function TabBlog({ translate }: { translate: any }) {
         ))}
       </div>
       <Pagination count={Math.ceil(FAKE.BLOGS.length / 10)} shape="rounded" className="mt-10" />
-      <ProductPopular translate={translate} />
       <SubBanner isRoundedFull={true} translate={translate} />
-      <RegisterReceive translate={translate} />
     </div>
   );
 }

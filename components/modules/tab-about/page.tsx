@@ -86,8 +86,8 @@ export default function TabAbout({ translate }: { translate: any }) {
       </div>
       <div className="h-[20px]"></div>
       <RegisterReceive translate={translate}/>
-      <div className="h-[40px]"></div>
-      <Service translate={translate} />
+      {/* <div className="h-[40px]"></div> */}
+      {/* <Service translate={translate} /> */}
     </div>
   );
 }

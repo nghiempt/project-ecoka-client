@@ -14,6 +14,7 @@ import Filter7OutlinedIcon from "@mui/icons-material/Filter7Outlined";
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { useSearchParams } from "next/navigation";
 import { convertStringToMoney, increaseMoney } from "@/utils/helper";
+import { SubBanner } from "@/components/common/sub-banner";
 
 export default function Product({ translate }: { translate: any }) {
 
@@ -34,7 +35,7 @@ export default function Product({ translate }: { translate: any }) {
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
       <PreBanner title={translate('product-banner')} translate={translate} />
-      <div className="lg:w-full lg:mt-10">
+      <div className="lg:w-full mt-10">
         <div className="lg:w-full flex flex-col lg:flex-row">
           <div className="lg:w-1/2 flex flex-col justify-center items-center mb-10 lg:mb-0">
             <div
@@ -228,10 +229,8 @@ export default function Product({ translate }: { translate: any }) {
           </div>
         </div>
       </div>
-      <div className="h-[100px]"></div>
-      <ProductPopular translate={translate} />
-      <div className="h-[40px]"></div>
-      <Service translate={translate} />
+      <div className="h-[80px]"></div>
+      <SubBanner isRoundedFull={true} translate={translate} />
     </div>
   );
 }

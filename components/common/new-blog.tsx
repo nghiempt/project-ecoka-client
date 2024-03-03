@@ -5,6 +5,7 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { CardMedia } from "@mui/material";
 import { FAKE } from "@/constant/fake";
 import Link from "next/link";
+import { limitString } from "@/utils/helper";
 
 export const NewBlog = ({ translate }: { translate: any }) => {
   const init = async () => { };
@@ -17,7 +18,7 @@ export const NewBlog = ({ translate }: { translate: any }) => {
 
   return (
     <div className="w-full mt-20">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center px-4 lg:px-0">
         <h1 className="text-[20px] lg:text-[24px] text-gray-700 font-bold">
           {translate('new-blog-01')}
         </h1>
@@ -54,7 +55,7 @@ export const NewBlog = ({ translate }: { translate: any }) => {
               </h6>
               <div className="px-6 py-2" style={{ minHeight: '48px' }}>
                 <div className="font-bold text-[16px] mb-2" style={{ minHeight: '48px' }}>
-                  {blog?.blog_title}
+                  {limitString(blog?.blog_title, 65)}
                 </div>
               </div>
               <div className="px-6 pt-2 pb-2">

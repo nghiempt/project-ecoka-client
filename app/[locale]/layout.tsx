@@ -11,8 +11,8 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 // Metadata type definition
 export const metadata = {
-  title: "ECOKA",
-  description: "ECOKA",
+  title: "ECOKA HANDICRAFTS",
+  description: "CÔNG TY CỔ PHẦN ECOKA. Là công ty sản xuất và thương mại các sản phẩm thủ công mỹ nghệ truyền thống từ các nguyên liệu 100% từ thiên nhiên như: lục bình, mây, ...",
 };
 
 // Function to generate static params

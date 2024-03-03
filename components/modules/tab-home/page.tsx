@@ -1,38 +1,16 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { ProductPopular } from "@/components/common/product-popular";
-import { SubBanner } from "@/components/common/sub-banner";
 import { NewBlog } from "@/components/common/new-blog";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import { Service } from "@/components/common/service";
 import { URL } from "@/constant/url";
-import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
-import { FAKE } from "@/constant/fake";
 import Link from "next/link";
 
 export default function TabHome({ translate }: { translate: any }) {
-
-  const renderAlbumProduct = (index: any) => {
-    switch (index) {
-      case 0:
-        return URL.PRODUCT_THUMBNAL
-      case 1:
-        return URL.PRODUCT_THUMBNAL
-      case 2:
-        return URL.PRODUCT_THUMBNAL
-      case 3:
-        return URL.PRODUCT_THUMBNAL
-      default:
-        return URL.PRODUCT_THUMBNAL
-    }
-  }
 
   const init = async () => { };
 
@@ -43,12 +21,13 @@ export default function TabHome({ translate }: { translate: any }) {
   useEffect(() => { }, []);
 
   return (
-    <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
-      <div className="w-full relative text-white flex flex-col justify-start items-center py-10 rounded-lg">
+    <div className="lg:w-3/4 flex flex-col justify-center items-center lg:px-0">
+      <div className="w-full relative text-white flex flex-col justify-start items-center py-10 lg:rounded-lg">
         <video
           autoPlay
           loop
           muted
+          className="lg:rounded-lg"
           style={{
             position: "absolute",
             left: "50%",
@@ -58,18 +37,16 @@ export default function TabHome({ translate }: { translate: any }) {
             objectFit: "cover",
             transform: "translate(-50%, -50%)",
             zIndex: "-1",
-            borderRadius: "10px",
           }}
           src={URL.VIDEO}
         />
         <div className="z-10 flex flex-col justify-center items-center">
-          <h1 className="lg:text-[60px] font-bold">{translate('home-banner-01')}</h1>
           <h1 className="lg:text-[60px] font-bold">{translate('home-banner-02')}</h1>
-          <h1 className="lg:text-[60px] font-bold">{translate('home-banner-03')}</h1>
-          <h2 className="invisible lg:visible lg:text-[18px] font-bold mt-4">
+          <h1 className="lg:text-[60px] font-bold mb-6 lg:mb-0">{translate('home-banner-03')}</h1>
+          <h2 className="hidden lg:block lg:text-[18px] font-bold mt-4">
             {translate('home-banner-04')}
           </h2>
-          <h3 className="invisible lg:visible lg:text-[18px] font-bold mb-8">
+          <h3 className="hidden lg:block lg:text-[18px] font-bold mb-8">
             {translate('home-banner-05')}
           </h3>
           <Link href={{
@@ -81,100 +58,149 @@ export default function TabHome({ translate }: { translate: any }) {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row flex-wrap gap-4 p-4 justify-center my-10">
-        {FAKE.CATEGORIES?.map(
-          (category: any, index: any) => (
-            <button
-              key={index}
-              className="border border-gray-300 rounded-lg px-6 py-2 lg:text-[16px] font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            >
-              <Link href={{
-                pathname: '/collection'
-              }}>
-                {category?.category_name}
-              </Link>
-            </button>
-          )
-        )}
+
+      <div className="w-3/4 flex justify-center items-center text-center mb-10">
+        <h1 className="mt-10 text-[16px] text-[rgb(var(--primary-rgb))] font-medium">{translate("footer-desc")}</h1>
       </div>
-      <ProductPopular translate={translate} />
-      <div className="w-full items-center text-center py-10 my-20">
-        <h1 className="text-[20px] lg:text-[24px] text-gray-700 font-bold">
-          {translate('reason-01')}
-        </h1>
-        <div className="flex justify-center items-center grid grid-cols-1 lg:grid-cols-3 gap-20 mt-10">
-          <div className="col-span-1 flex flex-col justify-center items-center">
-            <div className="p-3 rounded-full bg-[rgb(var(--quaternary-rgb))]">
-              <LocalShippingOutlinedIcon fontSize="large" />
-            </div>
-            <h1 className="text-[18px] text-gray-700 font-bold mb-2 mt-4">
-              {translate('reason-02')}
-            </h1>
-            <h1 className="text-[14px] text-[rgb(var(--primary-rgb))]">
-              {translate('reason-03')}
-            </h1>
-          </div>
-          <div className="col-span-1 flex flex-col justify-center items-center">
-            <div className="p-3 rounded-full bg-[rgb(var(--quaternary-rgb))]">
-              <PermIdentityIcon fontSize="large" />
-            </div>
-            <h1 className="text-[18px] text-gray-700 font-bold mb-2 mt-4">
-              {translate('reason-04')}
-            </h1>
-            <h1 className="text-[14px] text-[rgb(var(--primary-rgb))]">
-              {translate('reason-05')}
-            </h1>
-          </div>
-          <div className="col-span-1 flex flex-col justify-center items-center">
-            <div className="p-3 rounded-full bg-[rgb(var(--quaternary-rgb))]">
-              <StarOutlineIcon fontSize="large" />
-            </div>
-            <h1 className="text-[18px] text-gray-700 font-bold mb-2 mt-4">
-              {translate('reason-06')}
-            </h1>
-            <h1 className="text-[14px] text-[rgb(var(--primary-rgb))]">
-              {translate('reason-07')}
-            </h1>
-          </div>
-        </div>
-      </div>
-      <div className="hidden lg:block lg:w-full bg-[#64694C] rounded-tr-lg rounded-tl-lg mt-10">
-        <div className="p-10">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-[20px] lg:text-[24px] text-white font-bold">{translate('album-01')}</h1>
-              <h6 className="text-[14px] text-white hidden">
-                {translate('album-02')}
-              </h6>
-            </div>
-            <Link href={{
-              pathname: '/collection'
-            }}>
-              <button className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center" >
-                {translate('album-03')} <ArrowOutwardIcon className="ml-1" fontSize="small" />
-              </button>
-            </Link>
-          </div>
-          <div className="mt-6 flex flex-col lg:flex-row overflow-x-auto lg:gap-x-[20px] lg:h-[310px] unshowscrollbar">
-            {[...FAKE.CATEGORIES, ...FAKE.CATEGORIES.slice(0, 1)]?.map((item: any, index: any) => (
-              <div
-                key={index}
-                className="relative flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg w-[400px] h-[400px] lg:w-[300px] lg:h-[260px]"
-                style={{
-                  backgroundImage: `url(${renderAlbumProduct(index)})`,
-                  backgroundSize: "cover",
-                }}
-              >
-                <button className="ml-4 mb-4 bg-white !text-gray-700 text-[14px] py-2 px-4 rounded-lg shadow-md hover:shadow-lg focus:shadow-lg active:shadow-xs transition-shadow duration-200 ease-in-out">
-                  {item?.category_name}
-                </button>
+
+      <div className="w-3/4 lg:w-full flex flex-col gap-4 justify-center items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
+          <div className="w-full lg:w-1/2 bg-[rgb(var(--quaternary-rgb))] rounded-lg flex flex-col justify-center items-center p-4 pt-8 gap-y-6">
+            <h1 className="text-[20px] font-bold mb-4">HOME DECORATION</h1>
+            <div className="w-full flex justify-center items-center gap-x-4">
+              <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
               </div>
-            ))}
+              <div className="hidden lg:block w-1/2 flex flex-col justify-center items-center text-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-1/2 bg-[rgb(var(--secondary-rgb))] rounded-lg flex flex-col justify-center items-center p-4 pt-8 gap-y-6">
+            <h1 className="text-[20px] font-bold mb-4 text-white">KITCHEN</h1>
+            <div className="w-full flex justify-center items-center gap-x-4">
+              <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px] text-white" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
+              </div>
+              <div className="hidden lg:block w-1/2 flex flex-col justify-center items-center text-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px] text-white" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
+          <div className="w-full lg:w-1/2 bg-[rgb(var(--quaternary-rgb))] lg:bg-[rgb(var(--secondary-rgb))] rounded-lg flex flex-col justify-center items-center p-4 pt-8 gap-y-6">
+            <h1 className="text-[20px] font-bold mb-4 lg:text-white">FURNITURE</h1>
+            <div className="w-full flex justify-center items-center gap-x-4">
+              <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px] lg:text-white" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
+              </div>
+              <div className="hidden lg:block w-1/2 flex flex-col justify-center items-center text-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px] text-white" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-1/2 bg-[rgb(var(--secondary-rgb))] lg:bg-[rgb(var(--quaternary-rgb))] rounded-lg flex flex-col justify-center items-center p-4 pt-8 gap-y-6">
+            <h1 className="text-[20px] font-bold mb-4 text-white lg:text-gray-700">FASHION</h1>
+            <div className="w-full flex justify-center items-center gap-x-4">
+              <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px] text-white lg:text-gray-700" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
+              </div>
+              <div className="hidden lg:block w-1/2 flex flex-col justify-center items-center text-center">
+                <div
+                  className="w-full h-[280px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                  style={{
+                    backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                </div>
+                <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                  <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <SubBanner isRoundedFull={false} translate={translate} />
-      <NewBlog translate={translate} />
+
+      <div className="w-full">
+        <NewBlog translate={translate} />
+      </div>
+
       <div className="w-full items-center text-center py-10 mt-10">
         <div className="flex justify-center items-center grid grid-cols-1 lg:grid-cols-2 gap-0 border border-[#E1DEDB] rounded-md p-5">
           <div className="col-span-1 lg:border-r border-[#E1DEDB] pb-10">
@@ -224,7 +250,6 @@ export default function TabHome({ translate }: { translate: any }) {
           </div>
         </div>
       </div>
-      <Service translate={translate} />
     </div>
   );
 }
