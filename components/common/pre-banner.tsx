@@ -16,7 +16,7 @@ export const PreBanner = ({ title, translate }: { title: any, translate: any }) 
     <div
       className="w-full h-[280px] relative text-white flex justify-center items-center rounded-lg"
       style={{
-        backgroundImage: `url(${URL.PRIMARY_BANNER})`,
+        backgroundImage: `url(${URL.BANNER_01})`,
         backgroundSize: "cover",
       }}
     >
@@ -30,6 +30,8 @@ export const PreBanner = ({ title, translate }: { title: any, translate: any }) 
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">{translate('pre-banner-03')}</h1>
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">|</h1>
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">{translate('pre-banner-04')}</h1>
+          <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">|</h1>
+          <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">Contact</h1>
         </div>
       </div>
     </div>

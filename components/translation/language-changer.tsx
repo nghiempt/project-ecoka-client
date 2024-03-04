@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { i18nConfig } from "@/i18nConfig";
@@ -10,7 +10,6 @@ export default function LanguageChanger() {
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
-  const searchParams = useSearchParams()
 
   const handleChange = (e: any) => {
     const newLocale = e.target.value;

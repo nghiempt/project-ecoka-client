@@ -12,16 +12,11 @@ function AdminFallback() {
 }
 
 const AdminServer: NextPage<any> = async () => {
-  const { locale } = useParams();
   return (
     <BoxWrapper>
       <Suspense fallback={<AdminFallback />}>
         <div className="w-full h-screen flex justify-center items-center">
-          <AdminContainer
-            params={{
-              locale: locale,
-            }}
-          />
+          <AdminContainer />
         </div>
       </Suspense>
     </BoxWrapper>

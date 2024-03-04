@@ -12,14 +12,13 @@
   --quaternary-rgb: 242, 231, 222;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .unshowscrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .unshowscrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
 }
 
 body {

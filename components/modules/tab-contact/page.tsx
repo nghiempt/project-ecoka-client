@@ -8,9 +8,7 @@ export default function TabContact({ translate }: { translate: any }) {
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
       <PreBanner title="CONTACT" translate={translate} />
-
       <h1 className="mt-10 text-[18px] text-gray-700 font-bold">Hãy liên hệ với chúng tôi thông qua thông tin bên dưới</h1>
-
       <div className="flex flex-col lg:flex-row gap-x-10 mt-10">
         <div className="flex flex-col gap-2">
           <h1 className="text-[16px] flex gap-2">Tên Công Ty: <h1 className="font-semibold text-[rgb(var(--primary-rgb))]">Ecoka JSC</h1></h1>

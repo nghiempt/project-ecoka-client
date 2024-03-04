@@ -23,15 +23,15 @@ import HomeIcon from '@mui/icons-material/Home';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import InfoIcon from '@mui/icons-material/Info';
 import PostAddIcon from '@mui/icons-material/PostAdd';
-import LanguageChangerMobile from "../translation/language-changer-mobile";
 import PersonIcon from '@mui/icons-material/Person';
+import { ROUTE } from "@/constant/route";
 
 export default function Header({ translate }: { translate: any }) {
   const { data } = useSession();
 
   const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (newOpen: boolean) => () => {
+  const toggleDrawer = () => () => {
     setOpen(!open);
   };
 
@@ -39,41 +39,43 @@ export default function Header({ translate }: { translate: any }) {
 
   return (
     <div className="lg:w-3/4 flex justify-between items-center py-10">
-      <Drawer open={open} onClose={toggleDrawer(false)} anchor={"right"}>
-        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} className="pt-6 flex flex-col justify-between items-center">
+      <Drawer open={open} onClose={toggleDrawer()} anchor={"right"}>
+        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer()} className="pt-6 flex flex-col justify-between items-center">
           {
             data?.user ? (<div className="mb-4 flex flex-col justify-center items-center">
               <h1>Hi, nghiempt.dev@gmail.com</h1>
-              <Link href={{
-                pathname: '/sign-in'
-              }}
+              <Link
+                href={{
+                  pathname: '/sign-in'
+                }}
                 className="mt-4"
               >
-                <button
-                  className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center"
-                >
+                <button className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center">
                   {'Đăng xuất'}<LogoutIcon className="ml-2" fontSize="small" />
                 </button>
               </Link>
-            </div>) : (<Link href={{
-              pathname: '/sign-in'
-            }}
-              className="mt-4"
-            >
-              <button
-                className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center"
+            </div>) : (
+              <Link
+                href={{
+                  pathname: '/sign-in'
+                }}
+                className="mt-4"
               >
-                <LoginIcon className="mr-2" fontSize="small" /> {
-                  translate('header-sign-in')
-                }
-              </button>
-            </Link>)
+                <button
+                  className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-center items-center">
+                  <LoginIcon className="mr-2" fontSize="small" />
+                  {translate('header-sign-in')}
+                </button>
+              </Link>)
           }
           <List className="w-full">
             {[translate('header-tab-home'), translate('header-tab-collection'), translate('header-tab-about'), translate('header-tab-blog'), 'CONTACT'].map((text, index) => (
-              <Link key={index} href={{
-                pathname: `${index === 0 ? '/' : index === 1 ? '/collection' : index === 2 ? '/about' : index === 3 ? '/blog': '/contact'}`
-              }}>
+              <Link
+                key={index}
+                href={{
+                  pathname: `${index === 0 ? ROUTE.HOME : index === 1 ? ROUTE.COLLECTION : index === 2 ? ROUTE.ABOUT : index === 3 ? ROUTE.BLOG : ROUTE.CONTACT}`
+                }}
+              >
                 <ListItem>
                   <ListItemButton>
                     <ListItemIcon>
@@ -87,9 +89,11 @@ export default function Header({ translate }: { translate: any }) {
           </List>
         </Box>
       </Drawer>
-      <Link href={{
-        pathname: '/'
-      }}>
+      <Link
+        href={{
+          pathname: ROUTE.HOME
+        }}
+      >
         <CardMedia
           sx={{ width: 140, height: 50, borderRadius: "10px" }}
           image={URL.ECOKA_LOGO_SQUARE}
@@ -99,70 +103,65 @@ export default function Header({ translate }: { translate: any }) {
       </Link>
       <div className={`mx-10 flex gap-x-10`}>
         <Button
-          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
-        >
-          <Link href={{
-            pathname: '/'
-          }}>
-            {
-              translate('header-tab-home')
-            }
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
+          <Link
+            href={{
+              pathname: ROUTE.HOME
+            }}
+          >
+            {translate('header-tab-home')}
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
-        >
-          <Link href={{
-            pathname: '/about'
-          }}>
-            {
-              translate('header-tab-about')
-            }
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
+          <Link
+            href={{
+              pathname: ROUTE.ABOUT
+            }}
+          >
+            {translate('header-tab-about')}
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
-        >
-          <Link href={{
-            pathname: '/collection'
-          }}>
-            {
-              translate('header-tab-collection')
-            }
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
+          <Link
+            href={{
+              pathname: ROUTE.COLLECTION
+            }}
+          >
+            {translate('header-tab-collection')}
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
-        >
-          <Link href={{
-            pathname: '/blog'
-          }}>
-            {
-              translate('header-tab-blog')
-            }
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
+          <Link
+            href={{
+              pathname: ROUTE.BLOG
+            }}
+          >
+            {translate('header-tab-blog')}
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
-        >
-          <Link href={{
-            pathname: '/contact'
-          }}>
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
+          <Link
+            href={{
+              pathname: ROUTE.CONTACT
+            }}
+          >
             CONTACT
           </Link>
         </Button>
       </div>
-      {/* <div className="lg:w-[100px]"></div> */}
       <div className="flex justity-center items-center">
         <Avatar
           alt="avatar"
-          src={translate('lang') === 'vi' ? URL.VN_FLAG : translate('lang') === 'en' ? URL.EN_FLAG : URL.JA_FLAG}
+          src={translate('lang') === 'vi' ? URL.VI_FLAG : translate('lang') === 'en' ? URL.EN_FLAG : URL.JA_FLAG}
           sx={{ width: 20, height: 20, marginRight: 1 }}
         />{" "}
-        <div className="hidden lg:block"><LanguageChanger /></div>
-        <div className="lg:hidden"><LanguageChangerMobile /></div>
+        <div className=""><LanguageChanger /></div>
       </div>
-      <div className="ml-6 lg:hidden cursor-pointer" onClick={toggleDrawer(true)}>
+      <div className="ml-6 lg:hidden cursor-pointer" onClick={toggleDrawer()}>
         <MenuIcon />
       </div>
       {data?.user ? (
@@ -173,18 +172,12 @@ export default function Header({ translate }: { translate: any }) {
           </div>
         </div>
       ) : (
-        <Link href={{
-          pathname: '/sign-in'
-        }}
+        <Link
+          href={{
+            pathname: ROUTE.SIGN_IN
+          }}
           className="hidden lg:block bg-[rgb(var(--quaternary-rgb))] p-2 rounded-full"
         >
-          {/* <button
-            className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-2 rounded-lg font-semibold flex justify-center items-center"
-          >
-            <LoginIcon className="mr-2" fontSize="small" /> {
-              translate('header-sign-in')
-            }
-          </button> */}
           <PersonIcon />
         </Link>
       )}

@@ -9,6 +9,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
+import { ROUTE } from "@/constant/route";
 
 export default function TabHome({ translate }: { translate: any }) {
 
@@ -22,8 +23,9 @@ export default function TabHome({ translate }: { translate: any }) {
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center lg:px-0">
+      
       <div className="w-full relative text-white flex flex-col justify-start items-center lg:rounded-lg">
-        <div style={{ position: 'relative', width: '100%', paddingTop: '42.85%' }}> {/* Adjust paddingTop for 21:9 aspect ratio */}
+        <div style={{ position: 'relative', width: '100%', paddingTop: '42.85%' }}>
           <video
             autoPlay
             loop
@@ -41,6 +43,7 @@ export default function TabHome({ translate }: { translate: any }) {
             src={URL.VIDEO}
           />
         </div>
+        
         <div className="z-10 flex flex-col justify-center items-center" style={{
           position: "absolute",
           left: "0",
@@ -59,7 +62,7 @@ export default function TabHome({ translate }: { translate: any }) {
             {translate('home-banner-05')}
           </h3>
           <Link href={{
-            pathname: '/collection'
+            pathname: ROUTE.COLLECTION
           }}>
             <button className="bg-white !text-gray-700 text-[10px] lg:text-[15px] py-1 px-2 lg:px-5 rounded-lg font-semibold flex justify-center items-center" >
               {translate('home-banner-06')} <ArrowOutwardIcon className="ml-2" fontSize="small" />

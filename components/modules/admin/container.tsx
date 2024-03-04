@@ -5,17 +5,7 @@ import BoxWrapper from "@/components/common/box-wrapper";
 import { NextPage } from "next";
 import AdminDashboard from "./page";
 
-interface AdminContainerProps {
-  params: {
-    locale: string;
-  };
-}
-
-const AdminContainer: NextPage<AdminContainerProps> = async ({
-  params: { locale },
-}: {
-  params: any;
-}) => {
+const AdminContainer: NextPage<any> = async () => {
   return (
     <BoxWrapper>
       <div className="w-full flex justify-center items-center">

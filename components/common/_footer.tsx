@@ -10,6 +10,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import TtyOutlinedIcon from "@mui/icons-material/TtyOutlined";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
+import { STRING } from "@/constant/string";
 
 export default function Footer({ translate }: { translate: any }) {
   return (
@@ -108,21 +109,15 @@ export default function Footer({ translate }: { translate: any }) {
             </div>
             <div className="flex justify-start items-start mb-2 mt-4">
               <EmailOutlinedIcon className="text-white" />
-              <h1 className="text-[14px] text-gray-300 font-bold ml-2">
-                info@ecoka.vn
-              </h1>
+              <h1 className="text-[14px] text-gray-300 font-bold ml-2">{STRING.ECOKA_EMAIL}</h1>
             </div>
             <div className="flex justify-start items-start mb-2 mt-4">
               <TtyOutlinedIcon className="text-white" />
-              <h1 className="text-[14px] text-gray-300 font-bold ml-2">
-                0973.998.068
-              </h1>
+              <h1 className="text-[14px] text-gray-300 font-bold ml-2">{STRING.ECOKA_PHONE}</h1>
             </div>
             <div className="flex justify-start items-start mb-2 mt-4">
               <FmdGoodOutlinedIcon className="text-white" />
-              <h1 className="text-[14px] text-gray-300 font-bold ml-2">
-                121, Nguyễn Văn Trường, Long Tuyền, Bình Thủy, TP. Cần Thơ
-              </h1>
+              <h1 className="text-[14px] text-gray-300 font-bold ml-2">{STRING.ECOKA_ADDRESS}</h1>
             </div>
           </div>
         </div>
@@ -131,15 +126,13 @@ export default function Footer({ translate }: { translate: any }) {
             <div style={{ display: "flex", alignItems: "center" }}>
               <Avatar
                 alt="avatar"
-                src={URL.VN_FLAG}
+                src={URL.VI_FLAG}
                 sx={{ width: 20, height: 20 }}
               />
-              <span style={{ marginLeft: 8 }}>VIET NAM</span>
+              <span style={{ marginLeft: 8 }}>{STRING.VN}</span>
             </div>
             <div className="w-[1.5px] h-[16px] bg-gray-700 mx-4"></div>
-            <p>
-              Copyright © 2023 ECOKA HANDICRAFTS. Powered by Nghiem Thanh Pham
-            </p>
+            <p>{STRING.COPYRIGHT}</p>
           </div>
         </div>
       </div>

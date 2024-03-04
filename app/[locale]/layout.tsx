@@ -6,21 +6,17 @@ import ProvidersContext from "@/context/providers-context";
 import { i18nConfig } from "@/i18nConfig";
 import { dir } from "i18next";
 
-// Define the type for the Montserrat font
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-// Metadata type definition
 export const metadata = {
   title: "ECOKA HANDICRAFTS",
   description: "CÔNG TY CỔ PHẦN ECOKA. Là công ty sản xuất và thương mại các sản phẩm thủ công mỹ nghệ truyền thống từ các nguyên liệu 100% từ thiên nhiên như: lục bình, mây, ...",
 };
 
-// Function to generate static params
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
-// Define the props for RootLayout
 interface RootLayoutProps {
   children: React.ReactNode;
   params: {
@@ -28,7 +24,6 @@ interface RootLayoutProps {
   };
 }
 
-// RootLayout component with TypeScript
 const RootLayout: React.FC<RootLayoutProps> = ({
   children,
   params: { locale },

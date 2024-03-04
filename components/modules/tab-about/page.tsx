@@ -2,7 +2,6 @@
 
 import { PreBanner } from "@/components/common/pre-banner";
 import { RegisterReceive } from "@/components/common/register-receive";
-import { Service } from "@/components/common/service";
 import { URL } from "@/constant/url";
 import { Avatar } from "@mui/material";
 import React from "react";
@@ -86,8 +85,6 @@ export default function TabAbout({ translate }: { translate: any }) {
       </div>
       <div className="h-[20px]"></div>
       <RegisterReceive translate={translate}/>
-      {/* <div className="h-[40px]"></div> */}
-      {/* <Service translate={translate} /> */}
     </div>
   );
 }

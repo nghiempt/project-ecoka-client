@@ -1,18 +1,13 @@
 "use client";
 
 import { PreBanner } from "@/components/common/pre-banner";
-import { ProductPopular } from "@/components/common/product-popular";
-import { RegisterReceive } from "@/components/common/register-receive";
-import { Service } from "@/components/common/service";
 import { SubBanner } from "@/components/common/sub-banner";
 import React, { useEffect } from "react";
-import { CardMedia, Chip, Pagination } from "@mui/material";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+import { CardMedia, Pagination } from "@mui/material";
 import { FAKE } from "@/constant/fake";
 import Link from "next/link";
-import { convertStringToMoney, limitString } from "@/utils/helper";
+import { limitString } from "@/utils/helper";
+import { ROUTE } from "@/constant/route";
 
 export default function TabCollection({ translate }: { translate: any }) {
 
@@ -39,6 +34,7 @@ export default function TabCollection({ translate }: { translate: any }) {
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
       <PreBanner title={translate('collection-banner')} translate={translate} />
+
       <div className="w-full flex flex-col mt-10 mb-20">
 
         <div className="mb-10 flex justify-center items-center gap-x-1 lg:gap-x-4">
@@ -76,7 +72,7 @@ export default function TabCollection({ translate }: { translate: any }) {
                   style={{ flex: "25%" }}
                 >
                   <Link href={{
-                    pathname: '/collection/product',
+                    pathname: ROUTE.PRODUCT,
                     query: { product: JSON.stringify(item) }
                   }}
                   >
@@ -95,9 +91,9 @@ export default function TabCollection({ translate }: { translate: any }) {
             </div>
             <Pagination count={Math.ceil(FAKE.PRODUCTS.length / 10)} shape="rounded" className="mt-10" onChange={changePage} />
           </div>
-
         </div>
       </div>
+
       <SubBanner isRoundedFull={true} translate={translate} />
     </div>
   );

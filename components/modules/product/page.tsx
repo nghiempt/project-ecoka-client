@@ -1,8 +1,6 @@
 "use client";
 
 import { PreBanner } from "@/components/common/pre-banner";
-import { ProductPopular } from "@/components/common/product-popular";
-import { Service } from "@/components/common/service";
 import { Divider } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";

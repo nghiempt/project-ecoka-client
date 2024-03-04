@@ -18,7 +18,7 @@ export const RegisterReceive = ({ translate }: { translate: any }) => {
     <div
       className="w-full h-[340px] relative text-white flex flex-col justify-center items-center rounded-lg rounded-lg"
       style={{
-        backgroundImage: `url(${URL.TERTIARY_BANNER})`,
+        backgroundImage: `url(${URL.BANNER_01})`,
         backgroundSize: "cover",
       }}
     >

@@ -8,7 +8,7 @@ import Link from "next/link";
 export const SubBanner = ({ isRoundedFull, translate }: { isRoundedFull: any, translate: any }) => {
 
   const init = async () => { };
-  
+
   useEffect(() => {
     init();
   }, []);
@@ -17,10 +17,10 @@ export const SubBanner = ({ isRoundedFull, translate }: { isRoundedFull: any, tr
 
   return (
     <div
-      className={`w-full h-[340px] relative text-white flex flex-col justify-center items-start ${isRoundedFull ? "rounded-lg rounded-lg" : "rounded-br-lg rounded-bl-lg"
-        }`}
+      className={`w-full h-[340px] relative text-white flex flex-col justify-center items-start 
+      ${isRoundedFull ? "rounded-lg rounded-lg" : "rounded-br-lg rounded-bl-lg"}`}
       style={{
-        backgroundImage: `url(${URL.SECONDARY_BANNER})`,
+        backgroundImage: `url(${URL.BANNER_02})`,
         backgroundSize: "cover",
       }}
     >

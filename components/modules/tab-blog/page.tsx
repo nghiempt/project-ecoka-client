@@ -1,10 +1,9 @@
 "use client";
 
 import { PreBanner } from "@/components/common/pre-banner";
-import { ProductPopular } from "@/components/common/product-popular";
-import { RegisterReceive } from "@/components/common/register-receive";
 import { SubBanner } from "@/components/common/sub-banner";
 import { FAKE } from "@/constant/fake";
+import { ROUTE } from "@/constant/route";
 import { limitString } from "@/utils/helper";
 import { CardMedia, Pagination } from "@mui/material";
 import Link from "next/link";
@@ -19,7 +18,7 @@ export default function TabBlog({ translate }: { translate: any }) {
           <Link
             key={index}
             href={{
-              pathname: '/blog/detail',
+              pathname: ROUTE.BLOG_DETAIL,
               query: { blog: JSON.stringify(blog) },
             }}
             className="rounded-lg overflow-hidden shadow-lg cursor-pointer"

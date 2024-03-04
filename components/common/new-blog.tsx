@@ -6,6 +6,7 @@ import { CardMedia } from "@mui/material";
 import { FAKE } from "@/constant/fake";
 import Link from "next/link";
 import { limitString } from "@/utils/helper";
+import { ROUTE } from "@/constant/route";
 
 export const NewBlog = ({ translate }: { translate: any }) => {
   const init = async () => { };
@@ -22,9 +23,11 @@ export const NewBlog = ({ translate }: { translate: any }) => {
         <h1 className="text-[20px] lg:text-[24px] text-gray-700 font-bold">
           {translate('new-blog-01')}
         </h1>
-        <Link href={{
-          pathname: '/blog',
-        }}>
+        <Link
+          href={{
+            pathname: ROUTE.BLOG,
+          }}
+        >
           <button className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-4 rounded-lg font-semibold flex justify-between items-center">
             {translate('new-blog-02')} <ArrowOutwardIcon className="ml-1" fontSize="small" />
           </button>
@@ -35,7 +38,7 @@ export const NewBlog = ({ translate }: { translate: any }) => {
           <Link
             key={index}
             href={{
-              pathname: '/blog/detail',
+              pathname: ROUTE.BLOG_DETAIL,
               query: { blog: JSON.stringify(blog) },
             }}
             className="rounded-lg overflow-hidden shadow-lg cursor-pointer"

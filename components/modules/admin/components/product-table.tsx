@@ -8,32 +8,25 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button, CardMedia, TablePagination } from "@mui/material";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
+import { limitString } from "@/utils/helper";
+import { FetchData } from "@/fetch/fetchdata";
 
 function createData(
   product_id: string,
   product_name: string,
   product_price: string,
   product_status: string,
-  product_repository: string
 ) {
   return {
     product_id,
     product_name,
     product_price,
     product_status,
-    product_repository,
   };
 }
 
-const rows = [
-  createData("ECOKA-PRODUCT-01", "Túi Lục Bình", "99,000", "Còn Hàng", "10"),
-  createData("ECOKA-PRODUCT-02", "Túi Lục Bình", "99,000", "Còn Hàng", "10"),
-  createData("ECOKA-PRODUCT-03", "Túi Lục Bình", "99,000", "Còn Hàng", "10"),
-  createData("ECOKA-PRODUCT-03", "Túi Lục Bình", "99,000", "Còn Hàng", "10"),
-  createData("ECOKA-PRODUCT-03", "Túi Lục Bình", "99,000", "Còn Hàng", "10"),
-];
-
 export default function ProductTable() {
+  const [rows, setRows] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -48,6 +41,31 @@ export default function ProductTable() {
     setPage(0);
   };
 
+  const loadData = async () => {
+    let tmp: any = [];
+    const fetchRows = await FetchData.GET_ALL_PRODUCTS();
+    fetchRows?.data?.forEach((item: any) => {
+      console.log(item);
+      tmp = [...tmp, createData(
+        item?.product_id.toString(),
+        item?.product_nameVI.toString(),
+        item?.product_descriptionVI.toString(),
+        item?.category?.category_name.toString())]
+    })
+    setRows(tmp)
+  }
+
+  const init = async () => {
+    loadData()
+  }
+
+  React.useEffect(() => {
+    init()
+  }, [])
+
+  React.useEffect(() => {
+  }, [rows])
+
   return (
     <Paper>
       <TableContainer>
@@ -56,36 +74,30 @@ export default function ProductTable() {
             <TableRow>
               <TableCell>Mã sản phẩm</TableCell>
               <TableCell align="left">Tên sản phẩm</TableCell>
-              <TableCell align="left">Trạng thái</TableCell>
-              <TableCell align="left">Giá</TableCell>
-              <TableCell align="left">Kho</TableCell>
+              <TableCell align="left">Mô tả</TableCell>
+              <TableCell align="left">Danh mục</TableCell>
               <TableCell align="left"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {rows.map((row: any) => (
               <TableRow key={row.product_id}>
                 <TableCell align="left">{row.product_id}</TableCell>
                 <TableCell align="left">
                   <div className="flex justify-start items-center gap-x-2">
                     <CardMedia
                       sx={{ width: 40, height: 40, borderRadius: "10px" }}
-                      // image={STRING.dev_product}
+                      image=""
                       title="card"
                     />
                     {row.product_name}
                   </div>
                 </TableCell>
+                <TableCell align="left">{limitString(row.product_price, 70)}</TableCell>
                 <TableCell align="left">
                   <Button variant="contained" color="success">
                     {row.product_status}
                   </Button>
-                </TableCell>
-                <TableCell align="left">{row.product_price}</TableCell>
-                <TableCell align="left">
-                  <div className="flex justify-start items-center gap-x-2">
-                    <h1>{row.product_repository}</h1>
-                  </div>
                 </TableCell>
                 <TableCell align="left">
                   <BorderColorIcon />
