@@ -22,25 +22,34 @@ export default function TabHome({ translate }: { translate: any }) {
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center lg:px-0">
-      <div className="w-full relative text-white flex flex-col justify-start items-center py-10 lg:rounded-lg">
-        <video
-          autoPlay
-          loop
-          muted
-          className="lg:rounded-lg"
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            height: "100%",
-            width: "100%",
-            objectFit: "cover",
-            transform: "translate(-50%, -50%)",
-            zIndex: "-1",
-          }}
-          src={URL.VIDEO}
-        />
-        <div className="z-10 flex flex-col justify-center items-center">
+      <div className="w-full relative text-white flex flex-col justify-start items-center pt-6 pb-2 lg:rounded-lg">
+        <div style={{ position: 'relative', width: '100%', paddingTop: '42.85%' }}> {/* Adjust paddingTop for 21:9 aspect ratio */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="lg:rounded-lg"
+            style={{
+              position: "absolute",
+              left: "0",
+              top: "0",
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              zIndex: "-1",
+            }}
+            src={URL.VIDEO}
+          />
+        </div>
+        <div className="z-10 flex flex-col justify-center items-center" style={{
+          position: "absolute",
+          left: "0",
+          top: "0",
+          height: "100%",
+          width: "100%",
+          objectFit: "cover",
+          zIndex: "-1",
+        }}>
           <h1 className="lg:text-[60px] font-bold">{translate('home-banner-02')}</h1>
           <h1 className="lg:text-[60px] font-bold mb-6 lg:mb-0">{translate('home-banner-03')}</h1>
           <h2 className="hidden lg:block lg:text-[18px] font-bold mt-4">
