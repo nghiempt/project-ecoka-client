@@ -63,10 +63,10 @@ export default function TabHome({ translate }: { translate: any }) {
         <h1 className="mt-10 text-[16px] text-[rgb(var(--primary-rgb))] font-medium">{translate("footer-desc")}</h1>
       </div>
 
-      <div className="lg:w-full flex flex-col justify-center items-center rounded-lg py-4">
+      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]">HOME DECORATION</h1>
-        <div className="w-full flex justify-center items-center gap-4">
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -76,10 +76,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -89,10 +89,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -102,10 +102,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -115,16 +115,16 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="lg:w-full flex flex-col justify-center items-center rounded-lg py-4">
+      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-white text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))]">KITCHEN</h1>
-        <div className="w-full flex justify-center items-center gap-4">
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -134,10 +134,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -147,10 +147,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -160,10 +160,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -173,16 +173,16 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="lg:w-full flex flex-col justify-center items-center rounded-lg py-4">
+      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]">FURNITURE</h1>
-        <div className="w-full flex justify-center items-center gap-4">
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -192,10 +192,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -205,10 +205,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -218,10 +218,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -231,16 +231,16 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="lg:w-full flex flex-col justify-center items-center rounded-lg py-4">
+      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-white text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))]">FASHION</h1>
-        <div className="w-full flex justify-center items-center gap-4">
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -250,10 +250,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -263,10 +263,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -276,10 +276,10 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col justify-center items-center">
+          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
             <div
               className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
               style={{
@@ -289,7 +289,7 @@ export default function TabHome({ translate }: { translate: any }) {
             >
             </div>
             <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[16px]" style={{ minHeight: '48px' }}>Product Name</div>
+              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
             </div>
           </div>
         </div>
