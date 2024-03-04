@@ -22,7 +22,7 @@ export default function TabHome({ translate }: { translate: any }) {
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center lg:px-0">
-      <div className="w-full relative text-white flex flex-col justify-start items-center pt-6 pb-2 lg:rounded-lg">
+      <div className="w-full relative text-white flex flex-col justify-start items-center lg:rounded-lg">
         <div style={{ position: 'relative', width: '100%', paddingTop: '42.85%' }}> {/* Adjust paddingTop for 21:9 aspect ratio */}
           <video
             autoPlay
