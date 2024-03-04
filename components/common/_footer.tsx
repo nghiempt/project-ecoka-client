@@ -18,7 +18,7 @@ export default function Footer({ translate }: { translate: any }) {
         <Avatar alt="avatar" src={URL.ECOKA_LOGO_CIRCLE} className="!hidden lg:!block" />
         <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between mt-3 items-start">
           <Avatar alt="avatar" src={URL.ECOKA_LOGO_CIRCLE} className="lg:!hidden" />
-          <div className="w-[400px] lg:w-[800px] text-justify my-10 lg:my-0">
+          <div className="w-[400px] lg:w-[600px] text-justify my-10 lg:my-0">
             <h6 className="text-[14px] text-white">
               {translate("footer-desc")}
             </h6>

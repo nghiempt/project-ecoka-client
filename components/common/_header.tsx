@@ -24,6 +24,7 @@ import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantity
 import InfoIcon from '@mui/icons-material/Info';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import LanguageChangerMobile from "../translation/language-changer-mobile";
+import PersonIcon from '@mui/icons-material/Person';
 
 export default function Header({ translate }: { translate: any }) {
   const { data } = useSession();
@@ -98,7 +99,7 @@ export default function Header({ translate }: { translate: any }) {
       </Link>
       <div className={`mx-10 flex gap-x-10`}>
         <Button
-          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/'
@@ -109,7 +110,7 @@ export default function Header({ translate }: { translate: any }) {
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/about'
@@ -120,7 +121,7 @@ export default function Header({ translate }: { translate: any }) {
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/collection'
@@ -131,7 +132,7 @@ export default function Header({ translate }: { translate: any }) {
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/blog'
@@ -142,7 +143,7 @@ export default function Header({ translate }: { translate: any }) {
           </Link>
         </Button>
         <Button
-          className="!text-[15px] !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
+          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]"
         >
           <Link href={{
             pathname: '/contact'
@@ -175,15 +176,16 @@ export default function Header({ translate }: { translate: any }) {
         <Link href={{
           pathname: '/sign-in'
         }}
-          className="hidden lg:block"
+          className="hidden lg:block bg-[rgb(var(--quaternary-rgb))] p-2 rounded-full"
         >
-          <button
+          {/* <button
             className="bg-[rgb(var(--quaternary-rgb))] !text-gray-700 text-[13px] py-2 px-2 rounded-lg font-semibold flex justify-center items-center"
           >
             <LoginIcon className="mr-2" fontSize="small" /> {
               translate('header-sign-in')
             }
-          </button>
+          </button> */}
+          <PersonIcon />
         </Link>
       )}
     </div>
