@@ -33,7 +33,7 @@ export default function TabBlog({ translate }: { translate: any }) {
             key={index}
             href={{
               pathname: ROUTE.BLOG_DETAIL,
-              query: { blog: JSON.stringify(blog) },
+              query: { id: blog?.blog_id },
             }}
             className="rounded-lg overflow-hidden shadow-lg cursor-pointer"
             style={{ flex: "25%" }}

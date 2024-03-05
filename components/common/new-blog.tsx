@@ -43,9 +43,12 @@ export const NewBlog = ({ translate }: { translate: any }) => {
         {blogs.length <= 0 ? <CircularProgress className="mt-10 mb-6" /> : blogs.slice(0, 3)?.map((blog: any, index) => (
           <Link
             key={index}
+            replace
+            scroll={false}
+            prefetch={false}
             href={{
               pathname: ROUTE.BLOG_DETAIL,
-              query: { blog: JSON.stringify(blog) },
+              query: { id: blog?.blog_id },
             }}
             className="rounded-lg overflow-hidden shadow-lg cursor-pointer"
             style={{ flex: "25%" }}

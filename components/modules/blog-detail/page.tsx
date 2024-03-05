@@ -2,6 +2,7 @@
 
 import { NewBlog } from "@/components/common/new-blog";
 import { PreBanner } from "@/components/common/pre-banner";
+import { FetchData } from "@/fetch/fetchdata";
 import { CardMedia } from "@mui/material";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -13,7 +14,9 @@ export default function BlogDetail({ translate }: { translate: any }) {
   const searchParams = useSearchParams()
 
   const init = async () => {
-    setBlog(JSON.parse(searchParams.get('blog') as string));
+    const fetchBlogs = await FetchData.GET_ALL_BLOGS()
+    let foundItem: any = fetchBlogs?.find((item: any) => item?.blog_id.toString() === (searchParams.get('id') || '1'));
+    setBlog(foundItem)
   };
 
   useEffect(() => {

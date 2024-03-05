@@ -20,9 +20,9 @@ export const PreBanner = ({ title, translate }: { title: any, translate: any }) 
         backgroundSize: "cover",
       }}
     >
-      <div className="w-full h-[280px] text-white flex flex-col justify-center items-center rounded-lg opacity-70">
-        <h1 className="text-[30px] lg:text-[50px] font-black">{title}</h1>
-        <div className="flex mt-2">
+      <div className="w-full h-[280px] text-white flex flex-col justify-center items-center rounded-lg bg-gray-600 opacity-60">
+        <h1 className="mt-6 lg:mt-0 text-[30px] lg:text-[50px] font-black">{title}</h1>
+        <div className="invisible lg:visible flex lg:mt-2">
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">{translate('pre-banner-01')}</h1>
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">|</h1>
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">{translate('pre-banner-02')}</h1>

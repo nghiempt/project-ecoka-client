@@ -1,7 +1,7 @@
 export const URL = {
   ECOKA_LOGO_SQUARE: "https://ecoka.devilop.me/ecoka_logo_square.png",
   ECOKA_LOGO_CIRCLE: "https://ecoka.devilop.me/ecoka_logo_circle.png",
-  BANNER_01: "https://ecoka.devilop.me/banner_01.png",
+  BANNER_01: "https://ecoka.devilop.me/banner_05.png",
   BANNER_02: "https://ecoka.devilop.me/banner_02.png",
   BANNER_SIGN_IN: "https://ecoka.devilop.me/banner_sign_in.png",
   BANNER_SIGN_UP: "https://ecoka.devilop.me/banner_sign_up.png",

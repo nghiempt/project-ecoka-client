@@ -8,11 +8,12 @@ import Link from "next/link";
 import { limitString } from "@/utils/helper";
 import { ROUTE } from "@/constant/route";
 import { FetchData } from "@/fetch/fetchdata";
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 export default function TabCollection({ translate }: { translate: any }) {
 
   const router = useRouter()
+  const searchParams = useSearchParams()
 
   const [page, setPage] = React.useState(1);
   const [category, setCategory] = React.useState("1");
@@ -47,9 +48,9 @@ export default function TabCollection({ translate }: { translate: any }) {
 
   const init = async () => {
     const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
-    console.log(fetchProducts);
+    setCategory(searchParams.get('category') || '1')
     setProducts(fetchProducts)
-    setFilterProducts(filterByCategory(fetchProducts, "1"))
+    setFilterProducts(filterByCategory(fetchProducts, searchParams.get('category') || '1'))
   };
 
   useEffect(() => {

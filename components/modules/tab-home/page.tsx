@@ -77,7 +77,15 @@ export default function TabHome({ translate }: { translate: any }) {
       </div>
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
-        <h1 className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]">HOME DECORATION</h1>
+        <Link
+          href={{
+            pathname: ROUTE.COLLECTION,
+            query: { category: '1' },
+          }}
+          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]"
+        >
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">HOME DECORATION</h1>
+        </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {FAKE?.HOME_PRODUCTS?.slice(0, 4)?.map((item, index) => (
             <div key={index} className="w-full flex flex-col justify-center items-center">
@@ -103,7 +111,15 @@ export default function TabHome({ translate }: { translate: any }) {
       </div>
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
-        <h1 className="w-full text-center py-2 text-white text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))]">KITCHEN</h1>
+        <Link
+          href={{
+            pathname: ROUTE.COLLECTION,
+            query: { category: '2' },
+          }}
+          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
+        >
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">KITCHEN</h1>
+        </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
             FAKE?.HOME_PRODUCTS?.slice(4, 8)?.map((item: any, index: any) => {
@@ -133,7 +149,15 @@ export default function TabHome({ translate }: { translate: any }) {
       </div>
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
-        <h1 className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]">FURNITURE</h1>
+        <Link
+          href={{
+            pathname: ROUTE.COLLECTION,
+            query: { category: '3' },
+          }}
+          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]"
+        >
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">FURNITURE</h1>
+        </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
             FAKE?.HOME_PRODUCTS?.slice(8, 12)?.map((item: any, index: any) => {
@@ -163,7 +187,15 @@ export default function TabHome({ translate }: { translate: any }) {
       </div>
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
-        <h1 className="w-full text-center py-2 text-white text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))]">FASHION</h1>
+        <Link
+          href={{
+            pathname: ROUTE.COLLECTION,
+            query: { category: '4' },
+          }}
+          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
+        >
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">FASHION</h1>
+        </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
             FAKE?.HOME_PRODUCTS?.slice(12, 16)?.map((item: any, index: any) => {
