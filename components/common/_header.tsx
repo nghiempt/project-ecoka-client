@@ -38,7 +38,7 @@ export default function Header({ translate }: { translate: any }) {
   useEffect(() => { }, [open])
 
   return (
-    <div className="lg:w-3/4 flex justify-between items-center py-10">
+    <div className="w-3/4 flex justify-between items-center py-10">
       <Drawer open={open} onClose={toggleDrawer()} anchor={"right"}>
         <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer()} className="pt-6 flex flex-col justify-between items-center">
           {
@@ -101,7 +101,7 @@ export default function Header({ translate }: { translate: any }) {
           title="card"
         />
       </Link>
-      <div className={`mx-10 flex gap-x-10`}>
+      <div className={`flex gap-x-10`}>
         <Button
           className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
           <Link

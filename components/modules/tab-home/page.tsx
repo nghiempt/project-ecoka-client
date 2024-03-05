@@ -79,33 +79,26 @@ export default function TabHome({ translate }: { translate: any }) {
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]">HOME DECORATION</h1>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
-          {
-            FAKE?.HOME_PRODUCTS?.slice(0, 4)?.map((item: any, index: any) => {
-              return (
-                <div key={index} className="w-full flex flex-col justify-center items-center">
-                  <Link
-                    href={{
-                      pathname: ROUTE.PRODUCT,
-                      query: { product: JSON.stringify(item) }
-                    }}
-                    className="w-full flex flex-col justify-center items-center"
-                  >
-                    <div
-                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                      style={{
-                        backgroundImage: `url(${item?.product_thumbnail_one})`,
-                        backgroundSize: "cover",
-                      }}
-                    >
-                    </div>
-                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
-                    </div>
-                  </Link>
+          {FAKE?.HOME_PRODUCTS?.slice(0, 4)?.map((item, index) => (
+            <div key={index} className="w-full flex flex-col justify-center items-center">
+              <Link
+                href={{
+                  pathname: ROUTE.PRODUCT,
+                  query: { product: JSON.stringify(item) },
+                }}
+                className="w-full flex flex-col justify-center items-center"
+              >
+                <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
+                  <div className="aspect-w-1 aspect-h-1">
+                    <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                  </div>
+                  <div className="px-6 py-4 h-[48px]">
+                    <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
+                  </div>
                 </div>
-              )
-            })
-          }
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -123,16 +116,13 @@ export default function TabHome({ translate }: { translate: any }) {
                     }}
                     className="w-full flex flex-col justify-center items-center"
                   >
-                    <div
-                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                      style={{
-                        backgroundImage: `url(${item?.product_thumbnail_one})`,
-                        backgroundSize: "cover",
-                      }}
-                    >
-                    </div>
-                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
+                      <div className="aspect-w-1 aspect-h-1">
+                        <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                      </div>
+                      <div className="px-6 py-4 h-[48px]">
+                        <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
+                      </div>
                     </div>
                   </Link>
                 </div>
@@ -156,16 +146,13 @@ export default function TabHome({ translate }: { translate: any }) {
                     }}
                     className="w-full flex flex-col justify-center items-center"
                   >
-                    <div
-                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                      style={{
-                        backgroundImage: `url(${item?.product_thumbnail_one})`,
-                        backgroundSize: "cover",
-                      }}
-                    >
-                    </div>
-                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
+                      <div className="aspect-w-1 aspect-h-1">
+                        <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                      </div>
+                      <div className="px-6 py-4 h-[48px]">
+                        <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
+                      </div>
                     </div>
                   </Link>
                 </div>
@@ -189,16 +176,13 @@ export default function TabHome({ translate }: { translate: any }) {
                     }}
                     className="w-full flex flex-col justify-center items-center"
                   >
-                    <div
-                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                      style={{
-                        backgroundImage: `url(${item?.product_thumbnail_one})`,
-                        backgroundSize: "cover",
-                      }}
-                    >
-                    </div>
-                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
+                      <div className="aspect-w-1 aspect-h-1">
+                        <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                      </div>
+                      <div className="px-6 py-4 h-[48px]">
+                        <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
+                      </div>
                     </div>
                   </Link>
                 </div>
