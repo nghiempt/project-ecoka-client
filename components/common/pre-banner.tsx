@@ -31,7 +31,7 @@ export const PreBanner = ({ title, translate }: { title: any, translate: any }) 
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">|</h1>
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">{translate('pre-banner-04')}</h1>
           <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">|</h1>
-          <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">Contact</h1>
+          <h1 className="text-[12px] lg:text-[16px] font-medium mr-4">{translate('pre-banner-05')}</h1>
         </div>
       </div>
     </div>

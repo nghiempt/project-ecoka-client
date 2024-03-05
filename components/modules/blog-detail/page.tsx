@@ -2,6 +2,7 @@
 
 import { NewBlog } from "@/components/common/new-blog";
 import { PreBanner } from "@/components/common/pre-banner";
+import { FAKE } from "@/constant/fake";
 import { FetchData } from "@/fetch/fetchdata";
 import { CardMedia } from "@mui/material";
 import { useSearchParams } from "next/navigation";
@@ -15,8 +16,13 @@ export default function BlogDetail({ translate }: { translate: any }) {
 
   const init = async () => {
     const fetchBlogs = await FetchData.GET_ALL_BLOGS()
-    let foundItem: any = fetchBlogs?.find((item: any) => item?.blog_id.toString() === (searchParams.get('id') || '1'));
-    setBlog(foundItem)
+    if (translate('lang') === 'vi') {
+      let foundItem: any = fetchBlogs?.find((item: any) => item?.blog_id.toString() === (searchParams.get('id') || '1'));
+      setBlog(foundItem)
+    } else {
+      let foundItem: any = FAKE.BLOGS_EN?.find((item: any) => item?.blog_id.toString() === (searchParams.get('id') || '1'));
+      setBlog(foundItem)
+    }
   };
 
   useEffect(() => {

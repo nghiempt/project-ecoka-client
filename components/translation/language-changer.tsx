@@ -37,7 +37,7 @@ export default function LanguageChanger() {
     <select onChange={handleChange} value={currentLocale} className="cursor-pointer">
       <option value="en">EN</option>
       <option value="vi">VI</option>
-      <option value="ja">JA</option>
+      {/* <option value="ja">JA</option> */}
     </select>
   );
 }

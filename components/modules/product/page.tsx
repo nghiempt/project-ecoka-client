@@ -13,6 +13,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { useSearchParams } from "next/navigation";
 import { convertStringToMoney, increaseMoney } from "@/utils/helper";
 import { SubBanner } from "@/components/common/sub-banner";
+import { FetchData } from "@/fetch/fetchdata";
 
 export default function Product({ translate }: { translate: any }) {
 
@@ -23,15 +24,17 @@ export default function Product({ translate }: { translate: any }) {
   const searchParams = useSearchParams()
 
   const init = async () => {
-    setProduct(JSON.parse(searchParams.get('product') as string));
+    const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
+    let foundItem: any = fetchProducts?.find((item: any) => item?.product_id.toString() === (searchParams.get('productId') || '1'));
+    setProduct(foundItem)
     let tmp: any = []
-    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_one]
-    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_two]
-    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_three]
-    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_four]
-    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_five]
-    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_six]
-    setCurrentThumbnail(JSON.parse(searchParams.get('product') as string)?.product_thumbnail_one)
+    tmp = [...tmp, foundItem?.product_thumbnail_one]
+    tmp = [...tmp, foundItem?.product_thumbnail_two]
+    tmp = [...tmp, foundItem?.product_thumbnail_three]
+    tmp = [...tmp, foundItem?.product_thumbnail_four]
+    tmp = [...tmp, foundItem?.product_thumbnail_five]
+    tmp = [...tmp, foundItem?.product_thumbnail_six]
+    setCurrentThumbnail(foundItem?.product_thumbnail_one)
     setThumbnails(tmp)
   };
 

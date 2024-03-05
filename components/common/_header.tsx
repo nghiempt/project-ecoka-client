@@ -149,7 +149,7 @@ export default function Header({ translate }: { translate: any }) {
               pathname: ROUTE.CONTACT
             }}
           >
-            CONTACT
+            {translate('header-tab-contact')}
           </Link>
         </Button>
       </div>

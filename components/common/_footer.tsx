@@ -117,7 +117,7 @@ export default function Footer({ translate }: { translate: any }) {
             </div>
             <div className="flex justify-start items-start mb-2 mt-4">
               <FmdGoodOutlinedIcon className="text-white" />
-              <h1 className="text-[14px] text-gray-300 font-bold ml-2">{STRING.ECOKA_ADDRESS}</h1>
+              <h1 className="text-[14px] text-gray-300 font-bold ml-2">{translate("footer-address")}</h1>
             </div>
           </div>
         </div>

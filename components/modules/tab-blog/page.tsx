@@ -2,6 +2,7 @@
 
 import { PreBanner } from "@/components/common/pre-banner";
 import { SubBanner } from "@/components/common/sub-banner";
+import { FAKE } from "@/constant/fake";
 import { ROUTE } from "@/constant/route";
 import { FetchData } from "@/fetch/fetchdata";
 import { limitString } from "@/utils/helper";
@@ -18,6 +19,14 @@ export default function TabBlog({ translate }: { translate: any }) {
     setBlogs(fetchBlogs)
   };
 
+  const renderTranslateBlog = (lang: string) => {
+    if (lang === 'vi') {
+      return FAKE.BLOGS_VI
+    } else {
+      return FAKE.BLOGS_EN
+    }
+  }
+
   useEffect(() => {
     init();
   }, []);
@@ -28,7 +37,7 @@ export default function TabBlog({ translate }: { translate: any }) {
     <div className="lg:w-3/4 flex flex-col flex-wrap justify-center items-center gap-10 px-4 lg:px-0">
       <PreBanner title={translate('blog-banner')} translate={translate} />
       <div className="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-10">
-        {blogs.length <= 0 ? <CircularProgress className="mt-10" /> : blogs?.map((blog: any, index) => (
+        {blogs.length <= 0 ? <CircularProgress className="mt-10" /> : renderTranslateBlog(translate('lang'))?.map((blog: any, index: any) => (
           <Link
             key={index}
             href={{

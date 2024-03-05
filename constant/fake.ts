@@ -17,12 +17,88 @@ const CATEGORIES = [
   },
 ];
 
-const BLOGS = [
+const BLOGS_EN = [
+  {
+    blog_id: 1,
+    blog_title: "ECOKA shares the journey of lifting the Vietnamese brand on Amazon at FPT University",
+    blog_description: "The Chairwoman of the Board of ECOKA JSC, Ms. Quang Chan Chan, and the CEO, Mr. Ha Anh Truong, had a meaningful sharing session at FPT University about ECOKA's successful journey in taking Vietnamese products to the international market on the Amazon e-commerce platform. The sharing session, which took place on June 23, sparked interest and admiration from the students.",
+    blog_date: "28/06/2023",
+    blog_author: "Tran My",
+    blog_thumbnail: "https://file.hstatic.net/200000611203/article/chap_canh_thuong_hieu_viet__29__60cd4c08d9bc49f98cbc9a7d32cdd274.jpg",
+    blog_section: [
+      {
+        section_id: 1,
+        section_thumbnail: 'https://file.hstatic.net/200000611203/file/chap_canh_thuong_hieu_viet__79__d2d9e8ff2ae24f8e9774287d33f7a64d_grande.jpg',
+        section_thumbnail_label: 'Ms. Chan and Mr. Truong sharing with FPT University students',
+        section_content: 'The sharing session inspired and encouraged students about the potential of Vietnamese enterprises in reaching out to international markets. Ms. Quang Chan Chan and Mr. Ha Anh Truong shared valuable experiences on building and developing a Vietnamese brand in a competitive environment like Amazon. This opened a new door for the students, encouraging them to approach and learn about how a Vietnamese enterprise can succeed on the world\'s leading e-commerce platform.'
+      },
+      {
+        section_id: 2,
+        section_thumbnail: 'https://file.hstatic.net/200000611203/file/chap_canh_thuong_hieu_viet__56__e52432f0b3754bee88d4ffc4df86b313_grande.jpg',
+        section_thumbnail_label: 'FPT students asking questions to the speakers',
+        section_content: 'At the end of the sharing session, ECOKA presented some special gifts, which were handicraft products from water hyacinth by ECOKA. This was a special gesture of appreciation for the lucky students, at the same time providing an opportunity for them to experience and understand more about the unique art and value of these products.'
+      }
+    ]
+  },
+  {
+    blog_id: 2,
+    blog_title: "Vice Chairman of Hau Giang People's Committee visits and encourages enterprises",
+    blog_description: "(NSMT) - On January 23, Mr. Truong Canh Tuyen - Vice Chairman of Hau Giang Provincial People's Committee and Mr. Nguyen Vu Truong - Chairman of Long My District People's Committee, along with leaders of various departments and agencies, visited and presented gifts to several enterprises in the area of Long My district.",
+    blog_date: "23/01/2024",
+    blog_author: "Mien Tay Life",
+    blog_thumbnail: "https://i.ex-cdn.com/mientay.giadinhonline.vn/files/content/2024/01/23/98976c98-4009-42a8-87ea-652ffbe7ab65-1636.jpg",
+    blog_section: [
+      {
+        section_id: 1,
+        section_thumbnail: 'https://i.ex-cdn.com/mientay.giadinhonline.vn/files/content/2024/01/23/98976c98-4009-42a8-87ea-652ffbe7ab65-1636.jpg',
+        section_thumbnail_label: 'Leaders at Ecoka Company.',
+        section_content: 'At each location, Mr. Truong Canh Tuyen and Mr. Nguyen Vu Truong exchanged, congratulated, and encouraged the leaders, staff, and employees of the enterprises, as well as commended the achievements that the enterprises had made in 2023, especially in the current context of economic fluctuations due to the aftermath of the Covid pandemic. The delegates also listened to and acknowledged the contributions, suggestions of the enterprises regarding issues related to the business environment, tax policies, financial support, human resources supply, infrastructure improvement, etc.'
+      },
+      {
+        section_id: 2,
+        section_thumbnail: 'https://i.ex-cdn.com/mientay.giadinhonline.vn/files/content/2024/01/23/239d3ff9-95b1-4949-99af-413fc5c827e9-1636.jpg',
+        section_thumbnail_label: 'Mr. Truong Canh Tuyen presents gifts to Thuận Lợi Cooperative.',
+        section_content: 'At the end of the visit, the enterprises expressed their gratitude and appreciation for the concern and encouragement of the provincial and district levels, and committed to making greater efforts in their production and business activities, ensuring labor safety, environmental protection, fulfilling obligations to the state and society, contributing to the socio-economic development of Long My district and Hau Giang province.'
+      }
+    ]
+  },
+  {
+    blog_id: 3,
+    blog_title: "Starting a business with water hyacinth, the young man earns a revenue of over 2 billion VND/month",
+    blog_description: "Realizing the hardships of the traditional handicraft villagers, Mr. Ha Anh Truong (35 years old), residing at Ward 9, Vung Tau City (Ba Ria - Vung Tau Province), has taken products made from water hyacinth abroad with a revenue of over 2 billion VND/month.",
+    blog_date: "19/10/2023",
+    blog_author: "Thanh Nien Newspaper",
+    blog_thumbnail: "https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2023/10/18/base64-169763416686080802620.jpeg",
+    blog_section: [
+      {
+        section_id: 1,
+        section_thumbnail: 'https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2023/10/18/base64-169763416686080802620.jpeg',
+        section_thumbnail_label: 'Ha Anh Truong starts his business with water hyacinth',
+        section_content: 'In 2018, while searching for products to start an e-commerce business, Mr. Ha Anh Truong noticed the handicraft products from water hyacinth of the traditional craft villages.'
+      },
+      {
+        section_id: 2,
+        section_thumbnail: 'https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2023/10/18/base64-1697634325867126376752.jpeg',
+        section_thumbnail_label: 'Creating a stable income source for the villagers',
+        section_content: '“Most products would be purchased by traders and then sold to China in a way that they buy this season but pay in the next. However, when the market is not favorable, traders will abandon the products, affecting the livelihood of the villagers. This is also the reason why many people have to change their profession,” Mr. Truong explained. \nWith the desire to change the villagers\' lives, Mr. Truong and his associates approached skilled workers, bought from them, and guided them to improve the products in order to export to the European market. “Products from water hyacinth are very environmentally friendly, biodegradable into fertilizer, reducing daily consumption emissions. Therefore, they are favored in the European market,” he said.'
+      },
+      {
+        section_id: 3,
+        section_thumbnail: 'https://images2.thanhnien.vn/528068263637045248/2023/10/18/z47955313726042da29c0da7f087866adbd86aac0c367d-16976339415291235375594.jpg',
+        section_thumbnail_label: 'Mr. Truong introduces products at the HCMC Export Forum 2023 event',
+        section_content: 'In 2022, Mr. Truong established a company manufacturing and trading handicraft products from water hyacinth, such as home decor, dining accessories, fashion items like hats, bags… with the main markets in the US, Canada, France achieving a revenue of over 2 billion VND/month.'
+      }
+    ]
+  },
+];
+
+
+const BLOGS_VI = [
   {
     blog_id: 1,
     blog_title: "ECOKA chia sẻ hành trình chắp cánh thương hiệu Việt trên Amazon tại trường đại học FPT",
     blog_description: "Chủ tịch HĐQT Công ty cổ phần ECOKA, chị Quang Chân Chân, và Tổng Giám Đốc Công ty cổ phần, anh Hà AnhTrường, đã có một buổi chia sẻ đầy ý nghĩa tại trường đại học FPT về hành trình thành công của ECOKA trong việc đưa hàng Việt ra quốc tế trên sàn thương mại điện tử Amazon. Buổi chia sẻ, diễn ra vào ngày 23/6, đã gây được sự quan tâm và ngưỡng mộ từ các sinh viên.",
-    blog_date: "28 Tháng 06, 2023",
+    blog_date: "28/06/2023",
     blog_author: "Trần My",
     blog_thumbnail: "https://file.hstatic.net/200000611203/article/chap_canh_thuong_hieu_viet__29__60cd4c08d9bc49f98cbc9a7d32cdd274.jpg",
     blog_section: [
@@ -92,9 +168,224 @@ const BLOGS = [
   },
 ];
 
-const HOME_PRODUCTS = [
+const HOME_PRODUCTS_EN = [
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT39",
+    product_name: "Shoe Rack",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/gia-giay/gia-giay_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/gia-giay/gia-giay_2.jpg',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT40",
+    product_name: "Storage",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_5.jpg',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT41",
+    product_name: "Storage",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_5.jpg',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT03",
+    product_name: "Seagrass Mat 3ft",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/03/03_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/03/03_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/03/03_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/03/03_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/03/03_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/03/03_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  // ======================================
+  {
+    product_id: "ECOKAPRODUCT09",
+    product_name: "Bamboo Basket",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT17",
+    product_name: "Water Hyacinth Water Storage Set 3-SF",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT15",
+    product_name: "Water Hyacinth Basket with Holes 3",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT11",
+    product_name: "Macrame Coasters",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  // ======================================
+  {
+    product_id: "ECOKAPRODUCT54",
+    product_name: "Home Storage",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_3.jpg',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT53",
+    product_name: "Stool",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/don/don_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/furniture/don/don_2.jpg',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT51",
+    product_name: "Chair",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/chair/chair.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT52",
+    product_name: "Coffee Table",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/coffee-table/coffee-table.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  // ======================================
+  {
+    product_id: "ECOKAPRODUCT19",
+    product_name: "3-Color Bag - Pink Yellow Red",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT20",
+    product_name: "3-Color Bag - Yellow Brown",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT21",
+    product_name: "3-Color Bag - White Brown",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT22",
+    product_name: "Beige Straw Bag",
+    product_description: "Product Description",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+];
+
+
+const HOME_PRODUCTS_VI = [
+  {
+    product_id: "ECOKAPRODUCT39",
     product_name: "Giá Giày",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/gia-giay/gia-giay_1.jpg',
@@ -107,8 +398,8 @@ const HOME_PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Storage",
+    product_id: "ECOKAPRODUCT40",
+    product_name: "Sọt Đựng Cao",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_1.jpg',
     product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_2.jpg',
@@ -120,8 +411,8 @@ const HOME_PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Storage",
+    product_id: "ECOKAPRODUCT41",
+    product_name: "Sọt Đựng Ngang",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_1.jpg',
     product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_2.jpg',
@@ -133,7 +424,7 @@ const HOME_PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT03",
     product_name: "Thảm Cỏ Biển 3ft",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/03/03_1.jpg',
@@ -147,7 +438,7 @@ const HOME_PRODUCTS = [
   },
   // ======================================
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT09",
     product_name: "Giỏ Tre",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_1.jpg',
@@ -160,7 +451,7 @@ const HOME_PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT17",
     product_name: "Bộ Lục Bình Trữ Nước 3-SF",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_1.jpg',
@@ -173,7 +464,7 @@ const HOME_PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT15",
     product_name: "Giỏ Đựng Lục Bình Có Lỗ 3",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_1.jpg',
@@ -186,7 +477,7 @@ const HOME_PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT11",
     product_name: "Lót Ly Macrame",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_1.jpg',
@@ -200,8 +491,8 @@ const HOME_PRODUCTS = [
   },
   // ======================================
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Home Storage",
+    product_id: "ECOKAPRODUCT54",
+    product_name: "Bàn Kèm Hộp",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_1.jpg',
     product_thumbnail_two: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_2.jpg',
@@ -213,7 +504,7 @@ const HOME_PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT53",
     product_name: "Đôn",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/don/don_1.jpg',
@@ -226,8 +517,8 @@ const HOME_PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Chair",
+    product_id: "ECOKAPRODUCT51",
+    product_name: "Ghế",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/chair/chair.jpg',
     product_thumbnail_two: '',
@@ -239,8 +530,8 @@ const HOME_PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Coffee Table",
+    product_id: "ECOKAPRODUCT52",
+    product_name: "Bàn Coffee",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/coffee-table/coffee-table.jpg',
     product_thumbnail_two: '',
@@ -253,7 +544,7 @@ const HOME_PRODUCTS = [
   },
   // ======================================
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT19",
     product_name: "Túi 3 Tinh - Vàng Hồng Đỏ",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_1.jpg',
@@ -266,7 +557,7 @@ const HOME_PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT20",
     product_name: "Túi 3 Màu - Vàng Nâu",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_1.jpg',
@@ -279,7 +570,7 @@ const HOME_PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT21",
     product_name: "Túi 3 Màu - Màu Trắng Nâu",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_1.jpg',
@@ -292,7 +583,7 @@ const HOME_PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT22",
     product_name: "Túi Cói Kem",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_1.jpg',
@@ -308,7 +599,7 @@ const HOME_PRODUCTS = [
 
 const PRODUCTS = [
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT01",
     product_name: "Nhẫn Lục Bình",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/01/01_1.jpg',
@@ -321,7 +612,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT02",
     product_name: "Thảm Cỏ Biển Hoa 4ft",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/02/02_1.jpg',
@@ -334,7 +625,7 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT03",
     product_name: "Thảm Cỏ Biển 3ft",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/03/03_1.jpg',
@@ -347,7 +638,7 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT04",
     product_name: "Rèm Macrame-Màu Be",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/04/04_1.jpg',
@@ -360,7 +651,7 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT05",
     product_name: "Rèm Macrame-Vàng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/05/05_1.jpg',
@@ -373,7 +664,7 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT06",
     product_name: "Rèm Macrame-Xám",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/06/06_1.jpg',
@@ -386,7 +677,7 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT07",
     product_name: "Rèm Macrarme-Nâu Hồng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/07/07_1.jpg',
@@ -399,7 +690,7 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT08",
     product_name: "Rèm Lưới",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/08/08_1.png',
@@ -412,7 +703,7 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT09",
     product_name: "Giỏ Tre",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_1.jpg',
@@ -425,7 +716,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT10",
     product_name: "Lót Ly Lục Bình",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/10/10_1.JPG',
@@ -438,7 +729,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT11",
     product_name: "Lót Ly Macrame",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_1.jpg',
@@ -451,7 +742,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT12",
     product_name: "Giỏ Đựng Macrame 30cm-Beige",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/12/12_1.jpg',
@@ -464,7 +755,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT13",
     product_name: "Giỏ Đựng Macrame 30cm-Socola",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/13/13_1.jpg',
@@ -477,7 +768,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT14",
     product_name: "Giỏ Đựng Cỏ Biển Vuông 30cm",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/14/14_1.jpg',
@@ -490,7 +781,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT15",
     product_name: "Giỏ Đựng Lục Bình Có Lỗ 3",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_1.jpg',
@@ -503,7 +794,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT16",
     product_name: "Giỏ Đựng Lục Bình Xca Set 3",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/16/16_1.jpg',
@@ -516,7 +807,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT17",
     product_name: "Bộ Lục Bình Trữ Nước 3-SF",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_1.jpg',
@@ -529,7 +820,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT18",
     product_name: "Bình Lục Bình Vuông 30cm",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/18/18_1.jpg',
@@ -542,7 +833,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT19",
     product_name: "Túi 3 Tinh - Vàng Hồng Đỏ",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_1.jpg',
@@ -555,7 +846,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT20",
     product_name: "Túi 3 Màu - Vàng Nâu",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_1.jpg',
@@ -568,7 +859,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT21",
     product_name: "Túi 3 Màu - Màu Trắng Nâu",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_1.jpg',
@@ -581,7 +872,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT22",
     product_name: "Túi Cói Kem",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_1.jpg',
@@ -594,7 +885,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT23",
     product_name: "Túi Cói MixColor",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/23/23_1.jpg',
@@ -607,7 +898,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT24",
     product_name: "Túc Lục Bình",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/24/24_1.jpg',
@@ -620,7 +911,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT25",
     product_name: "Túi Lục Bình Chim Công",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/25/25_1.jpg',
@@ -633,7 +924,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT26",
     product_name: "Túi Lục Bình Hoa Độc",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/26/26_1.jpg',
@@ -646,7 +937,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT27",
     product_name: "Túi Lục Bình Hoa Miếng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/27/27_1.jpg',
@@ -659,7 +950,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT28",
     product_name: "Túi Lục Bình Quay Đá 26",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/28/28_1.jpg',
@@ -672,7 +963,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT29",
     product_name: "Túi Lục Bình Quay Đà",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/29/29_1.jpg',
@@ -685,7 +976,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT30",
     product_name: "Túi Lục Bình Quay Da Macrame",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/30/30_1.jpg',
@@ -698,7 +989,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT31",
     product_name: "Túi Macrame Điện Thoại - Hồng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/31/31_1.jpg',
@@ -711,7 +1002,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT32",
     product_name: "Túi Macrame Điện Thoại - Kem",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/32/32_1.jpg',
@@ -724,8 +1015,8 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Laptop 32 Túi Macrame",
+    product_id: "ECOKAPRODUCT33",
+    product_name: "Túi Macrame Laptop 32",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_1.jpg',
     product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_2.jpg',
@@ -737,7 +1028,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT34",
     product_name: "Túi Macrame Ngang - Kem",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/34/34_1.jpg',
@@ -750,7 +1041,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT35",
     product_name: "Túi Trống - Kem Nâu",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/35/35_1.jpg',
@@ -763,7 +1054,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT36",
     product_name: "Túi Trống - Kem Vàng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/36/36_1.jpg',
@@ -776,7 +1067,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT37",
     product_name: "Mũ Đi Biển Hoa Lục Bình Cho Nữ Sang Trọng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/37/37_1.jpg',
@@ -789,7 +1080,7 @@ const PRODUCTS = [
     category_id: 4
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT38",
     product_name: "Mũ Đi Biển Lục Bình Dây Đơn Cho Nữ",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/38/38_1.jpg',
@@ -803,7 +1094,7 @@ const PRODUCTS = [
   },
   // ======================================
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT39",
     product_name: "Giá Giày",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/gia-giay/gia-giay_1.jpg',
@@ -816,8 +1107,8 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Storage",
+    product_id: "ECOKAPRODUCT40",
+    product_name: "Sọt Đựng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_1.jpg',
     product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_2.jpg',
@@ -829,8 +1120,8 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Storage",
+    product_id: "ECOKAPRODUCT41",
+    product_name: "Sọt Đựng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_1.jpg',
     product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_2.jpg',
@@ -842,8 +1133,8 @@ const PRODUCTS = [
     category_id: 1
   },
   {
-    product_id: "ECOKAPRODUCT",
-    product_name: "Storage",
+    product_id: "ECOKAPRODUCT42",
+    product_name: "Sọt Đựng",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_1.jpg',
     product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_2.jpg',
@@ -856,7 +1147,7 @@ const PRODUCTS = [
   },
   // ======================================
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT43",
     product_name: "Coster",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/coster/coster_1.jpg',
@@ -869,7 +1160,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT44",
     product_name: "Holder",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/holder/holder.jpg',
@@ -882,7 +1173,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT45",
     product_name: "Napkin Ring",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/napkin-ring/napkin-ring_1.jpg',
@@ -895,7 +1186,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT46",
     product_name: "Placemat",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/placemat-01/placemat-01_1.jpg',
@@ -908,7 +1199,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT47",
     product_name: "Placemat",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/placemat-02/placemat-02_1.jpg',
@@ -921,7 +1212,7 @@ const PRODUCTS = [
     category_id: 2
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT48",
     product_name: "Placemat",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/placemat-03/placemat-03_1.jpg',
@@ -935,7 +1226,7 @@ const PRODUCTS = [
   },
   // ======================================
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT49",
     product_name: "Benches",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/benches/benches.jpg',
@@ -948,7 +1239,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT50",
     product_name: "Bộ Sofa",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/bo-sofa/bo-sofa.jpg',
@@ -961,7 +1252,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT51",
     product_name: "Chair",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/chair/chair.jpg',
@@ -974,7 +1265,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT52",
     product_name: "Coffee Table",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/coffee-table/coffee-table.jpg',
@@ -987,7 +1278,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT53",
     product_name: "Đôn",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/don/don_1.jpg',
@@ -1000,7 +1291,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT54",
     product_name: "Home Storage",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_1.jpg',
@@ -1013,7 +1304,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT55",
     product_name: "Sofa",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/sofa/sofa.jpg',
@@ -1026,7 +1317,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT56",
     product_name: "Sofa Table",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/sofa-table/sofa-table_1.jpg',
@@ -1039,7 +1330,7 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT57",
     product_name: "Sofa Table Restangle",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/sofa-table-restangle/sofa-table-restangle.jpg',
@@ -1052,7 +1343,767 @@ const PRODUCTS = [
     category_id: 3
   },
   {
-    product_id: "ECOKAPRODUCT",
+    product_id: "ECOKAPRODUCT58",
+    product_name: "Tủ Kệ",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/tu-ke/tu-ke_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/furniture/tu-ke/tu-ke_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/furniture/tu-ke/tu-ke_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/furniture/tu-ke/tu-ke_4.jpg',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+];
+
+const PRODUCTS_EN = [
+  {
+    product_id: "ECOKAPRODUCT01",
+    product_name: "Nhẫn Lục Bình",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/01/01_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/01/01_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/01/01_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/01/01_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/01/01_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/01/01_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT02",
+    product_name: "Thảm Cỏ Biển Hoa 4ft",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/02/02_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/02/02_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/02/02_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/02/02_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/02/02_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/02/02_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT03",
+    product_name: "Thảm Cỏ Biển 3ft",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/03/03_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/03/03_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/03/03_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/03/03_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/03/03_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/03/03_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT04",
+    product_name: "Rèm Macrame-Màu Be",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/04/04_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/04/04_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/04/04_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/04/04_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/04/04_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/04/04_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT05",
+    product_name: "Rèm Macrame-Vàng",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/05/05_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/05/05_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/05/05_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/05/05_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/05/05_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/05/05_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT06",
+    product_name: "Rèm Macrame-Xám",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/06/06_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/06/06_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/06/06_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/06/06_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/06/06_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/06/06_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT07",
+    product_name: "Rèm Macrarme-Nâu Hồng",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/07/07_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/07/07_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/07/07_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/07/07_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/07/07_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/07/07_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT08",
+    product_name: "Rèm Lưới",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-home.devilop.me/home/08/08_1.png',
+    product_thumbnail_two: 'https://ecoka-product-home.devilop.me/home/08/08_2.png',
+    product_thumbnail_three: 'https://ecoka-product-home.devilop.me/home/08/08_3.png',
+    product_thumbnail_four: 'https://ecoka-product-home.devilop.me/home/08/08_4.png',
+    product_thumbnail_five: 'https://ecoka-product-home.devilop.me/home/08/08_5.png',
+    product_thumbnail_six: 'https://ecoka-product-home.devilop.me/home/08/08_6.png',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT09",
+    product_name: "Giỏ Tre",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/09/09_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT10",
+    product_name: "Lót Ly Lục Bình",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/10/10_1.JPG',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/10/10_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/10/10_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/10/10_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/10/10_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/10/10_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT11",
+    product_name: "Lót Ly Macrame",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/11/11_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT12",
+    product_name: "Giỏ Đựng Macrame 30cm-Beige",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/12/12_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/12/12_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/12/12_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/12/12_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/12/12_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/12/12_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT13",
+    product_name: "Giỏ Đựng Macrame 30cm-Socola",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/13/13_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/13/13_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/13/13_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/13/13_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/13/13_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/13/13_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT14",
+    product_name: "Giỏ Đựng Cỏ Biển Vuông 30cm",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/14/14_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/14/14_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/14/14_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/14/14_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/14/14_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/14/14_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT15",
+    product_name: "Giỏ Đựng Lục Bình Có Lỗ 3",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/15/15_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT16",
+    product_name: "Giỏ Đựng Lục Bình Xca Set 3",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/16/16_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/16/16_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/16/16_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/16/16_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/16/16_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/16/16_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT17",
+    product_name: "Bộ Lục Bình Trữ Nước 3-SF",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/17/17_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT18",
+    product_name: "Bình Lục Bình Vuông 30cm",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-kitchen.devilop.me/kitchen/18/18_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-kitchen.devilop.me/kitchen/18/18_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-kitchen.devilop.me/kitchen/18/18_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-kitchen.devilop.me/kitchen/18/18_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-kitchen.devilop.me/kitchen/18/18_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-kitchen.devilop.me/kitchen/18/18_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT19",
+    product_name: "Túi 3 Tinh - Vàng Hồng Đỏ",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/19/19_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT20",
+    product_name: "Túi 3 Màu - Vàng Nâu",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/20/20_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT21",
+    product_name: "Túi 3 Màu - Màu Trắng Nâu",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/21/21_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT22",
+    product_name: "Túi Cói Kem",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/22/22_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT23",
+    product_name: "Túi Cói MixColor",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/23/23_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/23/23_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/23/23_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/23/23_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/23/23_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/23/23_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT24",
+    product_name: "Túc Lục Bình",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/24/24_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/24/24_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/24/24_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/24/24_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/24/24_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/24/24_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT25",
+    product_name: "Túi Lục Bình Chim Công",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/25/25_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/25/25_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/25/25_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/25/25_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/25/25_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/25/25_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT26",
+    product_name: "Túi Lục Bình Hoa Độc",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/26/26_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/26/26_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/26/26_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/26/26_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/26/26_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/26/26_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT27",
+    product_name: "Túi Lục Bình Hoa Miếng",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/27/27_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/27/27_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/27/27_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/27/27_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/27/27_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/27/27_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT28",
+    product_name: "Túi Lục Bình Quay Đá 26",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/28/28_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/28/28_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/28/28_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/28/28_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/28/28_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/28/28_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT29",
+    product_name: "Túi Lục Bình Quay Đà",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/29/29_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/29/29_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/29/29_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/29/29_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/29/29_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/29/29_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT30",
+    product_name: "Túi Lục Bình Quay Da Macrame",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/30/30_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/30/30_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/30/30_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/30/30_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/30/30_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/30/30_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT31",
+    product_name: "Túi Macrame Điện Thoại - Hồng",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/31/31_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/31/31_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/31/31_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/31/31_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/31/31_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/31/31_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT32",
+    product_name: "Túi Macrame Điện Thoại - Kem",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/32/32_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/32/32_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/32/32_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/32/32_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/32/32_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/32/32_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT33",
+    product_name: "Laptop 32 Túi Macrame",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion.devilop.me/fashion/33/33_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT34",
+    product_name: "Túi Macrame Ngang - Kem",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/34/34_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/34/34_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/34/34_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/34/34_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/34/34_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/34/34_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT35",
+    product_name: "Túi Trống - Kem Nâu",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/35/35_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/35/35_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/35/35_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/35/35_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/35/35_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/35/35_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT36",
+    product_name: "Túi Trống - Kem Vàng",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/36/36_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/36/36_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/36/36_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/36/36_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/36/36_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/36/36_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT37",
+    product_name: "Mũ Đi Biển Hoa Lục Bình Cho Nữ Sang Trọng",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/37/37_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/37/37_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/37/37_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/37/37_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/37/37_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/37/37_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  {
+    product_id: "ECOKAPRODUCT38",
+    product_name: "Mũ Đi Biển Lục Bình Dây Đơn Cho Nữ",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/38/38_1.jpg',
+    product_thumbnail_two: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/38/38_2.jpg',
+    product_thumbnail_three: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/38/38_3.jpg',
+    product_thumbnail_four: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/38/38_4.jpg',
+    product_thumbnail_five: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/38/38_5.jpg',
+    product_thumbnail_six: 'https://ecoka-product-fashion-02.devilop.me/fashion-02/38/38_6.jpg',
+    product_price: '0',
+    category_id: 4
+  },
+  // ======================================
+  {
+    product_id: "ECOKAPRODUCT39",
+    product_name: "Giá Giày",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/gia-giay/gia-giay_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/gia-giay/gia-giay_2.jpg',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT40",
+    product_name: "Storage",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/home/storage-01/storage-01_5.jpg',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT41",
+    product_name: "Storage",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/home/storage-02/storage-02_5.jpg',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 1
+  },
+  {
+    product_id: "ECOKAPRODUCT42",
+    product_name: "Storage",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_5.jpg',
+    product_thumbnail_six: 'https://ecoka-v2.devilop.me/home/storage-03/storage-03_6.jpg',
+    product_price: '0',
+    category_id: 1
+  },
+  // ======================================
+  {
+    product_id: "ECOKAPRODUCT43",
+    product_name: "Coster",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/coster/coster_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/kitchen/coster/coster_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/kitchen/coster/coster_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/kitchen/coster/coster_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/kitchen/coster/coster_5.jpg',
+    product_thumbnail_six: 'https://ecoka-v2.devilop.me/kitchen/coster/coster_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT44",
+    product_name: "Holder",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/holder/holder.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT45",
+    product_name: "Napkin Ring",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/napkin-ring/napkin-ring_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/kitchen/napkin-ring/napkin-ring_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/kitchen/napkin-ring/napkin-ring_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/kitchen/napkin-ring/napkin-ring_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/kitchen/napkin-ring/napkin-ring_5.jpg',
+    product_thumbnail_six: 'https://ecoka-v2.devilop.me/kitchen/napkin-ring/napkin-ring_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT46",
+    product_name: "Placemat",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/placemat-01/placemat-01_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/kitchen/placemat-01/placemat-01_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/kitchen/placemat-01/placemat-01_3jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/kitchen/placemat-01/placemat-01_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/kitchen/placemat-01/placemat-01_5.jpg',
+    product_thumbnail_six: 'https://ecoka-v2.devilop.me/kitchen/placemat-01/placemat-01_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT47",
+    product_name: "Placemat",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/placemat-02/placemat-02_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/kitchen/placemat-02/placemat-02_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/kitchen/placemat-02/placemat-02_3jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/kitchen/placemat-02/placemat-02_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/kitchen/placemat-02/placemat-02_5.jpg',
+    product_thumbnail_six: 'https://ecoka-v2.devilop.me/kitchen/placemat-02/placemat-02_6.jpg',
+    product_price: '0',
+    category_id: 2
+  },
+  {
+    product_id: "ECOKAPRODUCT48",
+    product_name: "Placemat",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/kitchen/placemat-03/placemat-03_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/kitchen/placemat-03/placemat-03_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/kitchen/placemat-03/placemat-03_3jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/kitchen/placemat-03/placemat-03_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/kitchen/placemat-03/placemat-03_5.jpg',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 2
+  },
+  // ======================================
+  {
+    product_id: "ECOKAPRODUCT49",
+    product_name: "Benches",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/benches/benches.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT50",
+    product_name: "Bộ Sofa",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/bo-sofa/bo-sofa.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT51",
+    product_name: "Chair",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/chair/chair.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT52",
+    product_name: "Coffee Table",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/coffee-table/coffee-table.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT53",
+    product_name: "Đôn",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/don/don_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/furniture/don/don_2.jpg',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT54",
+    product_name: "Home Storage",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/furniture/home-storage/home-storage_3.jpg',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT55",
+    product_name: "Sofa",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/sofa/sofa.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT56",
+    product_name: "Sofa Table",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/sofa-table/sofa-table_1.jpg',
+    product_thumbnail_two: 'https://ecoka-v2.devilop.me/furniture/sofa-table/sofa-table_2.jpg',
+    product_thumbnail_three: 'https://ecoka-v2.devilop.me/furniture/sofa-table/sofa-table_3.jpg',
+    product_thumbnail_four: 'https://ecoka-v2.devilop.me/furniture/sofa-table/sofa-table_4.jpg',
+    product_thumbnail_five: 'https://ecoka-v2.devilop.me/furniture/sofa-table/sofa-table_5.jpg',
+    product_thumbnail_six: 'https://ecoka-v2.devilop.me/furniture/sofa-table/sofa-table_6.jpg',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT57",
+    product_name: "Sofa Table Restangle",
+    product_description: "Mô Tả Sản Phẩm",
+    product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/sofa-table-restangle/sofa-table-restangle.jpg',
+    product_thumbnail_two: '',
+    product_thumbnail_three: '',
+    product_thumbnail_four: '',
+    product_thumbnail_five: '',
+    product_thumbnail_six: '',
+    product_price: '0',
+    category_id: 3
+  },
+  {
+    product_id: "ECOKAPRODUCT58",
     product_name: "Tủ Kệ",
     product_description: "Mô Tả Sản Phẩm",
     product_thumbnail_one: 'https://ecoka-v2.devilop.me/furniture/tu-ke/tu-ke_1.jpg',
@@ -1068,7 +2119,10 @@ const PRODUCTS = [
 
 export const FAKE = {
   CATEGORIES,
-  BLOGS,
+  BLOGS_VI,
+  BLOGS_EN,
   PRODUCTS,
-  HOME_PRODUCTS
+  PRODUCTS_EN,
+  HOME_PRODUCTS_VI,
+  HOME_PRODUCTS_EN,
 };

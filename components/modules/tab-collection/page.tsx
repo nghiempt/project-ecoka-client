@@ -68,18 +68,18 @@ export default function TabCollection({ translate }: { translate: any }) {
         <div className="mb-10 flex flex-col lg:flex-row justify-center items-center gap-4">
           <div className="flex gap-x-4">
             <button onClick={() => changeCategory("1")} className={`${category === "1" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold  gap-x-4 justify-center items-center`}>
-              HOME DECORATION
+              {translate('home-home')}
             </button>
             <button onClick={() => changeCategory("2")} className={`${category === "2" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
-              KITCHEN
+              {translate('home-kitchen')}
             </button>
           </div>
           <div className="flex gap-x-4">
             <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
-              FURNITURE
+              {translate('home-furniture')}
             </button>
             <button onClick={() => changeCategory("4")} className={`${category === "4" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
-              FASHION
+              {translate('home-fashion')}
             </button>
           </div>
         </div>
@@ -105,20 +105,20 @@ export default function TabCollection({ translate }: { translate: any }) {
                   >
                     <Link href={{
                       pathname: ROUTE.PRODUCT,
-                      query: { product: JSON.stringify(item) }
+                      query: { productId: item?.product_id.toString() }
                     }}
                     >
-                      {/* <CardMedia
+                      <CardMedia
                         sx={{ borderRadius: "10px" }}
                         className="h-[360px] lg:h-[300px]"
                         image={item?.product_thumbnail_one}
                         title="card"
-                      /> */}
-                      <div className="max-w-sm rounded-lg overflow-hidden p-2">
+                      />
+                      {/* <div className="max-w-sm rounded-lg overflow-hidden p-2">
                         <div className="aspect-w-1 aspect-h-1">
                           <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
                         </div>
-                      </div>
+                      </div> */}
                       <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
                         <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(translate(item?.product_name) || '', 65)}</div>
                       </div>

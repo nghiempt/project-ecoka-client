@@ -77,32 +77,28 @@ export default function TabAbout({ translate }: { translate: any }) {
       <div className="w-full mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="aspect-w-1 aspect-h-1 text-justify">
           <h1 className="text-[22px] font-bold mb-4">
-            Company Size & Facility
+            {translate('about-14')}
           </h1>
           <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-            A total area of 6500 square meters including
-            factory, office, drying house, showroom,
-            warehouse, and packaging area.
+            {translate('about-15')}
           </h1>
           <br />
           <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-            A team of 600 skilled workers with over 20 years
-            of experience in traditional handicraft villages and
-            well-trained in product quality requirements.
+            {translate('about-16')}
           </h1>
           <br />
           <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-            Capacity: 80TEUS/month.
+            {translate('about-17')}
           </h1>
           <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-            Current main markets: US, CANADA, FRANCE.
+            {translate('about-18')}
           </h1>
           <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-            Raw material supplier for domestic factories.
+            {translate('about-19')}
           </h1>
           <br />
           <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-            Customize as customers’ requirements.
+            {translate('about-20')}
           </h1>
         </div>
         <div className="aspect-w-1 aspect-h-1">

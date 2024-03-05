@@ -22,6 +22,14 @@ export default function TabHome({ translate }: { translate: any }) {
 
   useEffect(() => { }, []);
 
+  const renderTranslateHomeProduct = (lang: string) => {
+    if (lang === 'vi') {
+      return FAKE.HOME_PRODUCTS_VI
+    } else {
+      return FAKE.HOME_PRODUCTS_EN
+    }
+  }
+
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center lg:px-0">
 
@@ -44,32 +52,6 @@ export default function TabHome({ translate }: { translate: any }) {
             src={URL.VIDEO}
           />
         </div>
-
-        {/* <div className="z-10 flex flex-col justify-center items-center" style={{
-          position: "absolute",
-          left: "0",
-          top: "0",
-          height: "100%",
-          width: "100%",
-          objectFit: "cover",
-          zIndex: "-1",
-        }}>
-          <h1 className="lg:text-[60px] font-bold">{translate('home-banner-02')}</h1>
-          <h1 className="lg:text-[60px] font-bold mb-6 lg:mb-0">{translate('home-banner-03')}</h1>
-          <h2 className="hidden lg:block lg:text-[18px] font-bold mt-4">
-            {translate('home-banner-04')}
-          </h2>
-          <h3 className="hidden lg:block lg:text-[18px] font-bold mb-8">
-            {translate('home-banner-05')}
-          </h3>
-          <Link href={{
-            pathname: ROUTE.COLLECTION
-          }}>
-            <button className="bg-white !text-gray-700 text-[10px] lg:text-[15px] py-1 px-2 lg:px-5 rounded-lg font-semibold flex justify-center items-center" >
-              {translate('home-banner-06')} <ArrowOutwardIcon className="ml-2" fontSize="small" />
-            </button>
-          </Link>
-        </div> */}
       </div>
 
       <div className="w-3/4 flex justify-center items-center text-center mb-6">
@@ -84,15 +66,15 @@ export default function TabHome({ translate }: { translate: any }) {
           }}
           className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]"
         >
-          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">HOME DECORATION</h1>
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">{translate('home-home')}</h1>
         </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
-          {FAKE?.HOME_PRODUCTS?.slice(0, 4)?.map((item, index) => (
+          {renderTranslateHomeProduct(translate('lang'))?.slice(0, 4)?.map((item, index) => (
             <div key={index} className="w-full flex flex-col justify-center items-center">
               <Link
                 href={{
                   pathname: ROUTE.PRODUCT,
-                  query: { product: JSON.stringify(item) },
+                  query: { productId: item?.product_id.toString() },
                 }}
                 className="w-full flex flex-col justify-center items-center"
               >
@@ -118,17 +100,17 @@ export default function TabHome({ translate }: { translate: any }) {
           }}
           className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
         >
-          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">KITCHEN</h1>
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">{translate('home-kitchen')}</h1>
         </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
-            FAKE?.HOME_PRODUCTS?.slice(4, 8)?.map((item: any, index: any) => {
+            renderTranslateHomeProduct(translate('lang'))?.slice(4, 8)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
                   <Link
                     href={{
                       pathname: ROUTE.PRODUCT,
-                      query: { product: JSON.stringify(item) }
+                      query: { productId: item?.product_id.toString() }
                     }}
                     className="w-full flex flex-col justify-center items-center"
                   >
@@ -156,17 +138,17 @@ export default function TabHome({ translate }: { translate: any }) {
           }}
           className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]"
         >
-          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">FURNITURE</h1>
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">{translate('home-furniture')}</h1>
         </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
-            FAKE?.HOME_PRODUCTS?.slice(8, 12)?.map((item: any, index: any) => {
+            renderTranslateHomeProduct(translate('lang'))?.slice(8, 12)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
                   <Link
                     href={{
                       pathname: ROUTE.PRODUCT,
-                      query: { product: JSON.stringify(item) }
+                      query: { productId: item?.product_id.toString() }
                     }}
                     className="w-full flex flex-col justify-center items-center"
                   >
@@ -194,17 +176,17 @@ export default function TabHome({ translate }: { translate: any }) {
           }}
           className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
         >
-          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">FASHION</h1>
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">{translate('home-fashion')}</h1>
         </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
-            FAKE?.HOME_PRODUCTS?.slice(12, 16)?.map((item: any, index: any) => {
+            renderTranslateHomeProduct(translate('lang'))?.slice(12, 16)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
                   <Link
                     href={{
                       pathname: ROUTE.PRODUCT,
-                      query: { product: JSON.stringify(item) }
+                      query: { productId: item?.product_id.toString() }
                     }}
                     className="w-full flex flex-col justify-center items-center"
                   >

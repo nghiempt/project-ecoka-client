@@ -7,6 +7,7 @@ import Link from "next/link";
 import { limitString } from "@/utils/helper";
 import { ROUTE } from "@/constant/route";
 import { FetchData } from "@/fetch/fetchdata";
+import { FAKE } from "@/constant/fake";
 
 export const NewBlog = ({ translate }: { translate: any }) => {
 
@@ -16,6 +17,14 @@ export const NewBlog = ({ translate }: { translate: any }) => {
     const fetchBlogs = await FetchData.GET_ALL_BLOGS()
     setBlogs(fetchBlogs)
   };
+
+  const renderTranslateBlog = (lang: string) => {
+    if (lang === 'vi') {
+      return FAKE.BLOGS_VI
+    } else {
+      return FAKE.BLOGS_EN
+    }
+  }
 
   useEffect(() => {
     init();
@@ -40,7 +49,7 @@ export const NewBlog = ({ translate }: { translate: any }) => {
         </Link>
       </div>
       <div className="mt-6 flex flex-col lg:flex-row gap-x-[24px] gap-y-6">
-        {blogs.length <= 0 ? <CircularProgress className="mt-10 mb-6" /> : blogs.slice(0, 3)?.map((blog: any, index) => (
+        {blogs.length <= 0 ? <CircularProgress className="mt-10 mb-6" /> : renderTranslateBlog(translate('lang')).slice(0, 3)?.map((blog: any, index) => (
           <Link
             key={index}
             replace

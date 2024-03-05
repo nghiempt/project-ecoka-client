@@ -17,7 +17,7 @@ const GET_ALL_PRODUCTS = async () => {
 };
 
 const GET_ALL_BLOGS = async () => {
-    return FAKE.BLOGS
+    return FAKE.BLOGS_VI
     try {
         const response = await fetch(API.GET_ALL_BLOG);
         const data = await response.json();
