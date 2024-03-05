@@ -2,16 +2,22 @@
 
 import { PreBanner } from "@/components/common/pre-banner";
 import { SubBanner } from "@/components/common/sub-banner";
-import React, { useEffect } from "react";
-import { CardMedia, Pagination } from "@mui/material";
-import { FAKE } from "@/constant/fake";
+import React, { useEffect, useState } from "react";
+import { CardMedia, CircularProgress, Pagination } from "@mui/material";
 import Link from "next/link";
 import { limitString } from "@/utils/helper";
 import { ROUTE } from "@/constant/route";
+import { FetchData } from "@/fetch/fetchdata";
+import { useRouter } from 'next/navigation'
 
 export default function TabCollection({ translate }: { translate: any }) {
 
+  const router = useRouter()
+
   const [page, setPage] = React.useState(1);
+  const [category, setCategory] = React.useState("1");
+  const [products, setProducts] = useState([])
+  const [filterProducts, setFilterProducts] = useState([])
 
   const changePage = (e: any) => {
     setPage(e.target.textContent);
@@ -20,16 +26,36 @@ export default function TabCollection({ translate }: { translate: any }) {
   const loadDataByPage = (page: number) => {
     const start = (page - 1) * 8;
     const end = page * 8;
-    return FAKE.PRODUCTS.slice(start, end);
+    return filterProducts?.slice(start, end);
   };
 
-  const init = async () => { };
+  const filterByCategory = (productsParam: any, categoryId: any) => {
+    let tmp: any = []
+    productsParam?.forEach((item: any) => {
+      if (item?.category_id.toString() === categoryId.toString()) {
+        tmp = [...tmp, item]
+      }
+    })
+    return tmp
+  }
+
+  const changeCategory = (categoryId: any) => {
+    setCategory(categoryId)
+    setFilterProducts(filterByCategory(products, categoryId))
+    router.refresh()
+  }
+
+  const init = async () => {
+    const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
+    setProducts(fetchProducts)
+    setFilterProducts(filterByCategory(fetchProducts, "1"))
+  };
 
   useEffect(() => {
     init();
   }, []);
 
-  useEffect(() => { }, [page]);
+  useEffect(() => { }, [page, category, products, filterProducts]);
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
@@ -38,21 +64,21 @@ export default function TabCollection({ translate }: { translate: any }) {
       <div className="w-full flex flex-col mt-10 mb-20">
 
         <div className="mb-10 flex justify-center items-center gap-x-1 lg:gap-x-4">
-          <button className="bg-[rgb(var(--secondary-rgb))] !text-white text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+          <button onClick={() => changeCategory("1")} className={`${category === "1" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
             HOME DECORATION
           </button>
-          <button className="bg-gray-100 !text-gray-700 text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+          <button onClick={() => changeCategory("2")} className={`${category === "2" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
             KITCHEN
           </button>
-          <button className="bg-gray-100 !text-gray-700 text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+          <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
             FURNITURE
           </button>
-          <button className="bg-gray-100 !text-gray-700 text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
+          <button onClick={() => changeCategory("4")} className={`${category === "4" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} text-[12px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
             FASHION
           </button>
         </div>
 
-        <div className="mb-10 flex justify-center items-center gap-x-2 lg:gap-x-4">
+        {/* <div className="mb-10 flex justify-center items-center gap-x-2 lg:gap-x-4">
           <h1 className="text-[12px] lg:text-[14px] font-semibold">Category:</h1>
           <button className="bg-[rgb(var(--secondary-rgb))] !text-white text-[11px] lg:text-[12px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
             MACRAME DECORATION
@@ -60,16 +86,15 @@ export default function TabCollection({ translate }: { translate: any }) {
           <button className="bg-gray-100 !text-gray-700 text-[11px] lg:text-[12px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
             HYACINTH DECORATION
           </button>
-        </div>
+        </div> */}
 
         <div className="w-full flex justify-center items-center">
-          <div className="lg:w-full flex flex-col justify-center items-center">
-            <div className="lg:w-full flex grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
-              {loadDataByPage(page)?.map((item: any, index: any) => (
+          <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full flex grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
+              {products.length <= 0 ? <CircularProgress className="mt-10" /> : loadDataByPage(page)?.map((item: any, index: any) => (
                 <div
                   key={index}
                   className="cursor-pointer border border-gray-200 p-4 rounded-md"
-                  style={{ flex: "25%" }}
                 >
                   <Link href={{
                     pathname: ROUTE.PRODUCT,
@@ -89,7 +114,7 @@ export default function TabCollection({ translate }: { translate: any }) {
                 </div>
               ))}
             </div>
-            <Pagination count={Math.ceil(FAKE.PRODUCTS.length / 10)} shape="rounded" className="mt-10" onChange={changePage} />
+            <Pagination count={Math.ceil(loadDataByPage(page).length / 10)} shape="rounded" className="mt-10" onChange={changePage} />
           </div>
         </div>
       </div>

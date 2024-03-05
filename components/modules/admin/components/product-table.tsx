@@ -45,7 +45,6 @@ export default function ProductTable() {
     let tmp: any = [];
     const fetchRows = await FetchData.GET_ALL_PRODUCTS();
     fetchRows?.data?.forEach((item: any) => {
-      console.log(item);
       tmp = [...tmp, createData(
         item?.product_id.toString(),
         item?.product_nameVI.toString(),
@@ -80,7 +79,7 @@ export default function ProductTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row: any) => (
+            {rows?.map((row: any) => (
               <TableRow key={row.product_id}>
                 <TableCell align="left">{row.product_id}</TableCell>
                 <TableCell align="left">

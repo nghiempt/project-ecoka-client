@@ -2,19 +2,33 @@
 
 import { PreBanner } from "@/components/common/pre-banner";
 import { SubBanner } from "@/components/common/sub-banner";
-import { FAKE } from "@/constant/fake";
 import { ROUTE } from "@/constant/route";
+import { FetchData } from "@/fetch/fetchdata";
 import { limitString } from "@/utils/helper";
-import { CardMedia, Pagination } from "@mui/material";
+import { CardMedia, CircularProgress, Pagination } from "@mui/material";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function TabBlog({ translate }: { translate: any }) {
+
+  const [blogs, setBlogs] = useState([])
+
+  const init = async () => {
+    const fetchBlogs = await FetchData.GET_ALL_BLOGS()
+    setBlogs(fetchBlogs)
+  };
+
+  useEffect(() => {
+    init();
+  }, []);
+
+  useEffect(() => { }, [blogs]);
+
   return (
     <div className="lg:w-3/4 flex flex-col flex-wrap justify-center items-center gap-10 px-4 lg:px-0">
       <PreBanner title={translate('blog-banner')} translate={translate} />
       <div className="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-10">
-        {FAKE.BLOGS.map((blog: any, index) => (
+        {blogs.length <= 0 ? <CircularProgress className="mt-10" /> : blogs?.map((blog: any, index) => (
           <Link
             key={index}
             href={{
@@ -50,7 +64,7 @@ export default function TabBlog({ translate }: { translate: any }) {
           </Link>
         ))}
       </div>
-      <Pagination count={Math.ceil(FAKE.BLOGS.length / 10)} shape="rounded" className="mt-10" />
+      <Pagination count={Math.ceil(blogs.length / 10)} shape="rounded" className="mt-10" />
       <SubBanner isRoundedFull={true} translate={translate} />
     </div>
   );

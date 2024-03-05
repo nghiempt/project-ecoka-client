@@ -1,21 +1,27 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import { CardMedia } from "@mui/material";
-import { FAKE } from "@/constant/fake";
+import { CardMedia, CircularProgress } from "@mui/material";
 import Link from "next/link";
 import { limitString } from "@/utils/helper";
 import { ROUTE } from "@/constant/route";
+import { FetchData } from "@/fetch/fetchdata";
 
 export const NewBlog = ({ translate }: { translate: any }) => {
-  const init = async () => { };
+
+  const [blogs, setBlogs] = useState([])
+
+  const init = async () => {
+    const fetchBlogs = await FetchData.GET_ALL_BLOGS()
+    setBlogs(fetchBlogs)
+  };
 
   useEffect(() => {
     init();
   }, []);
 
-  useEffect(() => { }, []);
+  useEffect(() => { }, [blogs]);
 
   return (
     <div className="w-full mt-20">
@@ -34,7 +40,7 @@ export const NewBlog = ({ translate }: { translate: any }) => {
         </Link>
       </div>
       <div className="mt-6 flex flex-col lg:flex-row gap-x-[24px] gap-y-6">
-        {FAKE?.BLOGS?.map((blog: any, index) => (
+        {blogs.length <= 0 ? <CircularProgress className="mt-10 mb-6" /> : blogs.slice(0, 3)?.map((blog: any, index) => (
           <Link
             key={index}
             href={{

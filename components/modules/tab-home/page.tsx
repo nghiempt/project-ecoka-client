@@ -10,6 +10,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import { ROUTE } from "@/constant/route";
+import { FAKE } from "@/constant/fake";
 
 export default function TabHome({ translate }: { translate: any }) {
 
@@ -23,7 +24,7 @@ export default function TabHome({ translate }: { translate: any }) {
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center lg:px-0">
-      
+
       <div className="w-full relative text-white flex flex-col justify-start items-center lg:rounded-lg">
         <div style={{ position: 'relative', width: '100%', paddingTop: '42.85%' }}>
           <video
@@ -43,7 +44,7 @@ export default function TabHome({ translate }: { translate: any }) {
             src={URL.VIDEO}
           />
         </div>
-        
+
         <div className="z-10 flex flex-col justify-center items-center" style={{
           position: "absolute",
           left: "0",
@@ -77,233 +78,101 @@ export default function TabHome({ translate }: { translate: any }) {
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]">HOME DECORATION</h1>
-        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
+        <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
+          {
+            FAKE?.HOME_PRODUCTS?.slice(0, 4)?.map((item: any, index: any) => {
+              return (
+                <div key={index} className="w-full flex flex-col justify-center items-center">
+                  <div
+                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                    style={{
+                      backgroundImage: `url(${item?.product_thumbnail_one})`,
+                      backgroundSize: "cover",
+                    }}
+                  >
+                  </div>
+                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-white text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))]">KITCHEN</h1>
-        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
+        <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
+          {
+            FAKE?.HOME_PRODUCTS?.slice(4, 8)?.map((item: any, index: any) => {
+              return (
+                <div key={index} className="w-full flex flex-col justify-center items-center">
+                  <div
+                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                    style={{
+                      backgroundImage: `url(${item?.product_thumbnail_one})`,
+                      backgroundSize: "cover",
+                    }}
+                  >
+                  </div>
+                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]">FURNITURE</h1>
-        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
+        <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
+          {
+            FAKE?.HOME_PRODUCTS?.slice(8, 12)?.map((item: any, index: any) => {
+              return (
+                <div key={index} className="w-full flex flex-col justify-center items-center">
+                  <div
+                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                    style={{
+                      backgroundImage: `url(${item?.product_thumbnail_one})`,
+                      backgroundSize: "cover",
+                    }}
+                  >
+                  </div>
+                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
 
       <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <h1 className="w-full text-center py-2 text-white text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))]">FASHION</h1>
-        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
-          <div className="w-2/4 lg:w-1/2 flex flex-col justify-center items-center">
-            <div
-              className="w-full h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-              style={{
-                backgroundImage: `url(https://ecoka.devilop.me/dev_product.jpg)`,
-                backgroundSize: "cover",
-              }}
-            >
-            </div>
-            <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-              <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>Product Name</div>
-            </div>
-          </div>
+        <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
+          {
+            FAKE?.HOME_PRODUCTS?.slice(12, 16)?.map((item: any, index: any) => {
+              return (
+                <div key={index} className="w-full flex flex-col justify-center items-center">
+                  <div
+                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                    style={{
+                      backgroundImage: `url(${item?.product_thumbnail_one})`,
+                      backgroundSize: "cover",
+                    }}
+                  >
+                  </div>
+                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
 

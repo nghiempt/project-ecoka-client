@@ -60,7 +60,7 @@ export default function Product({ translate }: { translate: any }) {
             <h1 className="text-[22px] font-bold">
               {translate(product?.product_name)}
             </h1>
-            <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_status}</h1>
+            <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_description}</h1>
             <div className="flex items-center">
               <h1 className="text-[28px] font-bold mr-4">{convertStringToMoney(product?.product_price.toString() || "")} VND</h1>
               <button className="bg-red-500 rounded-lg text-white text-[12px] px-4 py-1">
@@ -70,7 +70,7 @@ export default function Product({ translate }: { translate: any }) {
             <div className="flex mt-4 items-center">
               <h1 className="text-[12px] mr-4">{translate('product-03')}:</h1>
               <button className="bg-[rgb(var(--tertiary-rgb))] rounded-lg text-white text-[12px] px-4 py-1 border border-[rgb(var(--tertiary-rgb))] mr-2">
-                {translate('product-04')}
+              {product?.product_id}
               </button>
             </div>
             <div className="flex mt-4 items-center">

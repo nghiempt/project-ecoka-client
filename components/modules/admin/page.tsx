@@ -139,7 +139,7 @@ export default function AdminDashboard() {
 
       {isSignIn ? (
         <div className="w-1/6 h-screen flex flex-col pt-20 border-r border-gray-300">
-          <div className="flex justify-center items-center gap-x-2">
+          <div className="flex justify-center items-center">
             <h1 className="text-[20px] font-medium">ECOKA ADMIN</h1>
           </div>
           <div className="h-[34px]"></div>
