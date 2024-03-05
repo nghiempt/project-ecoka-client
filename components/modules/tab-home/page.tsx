@@ -45,7 +45,7 @@ export default function TabHome({ translate }: { translate: any }) {
           />
         </div>
 
-        <div className="z-10 flex flex-col justify-center items-center" style={{
+        {/* <div className="z-10 flex flex-col justify-center items-center" style={{
           position: "absolute",
           left: "0",
           top: "0",
@@ -69,7 +69,7 @@ export default function TabHome({ translate }: { translate: any }) {
               {translate('home-banner-06')} <ArrowOutwardIcon className="ml-2" fontSize="small" />
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
 
       <div className="w-3/4 flex justify-center items-center text-center mb-6">

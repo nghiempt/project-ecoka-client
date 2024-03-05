@@ -46,16 +46,23 @@ export default function Product({ translate }: { translate: any }) {
       <PreBanner title={translate('product-banner')} translate={translate} />
       <div></div>
       <div className="lg:w-full mt-10">
-        <div className="lg:w-full flex flex-col lg:flex-row">
+        <div className="lg:w-full flex flex-col lg:flex-row gap-x-10">
           <div className="lg:w-1/2 flex flex-col justify-center items-center mb-10 lg:mb-0">
-            <div
+            {/* <div
               className="w-[400px] h-[400px] lg:w-[512px] lg:h-[512px] rounded-lg"
               style={{
                 backgroundImage: `url(${currentThumbnail})`,
                 backgroundSize: "cover",
               }}
-            ></div>
-            <div className="mt-8 grid grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-4 lg:gap-y-0 lg:gap-x-4">
+            ></div> */}
+
+            <div className="max-w-sm rounded-lg overflow-hidden shadow-lg p-2">
+              <div className="aspect-w-1 aspect-h-1">
+                <img className="object-cover rounded-md" src={currentThumbnail} alt="Product Image" />
+              </div>
+            </div>
+
+            <div className="mt-16 grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-4 lg:gap-y-0 lg:gap-x-4">
               {thumbnails?.map((item: any, index: any) => (
                 <div
                   key={index}

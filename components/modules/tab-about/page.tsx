@@ -9,85 +9,117 @@ import React from "react";
 export default function TabAbout({ translate }: { translate: any }) {
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
-      <PreBanner title={translate('about-banner')} translate={translate} />
-      <div className="w-full items-center text-center py-10 lg:px-40">
-        <div>
-          <div className="text-center mb-20">
-            <h1 className="text-[24px] lg:text-[40px] font-bold">{translate('about-01')}</h1>
-            <h1 className="text-[13px] lg:text-[16px] text-[rgb(var(--primary-rgb))] mt-2">
-              {translate('about-02')}
-            </h1>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-10 mb-16 items-center">
-            <div className="lg:col-span-4 lg:w-full lg:h-full border border-[5px] border-[rgb(var(--secondary-rgb))] flex justify-center items-center rounded-lg">
-              <div
-                className="w-full h-[280px]"
-                style={{
-                  backgroundImage: `url(${URL.ABOUT_02})`,
-                  backgroundSize: "cover",
-                }}
-              ></div>
-            </div>
-            <div className="lg:col-span-6 text-left text-justify mt-6 lg:mt-0 lg:ml-10">
-              <h1 className="text-[18px] font-bold mb-4">
-                {translate('about-03')}
-              </h1>
-              <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-                {translate('about-04')}
-              </h1>
-              <br />
-              <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-                {translate('about-05')}
-              </h1>
-              <br />
-              <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-                {translate('about-06')}
-              </h1>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-10 gap-10 items-center mt-10">
-            <div className="lg:col-span-6 text-left text-justify">
-              <div className="mb-10">
-                <h1 className="text-[18px] font-bold mb-4">
-                  {translate('about-07')}
-                </h1>
-                <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-                  {translate('about-08')}
-                </h1>
-                <br />
-                <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-                  {translate('about-09')}
-                </h1>
-                <br />
-                <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-                  {translate('about-10')}
-                </h1>
-              </div>
-              <div className="mt-2">
-                <h1 className="text-[16px] font-bold mb-4"></h1>
-                {translate('about-11')}
-                <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
-                  {translate('about-12')}
-                </h1>
-                <br />
-                <h1 className="text-[18px] text-[rgb(var(--primary-rgb))] font-bold">
-                  {translate('about-13')}
-                </h1>
-              </div>
-            </div>
-            <div className="lg:col-span-4 lg:w-full lg:h-full border border-[5px] border-[rgb(var(--secondary-rgb))] flex justify-center items-center rounded-lg">
-              <div
-                className="w-full h-[380px]"
-                style={{
-                  backgroundImage: `url(${URL.ABOUT_01})`,
-                  backgroundSize: "cover",
-                }}
-              ></div>
-            </div>
-          </div>
+      {/* <PreBanner title={translate('about-banner')} translate={translate} /> */}
+
+      <div style={{ position: 'relative', width: '100%', paddingTop: '42.85%' }}>
+        <video
+          autoPlay
+          loop
+          muted
+          className="lg:rounded-lg"
+          style={{
+            position: "absolute",
+            left: "0",
+            top: "0",
+            height: "100%",
+            width: "100%",
+            objectFit: "cover",
+            zIndex: "-1",
+          }}
+          src={URL.VIDEO}
+        />
+      </div>
+
+      <div className="w-full mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="aspect-w-1 aspect-h-1 text-justify">
+          <h1 className="text-[22px] lg:text-[32px] font-bold">{translate('about-01')}</h1>
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))] mt-2">
+            {translate('about-02')}
+          </h1>
+          <h1 className="text-[22px] font-bold mb-4 mt-4">
+            {translate('about-03')}
+          </h1>
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            {translate('about-04')}
+          </h1>
+          <br />
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            {translate('about-05')}
+          </h1>
+        </div>
+        <div className="aspect-w-1 aspect-h-1">
+          <img className="object-cover rounded-md" src="https://file.hstatic.net/200000611203/article/chap_canh_thuong_hieu_viet__29__60cd4c08d9bc49f98cbc9a7d32cdd274.jpg" alt="Product Image" />
         </div>
       </div>
-      <div className="h-[20px]"></div>
+
+      <div className="w-full mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="aspect-w-1 aspect-h-1">
+          <img className="object-cover rounded-md" src="https://images2.thanhnien.vn/528068263637045248/2023/10/18/z47955313726042da29c0da7f087866adbd86aac0c367d-16976339415291235375594.jpg" alt="Product Image" />
+        </div>
+        <div className="aspect-w-1 aspect-h-1 text-justify">
+          <h1 className="text-[22px] font-bold mb-4">
+            {translate('about-07')}
+          </h1>
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            {translate('about-08')}
+          </h1>
+          <br />
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            {translate('about-09')}
+          </h1>
+          <br />
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            {translate('about-10')}
+          </h1>
+        </div>
+      </div>
+
+      <div className="w-full mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="aspect-w-1 aspect-h-1 text-justify">
+          <h1 className="text-[22px] font-bold mb-4">
+            Company Size & Facility
+          </h1>
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            A total area of 6500 square meters including
+            factory, office, drying house, showroom,
+            warehouse, and packaging area.
+          </h1>
+          <br />
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            A team of 600 skilled workers with over 20 years
+            of experience in traditional handicraft villages and
+            well-trained in product quality requirements.
+          </h1>
+          <br />
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            Capacity: 80TEUS/month.
+          </h1>
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            Current main markets: US, CANADA, FRANCE.
+          </h1>
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            Raw material supplier for domestic factories.
+          </h1>
+          <br />
+          <h1 className="text-[16px] text-[rgb(var(--primary-rgb))]">
+            Customize as customers’ requirements.
+          </h1>
+        </div>
+        <div className="aspect-w-1 aspect-h-1">
+          <img className="object-cover rounded-md" src={URL.ABOUT_03} alt="Product Image" />
+        </div>
+      </div>
+
+      <div className="w-full mt-6 grid grid-cols-2 gap-6">
+        <div className="aspect-w-1 aspect-h-1">
+          <img className="object-cover rounded-md" src={URL.ABOUT_04} alt="Product Image" />
+        </div>
+        <div className="aspect-w-1 aspect-h-1">
+          <img className="object-cover rounded-md" src={URL.ABOUT_05} alt="Product Image" />
+        </div>
+      </div>
+
+      <div className="h-[60px]"></div>
       <RegisterReceive translate={translate} />
     </div>
   );
