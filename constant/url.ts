@@ -12,5 +12,5 @@ export const URL = {
   JA_FLAG: "https://ecoka.devilop.me/flag_ja.png",
   FB_ICON: "https://ecoka.devilop.me/icon_fb.png",
   GG_ICON: "https://ecoka.devilop.me/icon_gg.png",
-  VIDEO: "https://dt230.dlsnap01.xyz/download?file=MDBkN2M1ZTNjN2U4YWUzODkzNWNjYjQ0NzZmYWVjZDY1NjE5NzU2NmVmOTJhNzczMTdiNTEyMjhhZjAwMTI4NF8xMDgwcC5tcDTimK9ZMm1ldGEuYXBwLUVjb2thIFZpZGVv4pivMTA4MHA",
+  VIDEO: "https://dt163.dlsnap12.xyz/download?file=MDBkN2M1ZTNjN2U4YWUzODkzNWNjYjQ0NzZmYWVjZDY1NjE5NzU2NmVmOTJhNzczMTdiNTEyMjhhZjAwMTI4NF8xMDgwcC5tcDTimK9ZMm1ldGEuYXBwLUVjb2thIFZpZGVv4pivMTA4MHA",
 };

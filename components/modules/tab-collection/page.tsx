@@ -47,6 +47,7 @@ export default function TabCollection({ translate }: { translate: any }) {
 
   const init = async () => {
     const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
+    console.log(fetchProducts);
     setProducts(fetchProducts)
     setFilterProducts(filterByCategory(fetchProducts, "1"))
   };
@@ -90,31 +91,32 @@ export default function TabCollection({ translate }: { translate: any }) {
 
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center items-center">
-            <div className="w-full flex grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
-              {products.length <= 0 ? <CircularProgress className="mt-10" /> : loadDataByPage(page)?.map((item: any, index: any) => (
-                <div
-                  key={index}
-                  className="cursor-pointer border border-gray-200 p-4 rounded-md"
-                >
-                  <Link href={{
-                    pathname: ROUTE.PRODUCT,
-                    query: { product: JSON.stringify(item) }
-                  }}
+            {products.length <= 0 ? <div className="w-full text-center text-[20px] mt-6"><CircularProgress className="mt-10" /></div> : filterProducts.length === 0 ? <div className="w-full text-center text-[20px] mt-10">No data in this category</div> :
+              <div className="w-full flex grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
+                {filterProducts?.map((item: any, index: any) => (
+                  <div
+                    key={index}
+                    className="cursor-pointer border border-gray-200 px-4 pt-4 rounded-md"
                   >
-                    <CardMedia
-                      sx={{ borderRadius: "10px" }}
-                      className="h-[360px] lg:h-[300px]"
-                      image={item?.product_thumbnail_one}
-                      title="card"
-                    />
-                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                      <div className="font-medium lg:text-[14px] text-justify" style={{ minHeight: '48px' }}>{limitString(translate(item?.product_name) || '', 65)}</div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-            <Pagination count={Math.ceil(loadDataByPage(page).length / 10)} shape="rounded" className="mt-10" onChange={changePage} />
+                    <Link href={{
+                      pathname: ROUTE.PRODUCT,
+                      query: { product: JSON.stringify(item) }
+                    }}
+                    >
+                      <CardMedia
+                        sx={{ borderRadius: "10px" }}
+                        className="h-[360px] lg:h-[300px]"
+                        image={item?.product_thumbnail_one}
+                        title="card"
+                      />
+                      <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                        <div className="font-medium lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(translate(item?.product_name) || '', 65)}</div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>}
+            {/* <Pagination count={Math.ceil(products.length / 10)} shape="rounded" className="mt-10" onChange={changePage} /> */}
           </div>
         </div>
       </div>

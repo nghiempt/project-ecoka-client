@@ -17,39 +17,52 @@ import { SubBanner } from "@/components/common/sub-banner";
 export default function Product({ translate }: { translate: any }) {
 
   const [product, setProduct] = useState<any>(null);
+  const [thumbnails, setThumbnails] = useState<any>([]);
+  const [currentThumbnail, setCurrentThumbnail] = useState<any>("");
 
   const searchParams = useSearchParams()
 
   const init = async () => {
     setProduct(JSON.parse(searchParams.get('product') as string));
+    let tmp: any = []
+    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_one]
+    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_two]
+    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_three]
+    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_four]
+    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_five]
+    tmp = [...tmp, JSON.parse(searchParams.get('product') as string)?.product_thumbnail_six]
+    setCurrentThumbnail(JSON.parse(searchParams.get('product') as string)?.product_thumbnail_one)
+    setThumbnails(tmp)
   };
 
   useEffect(() => {
     init();
   }, []);
 
-  useEffect(() => { }, [product]);
+  useEffect(() => { }, [thumbnails, product, currentThumbnail]);
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
       <PreBanner title={translate('product-banner')} translate={translate} />
+      <div></div>
       <div className="lg:w-full mt-10">
         <div className="lg:w-full flex flex-col lg:flex-row">
           <div className="lg:w-1/2 flex flex-col justify-center items-center mb-10 lg:mb-0">
             <div
               className="w-[400px] h-[400px] lg:w-[512px] lg:h-[512px] rounded-lg"
               style={{
-                backgroundImage: `url(${product?.product_thumbnail_one})`,
+                backgroundImage: `url(${currentThumbnail})`,
                 backgroundSize: "cover",
               }}
             ></div>
             <div className="mt-8 grid grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-4 lg:gap-y-0 lg:gap-x-4">
-              {["", "", "", "", "", ""].map((item, index) => (
+              {thumbnails?.map((item: any, index: any) => (
                 <div
                   key={index}
-                  className="w-[72px] h-[72px] rounded-lg"
+                  className="w-[72px] h-[72px] rounded-lg cursor-pointer"
+                  onClick={() => setCurrentThumbnail(item)}
                   style={{
-                    backgroundImage: `url(${product?.product_thumbnail_one})`,
+                    backgroundImage: `url(${item})`,
                     backgroundSize: "cover",
                   }}
                 ></div>
@@ -70,7 +83,7 @@ export default function Product({ translate }: { translate: any }) {
             <div className="flex mt-4 items-center">
               <h1 className="text-[12px] mr-4">{translate('product-03')}:</h1>
               <button className="bg-[rgb(var(--tertiary-rgb))] rounded-lg text-white text-[12px] px-4 py-1 border border-[rgb(var(--tertiary-rgb))] mr-2">
-              {product?.product_id}
+                {product?.product_id}
               </button>
             </div>
             <div className="flex mt-4 items-center">

@@ -83,17 +83,25 @@ export default function TabHome({ translate }: { translate: any }) {
             FAKE?.HOME_PRODUCTS?.slice(0, 4)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
-                  <div
-                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                    style={{
-                      backgroundImage: `url(${item?.product_thumbnail_one})`,
-                      backgroundSize: "cover",
+                  <Link
+                    href={{
+                      pathname: ROUTE.PRODUCT,
+                      query: { product: JSON.stringify(item) }
                     }}
+                    className="w-full flex flex-col justify-center items-center"
                   >
-                  </div>
-                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
-                  </div>
+                    <div
+                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                      style={{
+                        backgroundImage: `url(${item?.product_thumbnail_one})`,
+                        backgroundSize: "cover",
+                      }}
+                    >
+                    </div>
+                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                    </div>
+                  </Link>
                 </div>
               )
             })
@@ -108,17 +116,25 @@ export default function TabHome({ translate }: { translate: any }) {
             FAKE?.HOME_PRODUCTS?.slice(4, 8)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
-                  <div
-                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                    style={{
-                      backgroundImage: `url(${item?.product_thumbnail_one})`,
-                      backgroundSize: "cover",
+                  <Link
+                    href={{
+                      pathname: ROUTE.PRODUCT,
+                      query: { product: JSON.stringify(item) }
                     }}
+                    className="w-full flex flex-col justify-center items-center"
                   >
-                  </div>
-                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
-                  </div>
+                    <div
+                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                      style={{
+                        backgroundImage: `url(${item?.product_thumbnail_one})`,
+                        backgroundSize: "cover",
+                      }}
+                    >
+                    </div>
+                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                    </div>
+                  </Link>
                 </div>
               )
             })
@@ -133,17 +149,25 @@ export default function TabHome({ translate }: { translate: any }) {
             FAKE?.HOME_PRODUCTS?.slice(8, 12)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
-                  <div
-                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                    style={{
-                      backgroundImage: `url(${item?.product_thumbnail_one})`,
-                      backgroundSize: "cover",
+                  <Link
+                    href={{
+                      pathname: ROUTE.PRODUCT,
+                      query: { product: JSON.stringify(item) }
                     }}
+                    className="w-full flex flex-col justify-center items-center"
                   >
-                  </div>
-                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
-                  </div>
+                    <div
+                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                      style={{
+                        backgroundImage: `url(${item?.product_thumbnail_one})`,
+                        backgroundSize: "cover",
+                      }}
+                    >
+                    </div>
+                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                    </div>
+                  </Link>
                 </div>
               )
             })
@@ -158,17 +182,25 @@ export default function TabHome({ translate }: { translate: any }) {
             FAKE?.HOME_PRODUCTS?.slice(12, 16)?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
-                  <div
-                    className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
-                    style={{
-                      backgroundImage: `url(${item?.product_thumbnail_one})`,
-                      backgroundSize: "cover",
+                  <Link
+                    href={{
+                      pathname: ROUTE.PRODUCT,
+                      query: { product: JSON.stringify(item) }
                     }}
+                    className="w-full flex flex-col justify-center items-center"
                   >
-                  </div>
-                  <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                    <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
-                  </div>
+                    <div
+                      className="w-full h-[220px] lg:h-[260px] flex flex-col items-start justify-end border-t-4 border-b-4 border-[rgb(var(--secondary-rgb))] rounded-lg"
+                      style={{
+                        backgroundImage: `url(${item?.product_thumbnail_one})`,
+                        backgroundSize: "cover",
+                      }}
+                    >
+                    </div>
+                    <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
+                      <div className="font-medium lg:text-[18px]" style={{ minHeight: '48px' }}>{item?.product_name}</div>
+                    </div>
+                  </Link>
                 </div>
               )
             })
