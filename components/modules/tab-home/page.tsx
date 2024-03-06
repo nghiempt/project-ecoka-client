@@ -58,7 +58,7 @@ export default function TabHome({ translate }: { translate: any }) {
         <h1 className="mt-10 text-[16px] text-[rgb(var(--primary-rgb))] font-medium">{translate("footer-desc")}</h1>
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
+      {/* <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <Link
           href={{
             pathname: ROUTE.COLLECTION,
@@ -90,9 +90,9 @@ export default function TabHome({ translate }: { translate: any }) {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
+      {/* <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <Link
           href={{
             pathname: ROUTE.COLLECTION,
@@ -204,7 +204,7 @@ export default function TabHome({ translate }: { translate: any }) {
             })
           }
         </div>
-      </div>
+      </div> */}
 
       <div className="w-full">
         <NewBlog translate={translate} />

@@ -1,15 +1,18 @@
 import { API } from "@/constant/api";
 import { Alert, Modal } from "@mui/material";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function ModalCreateProduct({ openModalProduct, handleCloseProduct }: { openModalProduct: any, handleCloseProduct: any }) {
-    const [productId, setProductId] = useState('none');
-    const [title, setTitle] = useState('none');
-    const [description, setDescription] = useState('none');
+function ModalUpdateProduct({ openModalProduct, handleCloseProduct }: { openModalProduct: any, handleCloseProduct: any }) {
+
+    const product: any = null;
+
+    const [productId, setProductId] = useState(product?.product_id);
+    const [title, setTitle] = useState(product?.product_name);
+    const [description, setDescription] = useState(product?.product_price);
     const [titleEn, setTitleEn] = useState('none');
     const [descriptionEn, setDescriptionEn] = useState('none');
     const [thumbnail, setThumbnail] = useState(null);
-    const [category, setCategory] = useState('1');
+    const [category, setCategory] = useState(product?.product_status);
     const [uploading, setUploading] = useState(false);
 
     const uploadFile = async (file: any) => {
@@ -43,7 +46,7 @@ function ModalCreateProduct({ openModalProduct, handleCloseProduct }: { openModa
             descriptionEN: descriptionEn,
             descriptionJP: description,
             price: "0",
-            thumbnail_one: thumbnailUrl,
+            thumbnail_one: product?.product_thumbnail,
             thumbnail_two: "",
             thumbnail_three: "",
             thumbnail_four: "",
@@ -52,8 +55,8 @@ function ModalCreateProduct({ openModalProduct, handleCloseProduct }: { openModa
             category_id: category
         };
         try {
-            const response = await fetch(API.CREATE_PRODUCT, {
-                method: 'POST',
+            const response = await fetch(`${API.UPDATE_PRODUCT}?id=${product?.product_id}`, {
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -88,6 +91,10 @@ function ModalCreateProduct({ openModalProduct, handleCloseProduct }: { openModa
         setThumbnail(e.target.files[0]);
     };
 
+    useEffect(() => {
+        console.log(product);
+    }, [])
+
     return (
         <Modal
             open={openModalProduct}
@@ -101,7 +108,7 @@ function ModalCreateProduct({ openModalProduct, handleCloseProduct }: { openModa
                 }
                 <div className="relative top-20 mx-auto p-5 border w-1/2 shadow-lg rounded-md bg-white">
                     <div className="flex justify-between items-center pb-3">
-                        <p className="text-2xl font-bold">Thêm Sản Phẩm</p>
+                        <p className="text-2xl font-bold">Cập Nhật Sản Phẩm</p>
                         <div className="modal-close cursor-pointer z-50" onClick={handleCloseProduct}>
                             <svg className="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><polygon points="18 1.41 16.59 0 9 7.59 1.41 0 0 1.41 7.59 9 0 16.59 1.41 18 9 10.41 16.59 18 18 16.59 10.41 9 18 1.41" /></svg>
                         </div>
@@ -109,45 +116,42 @@ function ModalCreateProduct({ openModalProduct, handleCloseProduct }: { openModa
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >Mã Sản Phẩm</label>
-                            <input onChange={(e) => setProductId(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-id" type="text" placeholder="Enter Product ID" />
+                            <input value={productId} onChange={(e) => setProductId(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-id" type="text" placeholder="Enter Product ID" />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >Tên Sản Phẩm (tiếng Việt)</label>
-                            <input onChange={(e) => setTitle(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" placeholder="Enter Title" />
+                            <input value={title} onChange={(e) => setTitle(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" placeholder="Enter Title" />
                         </div>
-                        <div className="mb-4">
+                        {/* <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >Tên Sản Phẩm (tiếng Anh)</label>
                             <input onChange={(e) => setTitleEn(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" placeholder="Enter Title" />
-                        </div>
+                        </div> */}
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả (tiếng Việt)</label>
-                            <textarea onChange={(e) => setDescription(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc" placeholder="Enter Description"></textarea>
+                            <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc" placeholder="Enter Description"></textarea>
                         </div>
                         {/* <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả (tiếng Anh)</label>
                             <textarea onChange={(e) => setDescriptionEn(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc" placeholder="Enter Description"></textarea>
                         </div> */}
-                        <div className="mb-4">
+                        {/* <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >Hình Ảnh Chính</label>
                             <div className="flex">
                                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-thumbnail" type="file" onChange={handleThumbnailChange} />
                             </div>
-                        </div>
+                        </div> */}
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >Danh Mục</label>
                             <select onChange={(e) => setCategory(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-category">
-                                <option value="1">MACRAME DECORATION</option>
-                                <option value="2">HYACINTH DECORATION</option>
-                                <option value="3">MACRAME FOR KITCHEN</option>
-                                <option value="4">HYACINTH FOR KITCHEN</option>
-                                <option value="5">FURNITURE</option>
-                                <option value="6">MACRAME FASHION</option>
-                                <option value="7">HYACINTH FASHION</option>
+                                <option value="1">TRANG TRÍ NHÀ CỬA</option>
+                                <option value="2">NHÀ BẾP</option>
+                                <option value="3">NỘI THẤT</option>
+                                <option value="4">THỜI TRANG</option>
                             </select>
                         </div>
                         <div className="flex items-center justify-between">
                             <button type="submit" disabled={uploading} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
-                                Tạo Sản Phẩm
+                                Cập Nhật
                             </button>
                         </div>
                     </form>
@@ -157,4 +161,4 @@ function ModalCreateProduct({ openModalProduct, handleCloseProduct }: { openModa
     );
 }
 
-export default ModalCreateProduct;
+export default ModalUpdateProduct;

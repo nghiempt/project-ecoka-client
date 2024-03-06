@@ -14,17 +14,22 @@ import SignInAdmin from "./components/sign-in";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import ModalCreateProduct from "./components/modal-create-product";
+import { useRouter, useSearchParams } from 'next/navigation'
 
 export default function AdminDashboard() {
   const [isSignIn, setIsSignIn] = React.useState(true);
   const [tab, setTab] = React.useState(0);
   const [open, setOpen] = React.useState(false);
 
+  const router = useRouter()
+
   const [openModalProduct, setOpenModalProduct] = React.useState(false);
   const [openModalBlog, setOpenModalBlog] = React.useState(false);
 
   const handleOpenModalProduct = () => setOpenModalProduct(true);
-  const handleCloseProduct = () => setOpenModalProduct(false);
+  const handleCloseProduct = () => {
+    setOpenModalProduct(false)
+  };
 
   const handleOpenModalBlog = () => setOpenModalBlog(true);
   const handleCloseBlog = () => setOpenModalBlog(false);
@@ -159,7 +164,7 @@ export default function AdminDashboard() {
                 Quản Lý Sản Phẩm
               </h1>
             </div>
-            <div
+            {/* <div
               className="flex justify-center items-center gap-x-2 cursor-pointer"
               onClick={() => handleTabChange(1)}
             >
@@ -172,7 +177,7 @@ export default function AdminDashboard() {
               >
                 Quản Lý Bài Viết
               </h1>
-            </div>
+            </div> */}
           </div>
         </div>
       ) : (

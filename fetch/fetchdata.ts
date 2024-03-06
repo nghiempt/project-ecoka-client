@@ -2,7 +2,22 @@ import { API } from "@/constant/api";
 import { FAKE } from "@/constant/fake";
 
 const GET_ALL_PRODUCTS = async () => {
-    return FAKE.PRODUCTS
+    // return FAKE.PRODUCTS
+    try {
+        const response = await fetch(API.GET_ALL_PRODUCT);
+        const data = await response.json();
+        if (data?.result) {
+            console.log(data.data);
+            return data.data;
+        }
+        return []
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+};
+
+const GET_ALL_PRODUCTS_REAL = async () => {
     try {
         const response = await fetch(API.GET_ALL_PRODUCT);
         const data = await response.json();
@@ -83,5 +98,6 @@ export const FetchData = {
     GET_ALL_BLOGS,
     GET_ALL_CATEGORIES,
     CREATE_PRODUCT,
-    UPLOAD_IMAGE
+    UPLOAD_IMAGE,
+    GET_ALL_PRODUCTS_REAL
 }

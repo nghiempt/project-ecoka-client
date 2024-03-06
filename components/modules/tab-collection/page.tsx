@@ -17,6 +17,7 @@ export default function TabCollection({ translate }: { translate: any }) {
 
   const [page, setPage] = React.useState(1);
   const [category, setCategory] = React.useState("1");
+  const [subCategory, setSubCategory] = React.useState("1");
   const [products, setProducts] = useState([])
   const [filterProducts, setFilterProducts] = useState([])
 
@@ -33,7 +34,7 @@ export default function TabCollection({ translate }: { translate: any }) {
   const filterByCategory = (productsParam: any, categoryId: any) => {
     let tmp: any = []
     productsParam?.forEach((item: any) => {
-      if (item?.category_id.toString() === categoryId.toString()) {
+      if (item?.category?.category_id.toString() === categoryId.toString()) {
         tmp = [...tmp, item]
       }
     })
@@ -46,10 +47,50 @@ export default function TabCollection({ translate }: { translate: any }) {
     router.refresh()
   }
 
+  const renderSelectSubCategory = () => {
+    switch (category) {
+      case '1':
+        return (
+          <select className="cursor-pointer" onChange={(e) => {
+            setFilterProducts(filterByCategory(products, e.target.value))
+            router.refresh()
+          }}>
+            <option value="1">MACRAME DECORATION</option>
+            <option value="2">HYACINTH DECORATION</option>
+          </select>
+        )
+      case '3':
+        return (
+          <select className="cursor-pointer" onChange={(e) => {
+            setFilterProducts(filterByCategory(products, e.target.value))
+            router.refresh()
+          }}>
+            <option value="3">MACRAME FOR KITCHEN</option>
+            <option value="4">HYACINTH FOR KITCHEN</option>
+          </select>
+        )
+      case '5':
+        return (
+          null
+        )
+      case '6':
+        return (
+          <select className="cursor-pointer" onChange={(e) => {
+            setFilterProducts(filterByCategory(products, e.target.value))
+            router.refresh()
+          }}>
+            <option value="6">MACRAME FASHION</option>
+            <option value="7">HYACINTH FASHION</option>
+          </select>
+        )
+    }
+  }
+
   const init = async () => {
     const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
     setCategory(searchParams.get('category') || '1')
     setProducts(fetchProducts)
+    console.log(fetchProducts);
     setFilterProducts(filterByCategory(fetchProducts, searchParams.get('category') || '1'))
   };
 
@@ -70,29 +111,23 @@ export default function TabCollection({ translate }: { translate: any }) {
             <button onClick={() => changeCategory("1")} className={`${category === "1" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold  gap-x-4 justify-center items-center`}>
               {translate('home-home')}
             </button>
-            <button onClick={() => changeCategory("2")} className={`${category === "2" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-kitchen')}
             </button>
           </div>
           <div className="flex gap-x-4">
-            <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("5")} className={`${category === "5" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-furniture')}
             </button>
-            <button onClick={() => changeCategory("4")} className={`${category === "4" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("6")} className={`${category === "6" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-fashion')}
             </button>
           </div>
         </div>
 
-        {/* <div className="mb-10 flex justify-center items-center gap-x-2 lg:gap-x-4">
-          <h1 className="text-[12px] lg:text-[14px] font-semibold">Category:</h1>
-          <button className="bg-[rgb(var(--secondary-rgb))] !text-white text-[11px] lg:text-[12px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
-            MACRAME DECORATION
-          </button>
-          <button className="bg-gray-100 !text-gray-700 text-[11px] lg:text-[12px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center" >
-            HYACINTH DECORATION
-          </button>
-        </div> */}
+        <div className="mb-10 flex justify-center items-center gap-x-2 lg:gap-x-4">
+          {renderSelectSubCategory()}
+        </div>
 
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center items-center">
@@ -120,7 +155,7 @@ export default function TabCollection({ translate }: { translate: any }) {
                         </div>
                       </div> */}
                       <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                        <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(translate(item?.product_name) || '', 65)}</div>
+                        <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(translate('lang') === 'vi' ? item?.product_nameVI : item?.product_nameEN || '', 65)}</div>
                       </div>
                     </Link>
                   </div>

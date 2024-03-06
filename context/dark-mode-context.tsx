@@ -3,8 +3,8 @@
 import { createContext, useState } from "react";
 
 const DarkModeContext = createContext({
-  isDarkMode: false,
-  setDarkMode: (isDarkMode: boolean) => {},
+  isDarkMode: null,
+  setDarkMode: (isDarkMode: any) => {},
 });
 
 export default DarkModeContext;
@@ -14,9 +14,9 @@ export const DarkModeProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [isDarkMode, setGlobalDarkMode] = useState(false);
+  const [isDarkMode, setGlobalDarkMode] = useState(null);
 
-  const setDarkMode = (isDarkMode: boolean) => {
+  const setDarkMode = (isDarkMode: any) => {
     setGlobalDarkMode(isDarkMode);
   };
 

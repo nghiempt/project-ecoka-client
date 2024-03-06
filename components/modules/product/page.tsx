@@ -81,9 +81,9 @@ export default function Product({ translate }: { translate: any }) {
           </div>
           <div className="lg:w-1/2">
             <h1 className="text-[22px] font-bold">
-              {translate(product?.product_name)}
+              {translate(product?.product_nameVI)}
             </h1>
-            <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_description}</h1>
+            <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_descriptionVI}</h1>
             <div className="flex items-center">
               <h1 className="text-[28px] font-bold mr-4">{convertStringToMoney(product?.product_price.toString() || "")} VND</h1>
               <button className="bg-red-500 rounded-lg text-white text-[12px] px-4 py-1">
