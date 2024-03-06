@@ -90,7 +90,6 @@ export default function TabCollection({ translate }: { translate: any }) {
     const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
     setCategory(searchParams.get('category') || '1')
     setProducts(fetchProducts)
-    console.log(fetchProducts);
     setFilterProducts(filterByCategory(fetchProducts, searchParams.get('category') || '1'))
   };
 

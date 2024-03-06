@@ -2,9 +2,15 @@ import { API } from "@/constant/api";
 import { FAKE } from "@/constant/fake";
 
 const GET_ALL_PRODUCTS = async () => {
-    // return FAKE.PRODUCTS
+    return FAKE.PRODUCTS
     try {
-        const response = await fetch(API.GET_ALL_PRODUCT);
+        const response = await fetch(API.GET_ALL_PRODUCT, {
+            mode: 'no-cors',
+            method: "get",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
         const data = await response.json();
         if (data?.result) {
             console.log(data.data);
@@ -19,7 +25,13 @@ const GET_ALL_PRODUCTS = async () => {
 
 const GET_ALL_PRODUCTS_REAL = async () => {
     try {
-        const response = await fetch(API.GET_ALL_PRODUCT);
+        const response = await fetch(API.GET_ALL_PRODUCT, {
+            mode: 'no-cors',
+            method: "get",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
         const data = await response.json();
         if (data?.result) {
             return data;

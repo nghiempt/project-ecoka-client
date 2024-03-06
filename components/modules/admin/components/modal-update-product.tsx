@@ -1,18 +1,19 @@
 import { API } from "@/constant/api";
+import DarkModeContext from "@/context/dark-mode-context";
 import { Alert, Modal } from "@mui/material";
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 function ModalUpdateProduct({ openModalProduct, handleCloseProduct }: { openModalProduct: any, handleCloseProduct: any }) {
 
-    const product: any = null;
+    const darkModeContext: any = useContext(DarkModeContext);
 
-    const [productId, setProductId] = useState(product?.product_id);
-    const [title, setTitle] = useState(product?.product_name);
-    const [description, setDescription] = useState(product?.product_price);
+    const [productId, setProductId] = useState(darkModeContext?.isDarkMode?.product_id);
+    const [title, setTitle] = useState(darkModeContext?.isDarkMode?.product_name);
+    const [description, setDescription] = useState(darkModeContext?.isDarkMode?.product_price);
     const [titleEn, setTitleEn] = useState('none');
     const [descriptionEn, setDescriptionEn] = useState('none');
     const [thumbnail, setThumbnail] = useState(null);
-    const [category, setCategory] = useState(product?.product_status);
+    const [category, setCategory] = useState(darkModeContext?.isDarkMode?.product_status);
     const [uploading, setUploading] = useState(false);
 
     const uploadFile = async (file: any) => {
@@ -46,7 +47,7 @@ function ModalUpdateProduct({ openModalProduct, handleCloseProduct }: { openModa
             descriptionEN: descriptionEn,
             descriptionJP: description,
             price: "0",
-            thumbnail_one: product?.product_thumbnail,
+            thumbnail_one: darkModeContext?.isDarkMode?.product_thumbnail,
             thumbnail_two: "",
             thumbnail_three: "",
             thumbnail_four: "",
@@ -55,7 +56,7 @@ function ModalUpdateProduct({ openModalProduct, handleCloseProduct }: { openModa
             category_id: category
         };
         try {
-            const response = await fetch(`${API.UPDATE_PRODUCT}?id=${product?.product_id}`, {
+            const response = await fetch(`${API.UPDATE_PRODUCT}?id=${darkModeContext?.isDarkMode?.product_id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,10 +91,6 @@ function ModalUpdateProduct({ openModalProduct, handleCloseProduct }: { openModa
     const handleThumbnailChange = async (e: any) => {
         setThumbnail(e.target.files[0]);
     };
-
-    useEffect(() => {
-        console.log(product);
-    }, [])
 
     return (
         <Modal

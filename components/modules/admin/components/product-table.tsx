@@ -12,6 +12,7 @@ import { limitString } from "@/utils/helper";
 import { FetchData } from "@/fetch/fetchdata";
 import ModalUpdateProduct from "./modal-update-product";
 import { useRouter } from "next/navigation";
+import DarkModeContext from "@/context/dark-mode-context";
 
 function createData(
   product_id: string,
@@ -34,6 +35,8 @@ export default function ProductTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const router = useRouter()
+
+  const darkModeContext = React.useContext(DarkModeContext);
 
   const [currentProduct, setCurrentProduct] = React.useState(null);
 
@@ -84,6 +87,9 @@ export default function ProductTable() {
       // Attempt to set the current product
       try {
         setCurrentProduct(product);
+        darkModeContext.setDarkMode(product)
+        console.log(darkModeContext.isDarkMode);
+        
         // If successful, resolve the promise
         resolve("done");
       } catch (error) {
