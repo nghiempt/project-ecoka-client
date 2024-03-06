@@ -1,4 +1,4 @@
-export const HOST = `http://14.225.204.219:8080/api/v1`
+export const HOST = `https://ecokav2.devilop.me/api/v1`
 
 export const API = {
   GET_ALL_PRODUCT: `${HOST}/product/get-all`,
