@@ -26,7 +26,7 @@ export default function TabAbout({ translate }: { translate: any }) {
             objectFit: "cover",
             zIndex: "-1",
           }}
-          src={URL.VIDEO}
+          src={URL.VIDEO_ABOUT}
         />
       </div>
 
