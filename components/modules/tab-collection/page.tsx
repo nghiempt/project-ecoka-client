@@ -34,7 +34,7 @@ export default function TabCollection({ translate }: { translate: any }) {
   const filterByCategory = (productsParam: any, categoryId: any) => {
     let tmp: any = []
     productsParam?.forEach((item: any) => {
-      if (item?.category?.category_id.toString() === categoryId.toString()) {
+      if (item?.category_id.toString() === categoryId.toString()) {
         tmp = [...tmp, item]
       }
     })
@@ -110,15 +110,15 @@ export default function TabCollection({ translate }: { translate: any }) {
             <button onClick={() => changeCategory("1")} className={`${category === "1" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold  gap-x-4 justify-center items-center`}>
               {translate('home-home')}
             </button>
-            <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("2")} className={`${category === "2" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-kitchen')}
             </button>
           </div>
           <div className="flex gap-x-4">
-            <button onClick={() => changeCategory("5")} className={`${category === "5" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-furniture')}
             </button>
-            <button onClick={() => changeCategory("6")} className={`${category === "6" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("4")} className={`${category === "4" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-fashion')}
             </button>
           </div>
@@ -154,7 +154,7 @@ export default function TabCollection({ translate }: { translate: any }) {
                         </div>
                       </div> */}
                       <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                        <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(translate('lang') === 'vi' ? item?.product_nameVI : item?.product_nameEN || '', 65)}</div>
+                        <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(item?.product_name || '', 65)}</div>
                       </div>
                     </Link>
                   </div>
