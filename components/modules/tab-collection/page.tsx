@@ -52,31 +52,31 @@ export default function TabCollection({ translate }: { translate: any }) {
       case '1':
         return (
           <select className="cursor-pointer" onChange={(e) => {
-            setFilterProducts(filterByCategory(products, e.target.value))
+            // setFilterProducts(filterByCategory(products, e.target.value))
             router.refresh()
           }}>
             <option value="1">MACRAME DECORATION</option>
             <option value="2">HYACINTH DECORATION</option>
           </select>
         )
-      case '3':
+      case '2':
         return (
           <select className="cursor-pointer" onChange={(e) => {
-            setFilterProducts(filterByCategory(products, e.target.value))
+            // setFilterProducts(filterByCategory(products, e.target.value))
             router.refresh()
           }}>
             <option value="3">MACRAME FOR KITCHEN</option>
             <option value="4">HYACINTH FOR KITCHEN</option>
           </select>
         )
-      case '5':
+      case '3':
         return (
           null
         )
-      case '6':
+      case '4':
         return (
           <select className="cursor-pointer" onChange={(e) => {
-            setFilterProducts(filterByCategory(products, e.target.value))
+            // setFilterProducts(filterByCategory(products, e.target.value))
             router.refresh()
           }}>
             <option value="6">MACRAME FASHION</option>
