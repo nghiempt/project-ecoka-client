@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Avatar,
   Button,
@@ -30,6 +30,8 @@ export default function Header({ translate }: { translate: any }) {
   const { data } = useSession();
 
   const [open, setOpen] = React.useState(false);
+  const [isProductHovered, setIsProductHovered] = useState(false);
+  const [isSubProductHovered, setIsSubProductHovered] = useState(false);
 
   const toggleDrawer = () => () => {
     setOpen(!open);
@@ -101,7 +103,10 @@ export default function Header({ translate }: { translate: any }) {
           title="card"
         />
       </Link>
-      <div className={`flex gap-x-10`}>
+
+
+
+      <div className={`flex gap-x-10 items-center`}>
         <Button
           className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
           <Link
@@ -122,16 +127,74 @@ export default function Header({ translate }: { translate: any }) {
             {translate('header-tab-about')}
           </Link>
         </Button>
-        <Button
-          className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
-          <Link
-            href={{
-              pathname: ROUTE.COLLECTION
-            }}
-          >
-            {translate('header-tab-collection')}
-          </Link>
-        </Button>
+        <div className="group relative cursor-pointer">
+          <Button
+            className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
+            <Link
+              href={{
+                pathname: ROUTE.COLLECTION
+              }}
+            >
+              {translate('header-tab-collection')}
+            </Link>
+          </Button>
+          <div className="invisible absolute z-50 flex w-[400px] flex-row gap-x-6 mt-1 p-6 shadow-xl bg-gray-500 opacity-90 rounded-md shadow-xl group-hover:visible">
+            <div className="w-full flex flex-col">
+              <Link replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '1' }, }}>
+                <h2 className="text-white text-[16px] font-semibold">HOME DECORATION</h2>
+              </Link>
+              <Link className="!cursor-pointer" replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '1' }, }}>
+                <h2 className="text-white cursor-pointer text-[14px]">Macrame Decoration</h2>
+              </Link>
+              <Link className="cursor-pointer" replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '2' }, }}>
+                <h2 className="text-white cursor-pointer text-[14px]">Hyacinth Decoration</h2>
+              </Link>
+              <Link className='mt-4 cursor-pointer' replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '3' }, }}>
+                <h2 className="text-white cursor-pointer text-[16px] font-semibold">KITCHEN</h2>
+              </Link>
+              <Link className="cursor-pointer" replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '3' }, }}>
+                <h2 className="text-white cursor-pointer text-[14px]">Macrame for Kitchen</h2>
+              </Link>
+              <Link className="cursor-pointer" replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '4' }, }}>
+                <h2 className="text-white cursor-pointer text-[14px]">Hyacinth for Kitchen</h2>
+              </Link>
+            </div>
+            <div className="w-full flex flex-col">
+              <Link className="cursor-pointer" replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '5' }, }}>
+                <h2 className="text-white cursor-pointer text-[16px] font-semibold">FASHION</h2>
+              </Link>
+              <Link className="cursor-pointer" replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '6' }, }}>
+                <h2 className="text-white cursor-pointer text-[14px]">Macrame Fashion</h2>
+              </Link>
+              <Link className="cursor-pointer" replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '6' }, }}>
+                <h2 className="text-white cursor-pointer text-[14px]">Hyacinth Fashion</h2>
+              </Link>
+              <Link className='mt-4 cursor-pointer' replace
+                scroll={false}
+                prefetch={false} href={{ pathname: ROUTE.COLLECTION, query: { category: '7' }, }}>
+                <h2 className="text-white cursor-pointer text-[16px] font-semibold">FURNITURE</h2>
+              </Link>
+            </div>
+          </div>
+        </div>
         <Button
           className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">
           <Link

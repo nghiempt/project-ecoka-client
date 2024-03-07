@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NewBlog } from "@/components/common/new-blog";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { URL } from "@/constant/url";
@@ -11,24 +11,40 @@ import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import { ROUTE } from "@/constant/route";
 import { FAKE } from "@/constant/fake";
+import { FetchData } from "@/fetch/fetchdata";
 
 export default function TabHome({ translate }: { translate: any }) {
 
-  const init = async () => { };
+  const [products, setProducts] = useState([])
+
+  const renderHomeProduct = (catId: any) => {
+    let tmp: any = []
+    products?.forEach((item: any) => {
+      if (item?.product_category_id.toString() === catId.toString()) {
+        tmp = [...tmp, item]
+      }
+    })
+    return tmp?.slice(0,4)
+  }
+
+  const renderImage = (originUrl: any) => {
+    if (originUrl === null || originUrl === undefined || originUrl === "") {
+      return "https://cdn-icons-png.flaticon.com/128/3342/3342137.png"
+    }
+    const filename = originUrl.split('/').pop();
+    return 'https://ecokav2.devilop.me/api/products/images/' + filename;
+  }
+
+  const init = async () => {
+    const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
+    setProducts(fetchProducts)
+  };
 
   useEffect(() => {
     init();
   }, []);
 
-  useEffect(() => { }, []);
-
-  const renderTranslateHomeProduct = (lang: string) => {
-    if (lang === 'vi') {
-      return FAKE.HOME_PRODUCTS_VI
-    } else {
-      return FAKE.HOME_PRODUCTS_EN
-    }
-  }
+  useEffect(() => { }, [products]);
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center lg:px-0">
@@ -58,7 +74,7 @@ export default function TabHome({ translate }: { translate: any }) {
         <h1 className="mt-10 text-[16px] text-[rgb(var(--primary-rgb))] font-medium">{translate("footer-desc")}</h1>
       </div>
 
-      {/* <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
+      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
         <Link
           href={{
             pathname: ROUTE.COLLECTION,
@@ -69,7 +85,7 @@ export default function TabHome({ translate }: { translate: any }) {
           <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">{translate('home-home')}</h1>
         </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
-          {renderTranslateHomeProduct(translate('lang'))?.slice(0, 4)?.map((item, index) => (
+          {renderHomeProduct('1')?.map((item: any, index: any) => (
             <div key={index} className="w-full flex flex-col justify-center items-center">
               <Link
                 href={{
@@ -80,53 +96,15 @@ export default function TabHome({ translate }: { translate: any }) {
               >
                 <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
                   <div className="aspect-w-1 aspect-h-1">
-                    <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                    <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
                   </div>
                   <div className="px-6 py-4 h-[48px]">
-                    <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
+                    <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>
                   </div>
                 </div>
               </Link>
             </div>
           ))}
-        </div>
-      </div> */}
-
-      {/* <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
-        <Link
-          href={{
-            pathname: ROUTE.COLLECTION,
-            query: { category: '2' },
-          }}
-          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
-        >
-          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">{translate('home-kitchen')}</h1>
-        </Link>
-        <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
-          {
-            renderTranslateHomeProduct(translate('lang'))?.slice(4, 8)?.map((item: any, index: any) => {
-              return (
-                <div key={index} className="w-full flex flex-col justify-center items-center">
-                  <Link
-                    href={{
-                      pathname: ROUTE.PRODUCT,
-                      query: { productId: item?.product_id.toString() }
-                    }}
-                    className="w-full flex flex-col justify-center items-center"
-                  >
-                    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
-                      <div className="aspect-w-1 aspect-h-1">
-                        <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
-                      </div>
-                      <div className="px-6 py-4 h-[48px]">
-                        <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              )
-            })
-          }
         </div>
       </div>
 
@@ -136,13 +114,13 @@ export default function TabHome({ translate }: { translate: any }) {
             pathname: ROUTE.COLLECTION,
             query: { category: '3' },
           }}
-          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]"
+          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
         >
-          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">{translate('home-furniture')}</h1>
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">{translate('home-kitchen')}</h1>
         </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
-            renderTranslateHomeProduct(translate('lang'))?.slice(8, 12)?.map((item: any, index: any) => {
+            renderHomeProduct('3')?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
                   <Link
@@ -154,10 +132,10 @@ export default function TabHome({ translate }: { translate: any }) {
                   >
                     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
                       <div className="aspect-w-1 aspect-h-1">
-                        <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                        <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
                       </div>
                       <div className="px-6 py-4 h-[48px]">
-                        <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
+                        <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>
                       </div>
                     </div>
                   </Link>
@@ -172,15 +150,15 @@ export default function TabHome({ translate }: { translate: any }) {
         <Link
           href={{
             pathname: ROUTE.COLLECTION,
-            query: { category: '4' },
+            query: { category: '5' },
           }}
-          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
+          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--quaternary-rgb))]"
         >
-          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">{translate('home-fashion')}</h1>
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--quaternary-rgb))]">{translate('home-furniture')}</h1>
         </Link>
         <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
           {
-            renderTranslateHomeProduct(translate('lang'))?.slice(12, 16)?.map((item: any, index: any) => {
+            renderHomeProduct('5')?.map((item: any, index: any) => {
               return (
                 <div key={index} className="w-full flex flex-col justify-center items-center">
                   <Link
@@ -192,10 +170,10 @@ export default function TabHome({ translate }: { translate: any }) {
                   >
                     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
                       <div className="aspect-w-1 aspect-h-1">
-                        <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                        <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
                       </div>
                       <div className="px-6 py-4 h-[48px]">
-                        <div className="font-medium lg:text-[18px]">{item?.product_name}</div>
+                        <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>
                       </div>
                     </div>
                   </Link>
@@ -204,7 +182,45 @@ export default function TabHome({ translate }: { translate: any }) {
             })
           }
         </div>
-      </div> */}
+      </div>
+
+      <div className="w-full flex flex-col justify-center items-center rounded-lg py-4">
+        <Link
+          href={{
+            pathname: ROUTE.COLLECTION,
+            query: { category: '6' },
+          }}
+          className="w-full text-center py-2 text-[20px] font-bold mb-4 bg-[rgb(var(--secondary-rgb))] text-white"
+        >
+          <h1 className="w-full text-center text-[20px] font-bold bg-[rgb(var(--secondary-rgb))]">{translate('home-fashion')}</h1>
+        </Link>
+        <div className="w-5/6 lg:w-full flex grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4">
+          {
+            renderHomeProduct('6')?.map((item: any, index: any) => {
+              return (
+                <div key={index} className="w-full flex flex-col justify-center items-center">
+                  <Link
+                    href={{
+                      pathname: ROUTE.PRODUCT,
+                      query: { productId: item?.product_id.toString() }
+                    }}
+                    className="w-full flex flex-col justify-center items-center"
+                  >
+                    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
+                      <div className="aspect-w-1 aspect-h-1">
+                        <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
+                      </div>
+                      <div className="px-6 py-4 h-[48px]">
+                        <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
 
       <div className="w-full">
         <NewBlog translate={translate} />

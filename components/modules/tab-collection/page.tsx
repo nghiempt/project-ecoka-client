@@ -150,17 +150,17 @@ export default function TabCollection({ translate }: { translate: any }) {
                       query: { productId: item?.product_id.toString() }
                     }}
                     >
-                      <CardMedia
+                      {/* <CardMedia
                         sx={{ borderRadius: "10px" }}
                         className="h-[360px] lg:h-[300px]"
                         image={renderImage(item?.product_image_one)}
                         title="card"
-                      />
-                      {/* <div className="max-w-sm rounded-lg overflow-hidden p-2">
+                      /> */}
+                      <div className="max-w-sm rounded-lg overflow-hidden p-2">
                         <div className="aspect-w-1 aspect-h-1">
-                          <img className="object-cover rounded-md" src={item?.product_thumbnail_one} alt="Product Image" />
+                          <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
                         </div>
-                      </div> */}
+                      </div>
                       <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
                         <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(item?.product_name_vi || '', 65)}</div>
                       </div>
