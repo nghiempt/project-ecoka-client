@@ -3,7 +3,7 @@
 import React from "react";
 import BoxWrapper from "@/components/common/box-wrapper";
 import { NextPage } from "next";
-import AdminDashboard from "./page";
+import AdminDashboard from "./page2";
 
 const AdminContainer: NextPage<any> = async () => {
   return (
