@@ -34,7 +34,7 @@ export default function TabCollection({ translate }: { translate: any }) {
   const filterByCategory = (productsParam: any, categoryId: any) => {
     let tmp: any = []
     productsParam?.forEach((item: any) => {
-      if (item?.category_id.toString() === categoryId.toString()) {
+      if (item?.product_category_id.toString() === categoryId.toString()) {
         tmp = [...tmp, item]
       }
     })
@@ -47,36 +47,44 @@ export default function TabCollection({ translate }: { translate: any }) {
     router.refresh()
   }
 
+  const renderImage = (originUrl: any) => {
+    if (originUrl === null || originUrl === undefined || originUrl === "") {
+      return "https://cdn-icons-png.flaticon.com/128/3342/3342137.png"
+    }
+    const filename = originUrl.split('/').pop();
+    return 'https://ecokav2.devilop.me/api/products/images/' + filename;
+  }
+
   const renderSelectSubCategory = () => {
     switch (category) {
       case '1':
         return (
           <select className="cursor-pointer" onChange={(e) => {
-            // setFilterProducts(filterByCategory(products, e.target.value))
+            setFilterProducts(filterByCategory(products, e.target.value))
             router.refresh()
           }}>
             <option value="1">MACRAME DECORATION</option>
             <option value="2">HYACINTH DECORATION</option>
           </select>
         )
-      case '2':
+      case '3':
         return (
           <select className="cursor-pointer" onChange={(e) => {
-            // setFilterProducts(filterByCategory(products, e.target.value))
+            setFilterProducts(filterByCategory(products, e.target.value))
             router.refresh()
           }}>
             <option value="3">MACRAME FOR KITCHEN</option>
             <option value="4">HYACINTH FOR KITCHEN</option>
           </select>
         )
-      case '3':
+      case '5':
         return (
           null
         )
-      case '4':
+      case '6':
         return (
           <select className="cursor-pointer" onChange={(e) => {
-            // setFilterProducts(filterByCategory(products, e.target.value))
+            setFilterProducts(filterByCategory(products, e.target.value))
             router.refresh()
           }}>
             <option value="6">MACRAME FASHION</option>
@@ -110,15 +118,15 @@ export default function TabCollection({ translate }: { translate: any }) {
             <button onClick={() => changeCategory("1")} className={`${category === "1" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold  gap-x-4 justify-center items-center`}>
               {translate('home-home')}
             </button>
-            <button onClick={() => changeCategory("2")} className={`${category === "2" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-kitchen')}
             </button>
           </div>
           <div className="flex gap-x-4">
-            <button onClick={() => changeCategory("3")} className={`${category === "3" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("5")} className={`${category === "5" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-furniture')}
             </button>
-            <button onClick={() => changeCategory("4")} className={`${category === "4" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
+            <button onClick={() => changeCategory("6")} className={`${category === "6" ? 'bg-[rgb(var(--secondary-rgb))] !text-white' : 'bg-gray-100 !text-gray-700'} min-w-[160px] lg:text-[16px] py-2 px-2 lg:px-4 rounded-lg font-semibold flex justify-center items-center`}>
               {translate('home-fashion')}
             </button>
           </div>
@@ -145,7 +153,7 @@ export default function TabCollection({ translate }: { translate: any }) {
                       <CardMedia
                         sx={{ borderRadius: "10px" }}
                         className="h-[360px] lg:h-[300px]"
-                        image={item?.product_thumbnail_one}
+                        image={renderImage(item?.product_image_one)}
                         title="card"
                       />
                       {/* <div className="max-w-sm rounded-lg overflow-hidden p-2">
@@ -154,7 +162,7 @@ export default function TabCollection({ translate }: { translate: any }) {
                         </div>
                       </div> */}
                       <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
-                        <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(item?.product_name || '', 65)}</div>
+                        <div className="font-medium text-[16px] lg:text-[18px] text-justify" style={{ minHeight: '48px' }}>{limitString(item?.product_name_vi || '', 65)}</div>
                       </div>
                     </Link>
                   </div>

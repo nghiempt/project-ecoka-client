@@ -27,16 +27,25 @@ export default function Product({ translate }: { translate: any }) {
     const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
     let foundItem: any = fetchProducts?.find((item: any) => item?.product_id.toString() === (searchParams.get('productId') || '1'));
     setProduct(foundItem)
+    console.log(foundItem);
     let tmp: any = []
-    tmp = [...tmp, foundItem?.product_thumbnail_one]
-    tmp = [...tmp, foundItem?.product_thumbnail_two]
-    tmp = [...tmp, foundItem?.product_thumbnail_three]
-    tmp = [...tmp, foundItem?.product_thumbnail_four]
-    tmp = [...tmp, foundItem?.product_thumbnail_five]
-    tmp = [...tmp, foundItem?.product_thumbnail_six]
-    setCurrentThumbnail(foundItem?.product_thumbnail_one)
+    tmp = [...tmp, foundItem?.product_image_one]
+    tmp = [...tmp, foundItem?.product_image_two]
+    tmp = [...tmp, foundItem?.product_image_three]
+    tmp = [...tmp, foundItem?.product_image_four]
+    tmp = [...tmp, foundItem?.product_image_five]
+    tmp = [...tmp, foundItem?.product_image_six]
+    setCurrentThumbnail(foundItem?.product_image_one)
     setThumbnails(tmp)
   };
+
+  const renderImage = (originUrl: any) => {
+    if (originUrl === null || originUrl === undefined || originUrl === "") {
+      return "https://cdn-icons-png.flaticon.com/128/3342/3342137.png"
+    }
+    const filename = originUrl.split('/').pop();
+    return 'https://ecokav2.devilop.me/api/products/images/' + filename;
+  }
 
   useEffect(() => {
     init();
@@ -61,7 +70,7 @@ export default function Product({ translate }: { translate: any }) {
 
             <div className="max-w-sm rounded-lg overflow-hidden shadow-lg p-2">
               <div className="aspect-w-1 aspect-h-1">
-                <img className="object-cover rounded-md" src={currentThumbnail} alt="Product Image" />
+                <img className="object-cover rounded-md" src={renderImage(currentThumbnail)} alt="Product Image" />
               </div>
             </div>
 
@@ -72,7 +81,7 @@ export default function Product({ translate }: { translate: any }) {
                   className="w-[72px] h-[72px] rounded-lg cursor-pointer"
                   onClick={() => setCurrentThumbnail(item)}
                   style={{
-                    backgroundImage: `url(${item})`,
+                    backgroundImage: `url(${renderImage(item)})`,
                     backgroundSize: "cover",
                   }}
                 ></div>
@@ -81,11 +90,11 @@ export default function Product({ translate }: { translate: any }) {
           </div>
           <div className="lg:w-1/2">
             <h1 className="text-[22px] font-bold">
-              {translate(product?.product_nameVI)}
+              {translate(product?.product_name_vi)}
             </h1>
-            <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_descriptionVI}</h1>
+            <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_desc_vi}</h1>
             <div className="flex items-center">
-              <h1 className="text-[28px] font-bold mr-4">{convertStringToMoney(product?.product_price.toString() || "")} VND</h1>
+              <h1 className="text-[28px] font-bold mr-4">0 VND</h1>
               <button className="bg-red-500 rounded-lg text-white text-[12px] px-4 py-1">
                 {translate('product-02')} 10%
               </button>
