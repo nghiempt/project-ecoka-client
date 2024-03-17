@@ -3,11 +3,11 @@
 import { PreBanner } from "@/components/common/pre-banner";
 import { SubBanner } from "@/components/common/sub-banner";
 import React, { useEffect, useState } from "react";
-import { CardMedia, CircularProgress, Pagination } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import Link from "next/link";
 import { limitString } from "@/utils/helper";
 import { ROUTE } from "@/constant/route";
-import { FetchData } from "@/fetch/fetchdata";
+import { FetchData } from "@/fetch/fetch_data";
 import { useRouter, useSearchParams } from 'next/navigation'
 
 export default function TabCollection({ translate }: { translate: any }) {
@@ -15,21 +15,9 @@ export default function TabCollection({ translate }: { translate: any }) {
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  const [page, setPage] = React.useState(1);
   const [category, setCategory] = React.useState("1");
-  const [subCategory, setSubCategory] = React.useState("1");
   const [products, setProducts] = useState([])
   const [filterProducts, setFilterProducts] = useState([])
-
-  const changePage = (e: any) => {
-    setPage(e.target.textContent);
-  };
-
-  const loadDataByPage = (page: number) => {
-    const start = (page - 1) * 8;
-    const end = page * 8;
-    return filterProducts?.slice(start, end);
-  };
 
   const filterByCategory = (productsParam: any, categoryId: any) => {
     let tmp: any = []
@@ -105,7 +93,7 @@ export default function TabCollection({ translate }: { translate: any }) {
     init();
   }, []);
 
-  useEffect(() => { }, [page, category, products, filterProducts]);
+  useEffect(() => { }, [category, products, filterProducts]);
 
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
@@ -150,12 +138,6 @@ export default function TabCollection({ translate }: { translate: any }) {
                       query: { productId: item?.product_id.toString() }
                     }}
                     >
-                      {/* <CardMedia
-                        sx={{ borderRadius: "10px" }}
-                        className="h-[360px] lg:h-[300px]"
-                        image={renderImage(item?.product_image_one)}
-                        title="card"
-                      /> */}
                       <div className="max-w-sm rounded-lg overflow-hidden p-2">
                         <div className="aspect-w-1 aspect-h-1">
                           <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
@@ -168,7 +150,6 @@ export default function TabCollection({ translate }: { translate: any }) {
                   </div>
                 ))}
               </div>}
-            {/* <Pagination count={Math.ceil(products.length / 10)} shape="rounded" className="mt-10" onChange={changePage} /> */}
           </div>
         </div>
       </div>

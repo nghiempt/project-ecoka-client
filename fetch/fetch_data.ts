@@ -2,9 +2,8 @@ import { API } from "@/constant/api";
 import { FAKE } from "@/constant/fake";
 
 const GET_ALL_PRODUCTS = async () => {
-    // return FAKE.PRODUCTS
     try {
-        const response = await fetch('https://ecokav2.devilop.me/api/products/get-all-products');
+        const response = await fetch(API.GET_ALL_PRODUCT);
         const data = await response.json();
         if (data?.length > 0) {
             return data;

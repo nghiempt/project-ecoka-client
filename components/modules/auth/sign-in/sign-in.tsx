@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, Checkbox, Divider } from "@mui/material";
+import { Checkbox, Divider } from "@mui/material";
 import React from "react";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";

@@ -6,7 +6,7 @@ import { CardMedia, CircularProgress } from "@mui/material";
 import Link from "next/link";
 import { limitString } from "@/utils/helper";
 import { ROUTE } from "@/constant/route";
-import { FetchData } from "@/fetch/fetchdata";
+import { FetchData } from "@/fetch/fetch_data";
 import { FAKE } from "@/constant/fake";
 
 export const NewBlog = ({ translate }: { translate: any }) => {

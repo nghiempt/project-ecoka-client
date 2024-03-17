@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Modal } from "@mui/material";
-import axios from 'axios';
 
 function ModalCreateProduct({ openModal, handleClose, productSelected }: { openModal: any, handleClose: any, productSelected: any }) {
 
@@ -11,7 +10,8 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
 
     const [productNameVi, setProductNameVi] = useState('');
     const [productNameEn, setProductNameEn] = useState('');
-    const [productDes, setProductDes] = useState('');
+    const [productDesVi, setProductDesVi] = useState('');
+    const [productDesEn, setProductDesEn] = useState('');
     const [productNameCatId, setProductNameCatId] = useState('');
 
     const validation = () => {
@@ -27,7 +27,13 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
         } else {
             setShowToastValidate(false)
         }
-        if (productDes === '') {
+        if (productDesVi === '') {
+            setShowToastValidate(true)
+            return false;
+        } else {
+            setShowToastValidate(false)
+        }
+        if (productDesEn === '') {
             setShowToastValidate(true)
             return false;
         } else {
@@ -44,8 +50,8 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
         const payload = {
             product_name_vi: productNameVi,
             product_name_en: productNameEn,
-            product_desc_vi: productDes,
-            product_desc_en: productSelected?.product_desc_en,
+            product_desc_vi: productDesVi,
+            product_desc_en: productDesEn,
             product_category_id: productNameCatId,
             product_image_one: productSelected?.product_image_one,
             product_image_two: productSelected?.product_image_two,
@@ -82,11 +88,12 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
     useEffect(() => {
         setProductNameVi(productSelected?.product_name_vi)
         setProductNameEn(productSelected?.product_name_en)
-        setProductDes(productSelected?.product_desc_vi)
+        setProductDesVi(productSelected?.product_desc_vi)
+        setProductDesEn(productSelected?.product_desc_en)
         setProductNameCatId(productSelected?.product_category_id.toString())
     }, [])
 
-    useEffect(() => { }, [productNameVi, productNameEn, productDes, productNameCatId])
+    useEffect(() => { }, [productNameVi, productNameEn, productDesVi, productDesEn, productNameCatId])
 
     return (
         <>
@@ -126,22 +133,26 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
                                     <svg className="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><polygon points="18 1.41 16.59 0 9 7.59 1.41 0 0 1.41 7.59 9 0 16.59 1.41 18 9 10.41 16.59 18 18 16.59 10.41 9 18 1.41" /></svg>
                                 </div>
                             </div>
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} className='w-full'>
                                 <div className="mb-4">
                                     <label className="block text-gray-700 text-sm font-bold mb-2" >Tên Sản Phẩm (tiếng Việt)</label>
-                                    <input onChange={(e) => setProductNameVi(e.target.value)} value={productNameVi} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" />
+                                    <input onChange={(e) => setProductNameVi(e.target.value)} value={productNameVi} className="shadow appearance-none border rounded w-full py-2 pl-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" />
                                 </div>
                                 <div className="mb-4">
                                     <label className="block text-gray-700 text-sm font-bold mb-2" >Tên Sản Phẩm (tiếng Anh)</label>
-                                    <input onChange={(e) => setProductNameEn(e.target.value)} value={productNameEn} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" />
+                                    <input onChange={(e) => setProductNameEn(e.target.value)} value={productNameEn} className="shadow appearance-none border rounded w-full py-2 pl-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" />
                                 </div>
                                 <div className="mb-2">
-                                    <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả</label>
-                                    <textarea onChange={(e) => setProductDes(e.target.value)} value={productDes} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc"></textarea>
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả (tiếng Việt)</label>
+                                    <textarea onChange={(e) => setProductDesVi(e.target.value)} value={productDesVi} className="shadow appearance-none border rounded w-full py-2 pl-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc"></textarea>
+                                </div>
+                                <div className="mb-2">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả (tiếng Anh)</label>
+                                    <textarea onChange={(e) => setProductDesEn(e.target.value)} value={productDesEn} className="shadow appearance-none border rounded w-full py-2 pl-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc"></textarea>
                                 </div>
                                 <div className="mb-4">
                                     <label className="block text-gray-700 text-sm font-bold mb-2" >Danh Mục</label>
-                                    <select defaultValue={productSelected?.product_category_id.toString()} onChange={(e) => setProductNameCatId(e.target.value)}>
+                                    <select className='!bg-gray-200 px-2 py-1 rounded-lg' defaultValue={productSelected?.product_category_id.toString()} onChange={(e) => setProductNameCatId(e.target.value)}>
                                         <option value='1'>MACRAME DECORATION</option>
                                         <option value='2'>HYACINTH DECORATION</option>
                                         <option value='3'>MACRAME FOR KITCHEN</option>
@@ -152,7 +163,7 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
                                     </select>
                                 </div>
                                 <div className="flex items-center justify-between mt-6">
-                                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
+                                    <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
                                         Cập Nhật Sản Phẩm
                                     </button>
                                 </div>

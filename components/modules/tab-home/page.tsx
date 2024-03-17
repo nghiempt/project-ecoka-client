@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { NewBlog } from "@/components/common/new-blog";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { URL } from "@/constant/url";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -10,8 +9,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import { ROUTE } from "@/constant/route";
-import { FAKE } from "@/constant/fake";
-import { FetchData } from "@/fetch/fetchdata";
+import { FetchData } from "@/fetch/fetch_data";
 
 export default function TabHome({ translate }: { translate: any }) {
 
@@ -24,7 +22,7 @@ export default function TabHome({ translate }: { translate: any }) {
         tmp = [...tmp, item]
       }
     })
-    return tmp?.slice(0,4)
+    return tmp?.slice(0, 4)
   }
 
   const renderImage = (originUrl: any) => {

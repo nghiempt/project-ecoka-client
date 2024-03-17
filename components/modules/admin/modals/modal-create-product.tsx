@@ -142,8 +142,12 @@ function ModalCreateProduct({ openModal, handleClose }: { openModal: any, handle
                         <input onChange={handleInputChange} name="product_name_en" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-title" type="text" placeholder="MACRAME HOME" />
                     </div>
                     <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả (tiếng Việt)</label>
                         <textarea onChange={handleInputChange} name="product_desc_vi" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc" placeholder="BEST PRODUCT"></textarea>
+                    </div>
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả (tiếng Anh)</label>
+                        <textarea onChange={handleInputChange} name="product_desc_en" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc" placeholder="BEST PRODUCT"></textarea>
                     </div>
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" >Hình Ảnh</label>
@@ -160,7 +164,7 @@ function ModalCreateProduct({ openModal, handleClose }: { openModal: any, handle
 
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" >Danh Mục</label>
-                        <select name='product_category_id' onChange={handleInputChange}>
+                        <select className='!bg-gray-200 px-2 py-1 rounded-lg' name='product_category_id' onChange={handleInputChange}>
                             <option value='1'>MACRAME DECORATION</option>
                             <option value='2'>HYACINTH DECORATION</option>
                             <option value='3'>MACRAME FOR KITCHEN</option>

@@ -1,16 +1,12 @@
 "use client";
 
-import { PreBanner } from "@/components/common/pre-banner";
 import { RegisterReceive } from "@/components/common/register-receive";
 import { URL } from "@/constant/url";
-import { Avatar } from "@mui/material";
 import React from "react";
 
 export default function TabAbout({ translate }: { translate: any }) {
   return (
     <div className="lg:w-3/4 flex flex-col justify-center items-center px-4 lg:px-0">
-      {/* <PreBanner title={translate('about-banner')} translate={translate} /> */}
-
       <div style={{ position: 'relative', width: '100%', paddingTop: '42.85%' }}>
         <video
           autoPlay

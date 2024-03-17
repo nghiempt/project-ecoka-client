@@ -13,7 +13,7 @@ import { URL } from "@/constant/url";
 import LanguageChanger from "../translation/language-changer";
 import Link from "next/link";
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box, Divider, Drawer } from "@mui/material";
+import { Box, Drawer } from "@mui/material";
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -30,8 +30,6 @@ export default function Header({ translate }: { translate: any }) {
   const { data } = useSession();
 
   const [open, setOpen] = React.useState(false);
-  const [isProductHovered, setIsProductHovered] = useState(false);
-  const [isSubProductHovered, setIsSubProductHovered] = useState(false);
 
   const toggleDrawer = () => () => {
     setOpen(!open);
@@ -103,9 +101,6 @@ export default function Header({ translate }: { translate: any }) {
           title="card"
         />
       </Link>
-
-
-
       <div className={`flex gap-x-10 items-center`}>
         <Button
           className="!text-[15px] !font-semibold !text-gray-700 !hidden lg:!block hover:!bg-[rgb(var(--quaternary-rgb))]">

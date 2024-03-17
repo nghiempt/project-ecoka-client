@@ -4,7 +4,7 @@ import { PreBanner } from "@/components/common/pre-banner";
 import { SubBanner } from "@/components/common/sub-banner";
 import { FAKE } from "@/constant/fake";
 import { ROUTE } from "@/constant/route";
-import { FetchData } from "@/fetch/fetchdata";
+import { FetchData } from "@/fetch/fetch_data";
 import { limitString } from "@/utils/helper";
 import { CardMedia, CircularProgress, Pagination } from "@mui/material";
 import Link from "next/link";

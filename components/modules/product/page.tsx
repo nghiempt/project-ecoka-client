@@ -11,9 +11,8 @@ import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import Filter7OutlinedIcon from "@mui/icons-material/Filter7Outlined";
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { useSearchParams } from "next/navigation";
-import { convertStringToMoney, increaseMoney } from "@/utils/helper";
 import { SubBanner } from "@/components/common/sub-banner";
-import { FetchData } from "@/fetch/fetchdata";
+import { FetchData } from "@/fetch/fetch_data";
 
 export default function Product({ translate }: { translate: any }) {
 
@@ -60,13 +59,6 @@ export default function Product({ translate }: { translate: any }) {
       <div className="lg:w-full mt-10">
         <div className="lg:w-full flex flex-col lg:flex-row gap-x-10">
           <div className="lg:w-1/2 flex flex-col justify-center items-center mb-10 lg:mb-0">
-            {/* <div
-              className="w-[400px] h-[400px] lg:w-[512px] lg:h-[512px] rounded-lg"
-              style={{
-                backgroundImage: `url(${currentThumbnail})`,
-                backgroundSize: "cover",
-              }}
-            ></div> */}
 
             <div className="max-w-sm rounded-lg overflow-hidden shadow-lg p-2">
               <div className="aspect-w-1 aspect-h-1">
@@ -94,10 +86,8 @@ export default function Product({ translate }: { translate: any }) {
             </h1>
             <h1 className="text-[12px] mt-2 mb-4">{translate('product-01')}: {product?.product_desc_vi}</h1>
             <div className="flex items-center">
-              <h1 className="text-[28px] font-bold mr-4">0 VND</h1>
-              <button className="bg-red-500 rounded-lg text-white text-[12px] px-4 py-1">
-                {translate('product-02')} 10%
-              </button>
+              <h1 className="text-[20px] font-bold mr-4">Giá:</h1>
+              <h1 className="text-[24px] font-bold mr-4">LIÊN HỆ</h1>
             </div>
             <div className="flex mt-4 items-center">
               <h1 className="text-[12px] mr-4">{translate('product-03')}:</h1>
