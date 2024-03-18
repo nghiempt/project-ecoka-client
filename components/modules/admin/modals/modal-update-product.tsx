@@ -13,6 +13,7 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
     const [productDesVi, setProductDesVi] = useState('');
     const [productDesEn, setProductDesEn] = useState('');
     const [productNameCatId, setProductNameCatId] = useState('');
+    const [images, setImages] = useState<any>([]);
 
     const validation = () => {
         if (productNameVi === '') {
@@ -53,12 +54,12 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
             product_desc_vi: productDesVi,
             product_desc_en: productDesEn,
             product_category_id: productNameCatId,
-            product_image_one: productSelected?.product_image_one,
-            product_image_two: productSelected?.product_image_two,
-            product_image_three: productSelected?.product_image_three,
-            product_image_four: productSelected?.product_image_four,
-            product_image_five: productSelected?.product_image_five,
-            product_image_six: productSelected?.product_image_six,
+            product_image_one: images[0] === undefined ? '' : images[0],
+            product_image_two: images[1] === undefined ? '' : images[1],
+            product_image_three: images[2] === undefined ? '' : images[2],
+            product_image_four: images[3] === undefined ? '' : images[3],
+            product_image_five: images[4] === undefined ? '' : images[4],
+            product_image_six: images[5] === undefined ? '' : images[5],
         }
         setShowToastLoading(true)
         try {
@@ -85,15 +86,61 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
         }
     };
 
+    const handleRemoveImage = (index: any) => {
+        setImages(images.map((item: any, i: any) => i === index ? '' : item))
+    }
+
+    const renderImage = (originUrl: any) => {
+        if (originUrl === null || originUrl === undefined || originUrl === "") {
+            return "https://cdn-icons-png.flaticon.com/128/3342/3342137.png"
+        }
+        const filename = originUrl.split('/').pop();
+        return 'https://ecokav2.devilop.me/api/products/images/' + filename;
+    }
+
+    const handleUploadSingleFile = async (e: any, index: any) => {
+        const file = e.target.files[0];
+        if (!file) {
+            alert('Please select an image file.');
+            return;
+        }
+        const formData = new FormData();
+        formData.append('image', file);
+        try {
+            const response = await fetch('https://ecokav2.devilop.me/api/products/image/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to upload image');
+            }
+
+            const data = await response.json();
+            setImages(images.map((item: any, i: any) => i === index ? data.imageUrl : item))
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to upload image. Please try again.');
+        }
+    }
+
     useEffect(() => {
         setProductNameVi(productSelected?.product_name_vi)
         setProductNameEn(productSelected?.product_name_en)
         setProductDesVi(productSelected?.product_desc_vi)
         setProductDesEn(productSelected?.product_desc_en)
         setProductNameCatId(productSelected?.product_category_id.toString())
+        setImages([
+            productSelected?.product_image_one === null ? '' : productSelected?.product_image_one,
+            productSelected?.product_image_two === null ? '' : productSelected?.product_image_two,
+            productSelected?.product_image_three === null ? '' : productSelected?.product_image_three,
+            productSelected?.product_image_four === null ? '' : productSelected?.product_image_four,
+            productSelected?.product_image_five === null ? '' : productSelected?.product_image_five,
+            productSelected?.product_image_six === null ? '' : productSelected?.product_image_six,
+        ])
     }, [])
 
-    useEffect(() => { }, [productNameVi, productNameEn, productDesVi, productDesEn, productNameCatId])
+    useEffect(() => { }, [productNameVi, productNameEn, productDesVi, productDesEn, productNameCatId, images])
 
     return (
         <>
@@ -150,7 +197,26 @@ function ModalCreateProduct({ openModal, handleClose, productSelected }: { openM
                                     <label className="block text-gray-700 text-sm font-bold mb-2" >Mô Tả (tiếng Anh)</label>
                                     <textarea onChange={(e) => setProductDesEn(e.target.value)} value={productDesEn} className="shadow appearance-none border rounded w-full py-2 pl-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product-desc"></textarea>
                                 </div>
-                                <div className="mb-4">
+
+                                <label className="block text-gray-700 text-sm font-bold mb-4" >Hình Ảnh</label>
+
+                                {images.length > 0 && (
+                                    <div className='flex gap-x-2'>
+                                        {images.map((file: any, index: any) => (
+                                            file === '' ?
+                                                <div className='bg-gray-100 cursor-pointer rounded-lg flex justify-center items-center'>
+                                                    <input className='w-[96px] cursor-pointer' type="file" name="image" accept="image/*" onChange={(e: any) => handleUploadSingleFile(e, index)} />
+                                                </div>
+                                                :
+                                                <div className='flex flex-col justify-center items-center'>
+                                                    <img key={index} src={renderImage(file)} alt="Preview" style={{ width: '100px', height: '100px' }} />
+                                                    <div onClick={() => handleRemoveImage(index)} className='bg-red-500 mt-2 text-white rounded-md px-2 py-1 cursor-pointer hover:opacity-60'>xoá</div>
+                                                </div>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <div className="mb-4 mt-6">
                                     <label className="block text-gray-700 text-sm font-bold mb-2" >Danh Mục</label>
                                     <select className='!bg-gray-200 px-2 py-1 rounded-lg' defaultValue={productSelected?.product_category_id.toString()} onChange={(e) => setProductNameCatId(e.target.value)}>
                                         <option value='1'>MACRAME DECORATION</option>
