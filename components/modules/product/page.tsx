@@ -13,6 +13,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { useSearchParams } from "next/navigation";
 import { SubBanner } from "@/components/common/sub-banner";
 import { FetchData } from "@/fetch/fetch_data";
+import { FAKE } from "@/constant/fake";
 
 export default function Product({ translate }: { translate: any }) {
 
@@ -23,8 +24,8 @@ export default function Product({ translate }: { translate: any }) {
   const searchParams = useSearchParams()
 
   const init = async () => {
-    const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
-    let foundItem: any = fetchProducts?.find((item: any) => item?.product_id.toString() === (searchParams.get('productId') || '1'));
+    // const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
+    let foundItem: any = FAKE?.PRODUCTS?.find((item: any) => item?.product_id.toString() === (searchParams.get('productId') || '1'));
     setProduct(foundItem)
     console.log(foundItem);
     let tmp: any = []
@@ -62,7 +63,7 @@ export default function Product({ translate }: { translate: any }) {
 
             <div className="max-w-sm rounded-lg overflow-hidden shadow-lg p-2">
               <div className="aspect-w-1 aspect-h-1">
-                <img className="object-cover rounded-md" src={renderImage(currentThumbnail)} alt="Product Image" />
+                <img className="object-cover rounded-md" src={currentThumbnail} alt="Product Image" />
               </div>
             </div>
 
@@ -73,7 +74,7 @@ export default function Product({ translate }: { translate: any }) {
                   className="w-[72px] h-[72px] rounded-lg cursor-pointer"
                   onClick={() => setCurrentThumbnail(item)}
                   style={{
-                    backgroundImage: `url(${renderImage(item)})`,
+                    backgroundImage: `url(${item})`,
                     backgroundSize: "cover",
                   }}
                 ></div>

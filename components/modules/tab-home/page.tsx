@@ -10,6 +10,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import { ROUTE } from "@/constant/route";
 import { FetchData } from "@/fetch/fetch_data";
+import { FAKE } from "@/constant/fake";
 
 export default function TabHome({ translate }: { translate: any }) {
 
@@ -17,7 +18,7 @@ export default function TabHome({ translate }: { translate: any }) {
 
   const renderHomeProduct = (catId: any) => {
     let tmp: any = []
-    products?.forEach((item: any) => {
+    FAKE?.PRODUCTS?.forEach((item: any) => {
       if (item?.product_category_id.toString() === catId.toString()) {
         tmp = [...tmp, item]
       }
@@ -94,7 +95,7 @@ export default function TabHome({ translate }: { translate: any }) {
               >
                 <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
                   <div className="aspect-w-1 aspect-h-1">
-                    <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
+                    <img className="object-cover rounded-md" src={item?.product_image_one} alt="Product Image" />
                   </div>
                   <div className="px-6 py-4 h-[48px]">
                     <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>
@@ -130,7 +131,7 @@ export default function TabHome({ translate }: { translate: any }) {
                   >
                     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
                       <div className="aspect-w-1 aspect-h-1">
-                        <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
+                        <img className="object-cover rounded-md" src={item?.product_image_one} alt="Product Image" />
                       </div>
                       <div className="px-6 py-4 h-[48px]">
                         <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>
@@ -168,7 +169,7 @@ export default function TabHome({ translate }: { translate: any }) {
                   >
                     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
                       <div className="aspect-w-1 aspect-h-1">
-                        <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
+                        <img className="object-cover rounded-md" src={item?.product_image_one} alt="Product Image" />
                       </div>
                       <div className="px-6 py-4 h-[48px]">
                         <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>
@@ -206,7 +207,7 @@ export default function TabHome({ translate }: { translate: any }) {
                   >
                     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg px-2 pt-2">
                       <div className="aspect-w-1 aspect-h-1">
-                        <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
+                        <img className="object-cover rounded-md" src={item?.product_image_one} alt="Product Image" />
                       </div>
                       <div className="px-6 py-4 h-[48px]">
                         <div className="font-medium lg:text-[18px]">{item?.product_name_vi}</div>

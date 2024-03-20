@@ -9,6 +9,7 @@ import { limitString } from "@/utils/helper";
 import { ROUTE } from "@/constant/route";
 import { FetchData } from "@/fetch/fetch_data";
 import { useRouter, useSearchParams } from 'next/navigation'
+import { FAKE } from "@/constant/fake";
 
 export default function TabCollection({ translate }: { translate: any }) {
 
@@ -16,10 +17,11 @@ export default function TabCollection({ translate }: { translate: any }) {
   const searchParams = useSearchParams()
 
   const [category, setCategory] = React.useState("1");
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<any>([])
   const [filterProducts, setFilterProducts] = useState([])
 
   const filterByCategory = (productsParam: any, categoryId: any) => {
+    console.log(productsParam);
     let tmp: any = []
     productsParam?.forEach((item: any) => {
       if (item?.product_category_id.toString() === categoryId.toString()) {
@@ -44,7 +46,7 @@ export default function TabCollection({ translate }: { translate: any }) {
   }
 
   const renderSelectSubCategory = () => {
-    switch (category) {
+    switch (category.toString()) {
       case '1':
         return (
           <select className="cursor-pointer" onChange={(e) => {
@@ -83,10 +85,10 @@ export default function TabCollection({ translate }: { translate: any }) {
   }
 
   const init = async () => {
-    const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
+    // const fetchProducts = await FetchData.GET_ALL_PRODUCTS()
     setCategory(searchParams.get('category') || '1')
-    setProducts(fetchProducts)
-    setFilterProducts(filterByCategory(fetchProducts, searchParams.get('category') || '1'))
+    setProducts(FAKE.PRODUCTS)
+    setFilterProducts(filterByCategory(FAKE.PRODUCTS, searchParams.get('category') || '1'))
   };
 
   useEffect(() => {
@@ -140,7 +142,7 @@ export default function TabCollection({ translate }: { translate: any }) {
                     >
                       <div className="max-w-sm rounded-lg overflow-hidden p-2">
                         <div className="aspect-w-1 aspect-h-1">
-                          <img className="object-cover rounded-md" src={renderImage(item?.product_image_one)} alt="Product Image" />
+                          <img className="object-cover rounded-md" src={item?.product_image_one} alt="Product Image" />
                         </div>
                       </div>
                       <div className="lg:pb-2 pt-4 lg:pt-4" style={{ minHeight: '48px' }}>
