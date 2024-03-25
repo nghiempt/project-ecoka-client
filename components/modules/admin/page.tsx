@@ -6,6 +6,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import Person4Icon from "@mui/icons-material/Person4";
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import BusinessIcon from '@mui/icons-material/Business';
 import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
 import ProductTable from "./components/product-table";
@@ -18,6 +19,7 @@ export default function AdminDashboard() {
   const [openModalUpdateProduct, setOpenModalUpdateProduct] = React.useState(false);
   const [openModalDeleteProduct, setOpenModalDeleteProduct] = React.useState(false);
 
+  const [currentTab, setCurrentTab] = React.useState<any>(1);
   const [currentProduct, setCurrentProduct] = React.useState<any>(null);
 
   const handleOpenModalCreateProduct = () => {
@@ -66,16 +68,14 @@ export default function AdminDashboard() {
     }
   }
 
-  const init = () => {
-
-  }
+  const init = () => { }
 
   useEffect(() => {
     init()
   }, [])
 
   React.useEffect(() => {
-  }, [currentProduct])
+  }, [currentProduct, currentTab])
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
@@ -87,16 +87,22 @@ export default function AdminDashboard() {
         <div className="h-[34px]"></div>
         <Divider />
         <div className="flex flex-col justify-center items-start pl-6 pt-10 gap-y-6">
-          <div className="flex justify-center items-center gap-x-2 cursor-pointer bg-gray-100 py-1 px-2 rounded-lg">
+          <div onClick={() => setCurrentTab(1)} className={`flex justify-center items-center gap-x-2 cursor-pointer py-1 px-2 ${currentTab === 1 ? 'bg-gray-100 rounded-lg' : ''}`}>
             <StorefrontIcon sx={{ color: `rgb(var(--primary-rgb))` }} />
-            <h1 className={`text-[16px] font-bold text-[rgb(var(--primary-rgb))]`}>
+            <h1 className={`text-[16px] ${currentTab === 1 ? 'font-bold' : 'font-medium'} text-[rgb(var(--primary-rgb))]`}>
               Quản Lý Sản Phẩm
             </h1>
           </div>
-          <div className="flex justify-center items-center gap-x-2 cursor-pointer py-1 px-2">
+          <div onClick={() => setCurrentTab(2)} className={`flex justify-center items-center gap-x-2 cursor-pointer py-1 px-2 ${currentTab === 2 ? 'bg-gray-100 rounded-lg' : ''}`}>
             <PostAddIcon sx={{ color: `rgb(var(--primary-rgb))` }} />
-            <h1 className={`text-[16px] font-medium text-[rgb(var(--primary-rgb))]`}>
+            <h1 className={`text-[16px] ${currentTab === 2 ? 'font-bold' : 'font-medium'} text-[rgb(var(--primary-rgb))]`}>
               Quản Lý Bài Viết
+            </h1>
+          </div>
+          <div onClick={() => setCurrentTab(3)} className={`flex justify-center items-center gap-x-2 cursor-pointer py-1 px-2 ${currentTab === 3 ? 'bg-gray-100 rounded-lg' : ''}`}>
+            <BusinessIcon sx={{ color: `rgb(var(--primary-rgb))` }} />
+            <h1 className={`text-[16px] ${currentTab === 3 ? 'font-bold' : 'font-medium'} text-[rgb(var(--primary-rgb))]`}>
+              Thông Tin Công Ty
             </h1>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { Avatar } from "@mui/material";
 import { URL } from "@/constant/url";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import TtyOutlinedIcon from "@mui/icons-material/TtyOutlined";
@@ -17,10 +17,9 @@ export default function Footer({ translate }: { translate: any }) {
     <div className="w-full bg-[rgb(24,21,19)] mt-10 py-6 flex justify-center items-center">
       <div className="w-3/4 flex flex-col">
         <Avatar alt="avatar" src={URL.ECOKA_LOGO_CIRCLE} className="!hidden lg:!block" />
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between mt-3 items-start">
-          <Avatar alt="avatar" src={URL.ECOKA_LOGO_CIRCLE} className="lg:!hidden" />
-          <div className="w-[400px] lg:w-[600px] text-justify my-10 lg:my-0">
-            <h6 className="text-[14px] text-white">
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between items-start">
+          <div className="w-[400px] lg:w-[600px] mb-8 lg:my-10 lg:my-0">
+            <h6 className="text-[14px] text-white px-10 lg:px-0">
               {translate("footer-desc")}
             </h6>
           </div>
@@ -101,7 +100,7 @@ export default function Footer({ translate }: { translate: any }) {
                 <FacebookIcon className="text-white" />
               </div>
               <div className="bg-[rgb(var(--secondary-rgb))] rounded-xl w-8 h-8 mx-2 flex justify-center items-center cursor-pointer">
-                <TwitterIcon className="text-white" />
+                <YouTubeIcon className="text-white" />
               </div>
               <div className="bg-[rgb(var(--secondary-rgb))] rounded-xl w-8 h-8 mx-2 flex justify-center items-center cursor-pointer">
                 <InstagramIcon className="text-white" />
@@ -111,12 +110,12 @@ export default function Footer({ translate }: { translate: any }) {
               <EmailOutlinedIcon className="text-white" />
               <h1 className="text-[14px] text-gray-300 font-bold ml-2">{STRING.ECOKA_EMAIL}</h1>
             </div>
-            <div className="flex justify-start items-start mb-2 mt-4">
+            <div className="flex justify-start items-start mb-2 mt-2">
               <TtyOutlinedIcon className="text-white" />
               <h1 className="text-[14px] text-gray-300 font-bold ml-2">{STRING.ECOKA_PHONE}</h1>
             </div>
-            <div className="flex justify-start items-start mb-2 mt-4">
-              <FmdGoodOutlinedIcon className="text-white" />
+            <div className="flex justify-start items-start mb-2 mt-2 text-center lg:text-left">
+              <FmdGoodOutlinedIcon className="text-white !hidden lg:!block" />
               <h1 className="text-[14px] text-gray-300 font-bold ml-2">{translate("footer-address")}</h1>
             </div>
           </div>
